@@ -2,18 +2,39 @@
 
 [ext_resource type="Texture2D" uid="uid://bnk1w67h0jtup" path="res://icon.svg" id="1_5divt"]
 [ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="3_n7d7u"]
+[ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="3_sugca"]
+[ext_resource type="PackedScene" uid="uid://dj1v4athwo45n" path="res://Components/DamageComponent.tscn" id="4_sugca"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sugca"]
+radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mstjn"]
 radius = 64.0
 
 [node name="Entity1Bullet" type="RigidBody2D" unique_id=231567729]
-scale = Vector2(0.1, 0.1)
 collision_layer = 0
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=379773902]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_5divt")
 
-[node name="BulletCollision" type="CollisionShape2D" parent="." unique_id=328775204]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058114692]
+shape = SubResource("CircleShape2D_sugca")
+
+[node name="DamageComponent" parent="." unique_id=162634644 instance=ExtResource("4_sugca")]
+collision_layer = 4
+collision_mask = 2
+
+[node name="BulletCollision" type="CollisionShape2D" parent="DamageComponent" unique_id=328775204]
+scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_mstjn")
 
 [node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("3_n7d7u")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=653392340]
+
+[node name="DespawnComponent" type="Node" parent="." unique_id=628881404 node_paths=PackedStringArray("visible_on_screen_notifier")]
+script = ExtResource("3_sugca")
+visible_on_screen_notifier = NodePath("../VisibleOnScreenNotifier2D")
+metadata/_custom_type_script = "uid://cq2s5aimu6dfn"

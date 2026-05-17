@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://dgjcptaxygbh7"]
 
 [ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
+[ext_resource type="PackedScene" uid="uid://bg667a7oky02g" path="res://Entities/Spawner/Spawner.tscn" id="2_b13i0"]
+[ext_resource type="PackedScene" uid="uid://cf5q1scjv6lwt" path="res://Entities/Player/Player.tscn" id="3_433hs"]
 
 [node name="Level1" type="Node2D" unique_id=687571251]
 
 [node name="LevelLimit" parent="." unique_id=515817730 instance=ExtResource("1_7p6ks")]
+
+[node name="Spawner" parent="." unique_id=690138998 instance=ExtResource("2_b13i0")]
+position = Vector2(576, 80)
+
+[node name="Player" parent="." unique_id=390965236 instance=ExtResource("3_433hs")]
+position = Vector2(584, 520)

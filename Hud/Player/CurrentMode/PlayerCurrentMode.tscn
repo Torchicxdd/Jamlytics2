@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c5vlidextufyg"]
+
+[ext_resource type="Texture2D" uid="uid://dcj4d41fcpxh1" path="res://Hud/Player/CurrentMode/current_mode_background.png" id="1_4j71m"]
+[ext_resource type="Script" uid="uid://cybsc78qyvdp5" path="res://Hud/Player/CurrentMode/player_current_mode.gd" id="2_c4l7n"]
+[ext_resource type="Texture2D" uid="uid://b0dqtn0haqja" path="res://Hud/Player/CurrentMode/default_mode.png" id="3_g10ul"]
+
+[node name="PlayerCurrentMode" type="MarginContainer" unique_id=975696919]
+offset_right = 88.0
+offset_bottom = 88.0
+script = ExtResource("2_c4l7n")
+
+[node name="Background" type="TextureRect" parent="." unique_id=391300809]
+layout_mode = 2
+texture = ExtResource("1_4j71m")
+
+[node name="ModeImage" type="TextureRect" parent="Background" unique_id=452818263]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -55.5
+offset_right = 33.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g10ul")

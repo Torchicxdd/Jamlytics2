@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cf5q1scjv6lwt"]
 
+[ext_resource type="Script" uid="uid://bsy0x5npkt3xa" path="res://Entities/Player/player.gd" id="1_t38ms"]
 [ext_resource type="Texture2D" uid="uid://bnk1w67h0jtup" path="res://icon.svg" id="1_vweq0"]
 [ext_resource type="Texture2D" uid="uid://dft7m6kcflryf" path="res://Entities/Player/core.png" id="2_1des2"]
 [ext_resource type="PackedScene" uid="uid://dgbpjt0auhbpc" path="res://Components/MovementComponent.tscn" id="3_an6q6"]
+[ext_resource type="PackedScene" uid="uid://djlxphyer30qi" path="res://Components/HurtboxComponent.tscn" id="3_t38ms"]
+[ext_resource type="PackedScene" uid="uid://gkyfmndrnava" path="res://Components/HealthComponent.tscn" id="5_hj1c0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vweq0"]
 size = Vector2(128, 128)
@@ -14,6 +17,8 @@ radius = 47.518417
 radius = 248.63791
 
 [node name="Player" type="CharacterBody2D" unique_id=390965236]
+collision_layer = 2
+script = ExtResource("1_t38ms")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=553972160]
 texture = ExtResource("1_vweq0")
@@ -22,6 +27,8 @@ texture = ExtResource("1_vweq0")
 shape = SubResource("RectangleShape2D_vweq0")
 
 [node name="ScrapingArea" type="Area2D" parent="." unique_id=1472998312]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScrapingArea" unique_id=1990884535]
 shape = SubResource("CircleShape2D_lu8i8")
@@ -30,10 +37,17 @@ shape = SubResource("CircleShape2D_lu8i8")
 scale = Vector2(0.041015625, 0.041015625)
 texture = ExtResource("2_1des2")
 
-[node name="Core" type="Area2D" parent="CoreSprite" unique_id=1205871150]
+[node name="HurtboxComponent" parent="CoreSprite" unique_id=1373001464 node_paths=PackedStringArray("health_component") instance=ExtResource("3_t38ms")]
+scale = Vector2(24.380953, 24.380953)
+collision_layer = 2
+collision_mask = 0
+health_component = NodePath("../../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CoreSprite/Core" unique_id=1556242971]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoreSprite/HurtboxComponent" unique_id=1556242971]
+scale = Vector2(0.041015625, 0.041015625)
 shape = SubResource("CircleShape2D_3uyv8")
 
 [node name="MovementComponent" parent="." unique_id=655246547 instance=ExtResource("3_an6q6")]
 speed = 500.0
+
+[node name="HealthComponent" parent="." unique_id=1908907186 instance=ExtResource("5_hj1c0")]

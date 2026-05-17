@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt8iun8muas1e"]
+
+[ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="1_4sftd"]
+
+[node name="DespawnComponent" type="Node" unique_id=972114894]
+script = ExtResource("1_4sftd")

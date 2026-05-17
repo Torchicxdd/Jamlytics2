@@ -17,11 +17,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://brbsy22q1c82u"
-SignalBus="*uid://cm2wkwlrm1vk"
+UISignalBus="*uid://cm2wkwlrm1vk"
 PoolManager="*uid://dn2rpfqwhx6r8"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -78,6 +80,7 @@ secondary_fire={
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Bullet"
 
 [physics]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8i507yhunpxn"
-path="res://.godot/imported/home icon.png-01bb7b136777ed6580e8294014dee647.ctex"
+uid="uid://dcj4d41fcpxh1"
+path="res://.godot/imported/current_mode_background.png-55138004988f34ea854a368319d70a12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://themes/home icon.png"
-dest_files=["res://.godot/imported/home icon.png-01bb7b136777ed6580e8294014dee647.ctex"]
+source_file="res://Hud/Player/CurrentMode/current_mode_background.png"
+dest_files=["res://.godot/imported/current_mode_background.png-55138004988f34ea854a368319d70a12.ctex"]
 
 [params]
 

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bkg4g88ho4mg0"]
+
+[ext_resource type="PackedScene" uid="uid://c5vlidextufyg" path="res://Hud/Player/CurrentMode/PlayerCurrentMode.tscn" id="1_vkcr1"]
+[ext_resource type="PackedScene" uid="uid://bg7isouxjry64" path="res://Hud/Player/HealthBar/PlayerHealthBar.tscn" id="2_sfqjq"]
+
+[node name="GameHud" type="Control" unique_id=1085315455]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=483879753]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_top = 90
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1368628187]
+layout_mode = 2
+
+[node name="PlayerHealthBar" parent="MarginContainer/Control" unique_id=781142148 instance=ExtResource("2_sfqjq")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 24.0
+offset_right = 481.0
+offset_bottom = 64.0
+
+[node name="PlayerCurrentMode" parent="MarginContainer/Control" unique_id=975696919 instance=ExtResource("1_vkcr1")]
+layout_mode = 0

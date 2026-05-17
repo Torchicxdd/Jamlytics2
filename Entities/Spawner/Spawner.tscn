@@ -7,7 +7,8 @@
 [node name="Spawner" type="Node2D" unique_id=690138998]
 script = ExtResource("1_31b67")
 bullet_scene = ExtResource("2_8qga2")
-spawn_interval = 0.115
+rotation_speed = 3
+spawn_interval = 0.05
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=174186417]
 texture = ExtResource("2_jqdt7")
