@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://pr6f2mkb6s4u"]
+
+[ext_resource type="Texture2D" uid="uid://bnk1w67h0jtup" path="res://icon.svg" id="1_5divt"]
+[ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="3_n7d7u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mstjn"]
+radius = 64.0
+
+[node name="Entity1Bullet" type="RigidBody2D" unique_id=231567729]
+scale = Vector2(0.1, 0.1)
+collision_layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=379773902]
+texture = ExtResource("1_5divt")
+
+[node name="BulletCollision" type="CollisionShape2D" parent="." unique_id=328775204]
+shape = SubResource("CircleShape2D_mstjn")
+
+[node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("3_n7d7u")]

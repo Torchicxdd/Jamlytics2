@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c8htuj1mqlnsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujwm1"]
+size = Vector2(16, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfah1"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whgad"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xckdo"]
+size = Vector2(16, 648)
+
+[node name="LevelLimit" type="Node2D" unique_id=515817730]
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=2036140736]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=690863220]
+position = Vector2(8, 324)
+shape = SubResource("RectangleShape2D_ujwm1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=577235919]
+position = Vector2(576, 640)
+shape = SubResource("RectangleShape2D_rfah1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=192519959]
+position = Vector2(576, 8)
+shape = SubResource("RectangleShape2D_whgad")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" unique_id=1802412827]
+position = Vector2(1144, 324)
+shape = SubResource("RectangleShape2D_xckdo")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dgjcptaxygbh7"]
+
+[ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
+
+[node name="Level1" type="Node2D" unique_id=687571251]
+
+[node name="LevelLimit" parent="." unique_id=515817730 instance=ExtResource("1_7p6ks")]

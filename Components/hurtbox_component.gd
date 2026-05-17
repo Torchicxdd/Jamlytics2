@@ -1,0 +1,10 @@
+class_name DamageComponent
+extends Area2D
+
+@export var health_component: HealthComponent
+
+func _ready() -> void:
+	assert(health_component != null, "HurtboxComponent must have a HealthComponent provided.")
+	
+func receive_damage(damage: float) -> void:
+	health_component.take_damage(damage)
