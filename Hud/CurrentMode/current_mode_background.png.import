@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxydg4gxsepi7"
-path="res://.godot/imported/health_bar_border.png-d266d280770ab8cbf0078b6778583229.ctex"
+uid="uid://dcj4d41fcpxh1"
+path="res://.godot/imported/current_mode_background.png-dcbfbade0a9cfd5e50d07b8b440d1d9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hud/Player/HealthBar/health_bar_border.png"
-dest_files=["res://.godot/imported/health_bar_border.png-d266d280770ab8cbf0078b6778583229.ctex"]
+source_file="res://Hud/CurrentMode/current_mode_background.png"
+dest_files=["res://.godot/imported/current_mode_background.png-dcbfbade0a9cfd5e50d07b8b440d1d9d.ctex"]
 
 [params]
 

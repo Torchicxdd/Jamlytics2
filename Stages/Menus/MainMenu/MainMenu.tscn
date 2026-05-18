@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://l7dpxxe5erbs"]
+
+[ext_resource type="Script" uid="uid://di26qhqeujt0e" path="res://Stages/Menus/MainMenu/main_menu.gd" id="1_w0tgi"]
+[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_mo46c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxv1a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niikg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k7ap5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q0u8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ofch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo46c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0tgi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ov3bf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3gmw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bsbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpjn0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooylj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k73os"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq18x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuy58"]
+
+[node name="MainMenu" type="Control" unique_id=499520224]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0tgi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1079165569]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.333334
+offset_right = 466.0
+offset_bottom = 30.333334
+grow_vertical = 2
+theme_override_constants/margin_left = 52
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=85145940]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mo46c")
+theme_override_font_sizes/font_size = 52
+text = "Tropi: Random Title"
+
+[node name="ButtonsWrapper" type="MarginContainer" parent="." unique_id=211910224]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -363.0
+offset_right = 518.0
+grow_vertical = 0
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_bottom = 104
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsWrapper" unique_id=1950764122]
+layout_mode = 2
+theme_override_constants/separation = 52
+
+[node name="Levels" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=242768162]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mo46c")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jxv1a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_niikg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k7ap5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0q0u8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6ofch")
+text = "Levels"
+alignment = 0
+
+[node name="Settings" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=1153131273]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mo46c")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mo46c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w0tgi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ov3bf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3gmw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1bsbk")
+text = "Settings"
+alignment = 0
+
+[node name="ExitGame" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=168272511]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mo46c")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mpjn0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ooylj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k73os")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bq18x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xuy58")
+text = "Exit Game
+"
+alignment = 0

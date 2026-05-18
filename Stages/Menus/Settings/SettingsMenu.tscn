@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://4p08anivxumm"]
+
+[ext_resource type="Script" uid="uid://dvds4haedjhyw" path="res://Stages/Menus/Settings/settings_menu.gd" id="1_n1pje"]
+[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="1_qffyb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qffyb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1pje"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ae1dn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6jad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_el0qr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fpgw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myfgb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3jxbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36pnm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hofac"]
+
+[node name="SettingsMenu" type="Control" unique_id=1365611155]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n1pje")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1374406636]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 240.0
+offset_bottom = 324.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_qffyb")
+theme_override_font_sizes/normal_font_size = 72
+text = "Options
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1216610445]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -143.5
+offset_right = 960.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 52
+
+[node name="Audio" type="Button" parent="VBoxContainer" unique_id=1366291886]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qffyb")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qffyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n1pje")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ae1dn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
+text = "Audio"
+
+[node name="Controller" type="Button" parent="VBoxContainer" unique_id=298895074]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qffyb")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qffyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n1pje")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ae1dn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
+text = "Controller"
+
+[node name="Keyboard" type="Button" parent="VBoxContainer" unique_id=1016744064]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qffyb")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qffyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n1pje")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ae1dn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
+text = "Keyboard"
+
+[node name="Back" type="Button" parent="." unique_id=1437575137]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -216.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_qffyb")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6fpgw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_myfgb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3jxbn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_36pnm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hofac")
+text = "Back"

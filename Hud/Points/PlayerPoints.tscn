@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b6apwrnfuiplj"]
+
+[ext_resource type="Shader" uid="uid://cbmvyivp4swc" path="res://themes/CustomFontColour/custom_font_colour.gdshader" id="1_u7e8c"]
+[ext_resource type="Script" uid="uid://di4vr3yndlges" path="res://Hud/Points/player_points.gd" id="1_yy81p"]
+[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_nqi08"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7nf0"]
+shader = ExtResource("1_u7e8c")
+shader_parameter/top_colour = Color(0.9019608, 0.65882355, 0.38431373, 1)
+shader_parameter/bottom_colour = Color(0.43137255, 0, 0, 1)
+shader_parameter/gradient_strength = 0.86000004085
+shader_parameter/text_bottom = 55.602002546095
+shader_parameter/stroke_colour = Color(0, 0, 0, 1)
+shader_parameter/stroke_width = 1.6000000760000002
+shader_parameter/sharpness = 50.0
+shader_parameter/shadow_colour = Color(0, 0, 0, 0.4)
+shader_parameter/shadow_offset = Vector2(0.75, 3.5)
+shader_parameter/shadow_size = 1.06400005054
+
+[node name="PlayerPoints" type="RichTextLabel" unique_id=495870180]
+material = SubResource("ShaderMaterial_g7nf0")
+theme_override_fonts/normal_font = ExtResource("2_nqi08")
+theme_override_font_sizes/normal_font_size = 42
+text = "30000 PTS"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("1_yy81p")

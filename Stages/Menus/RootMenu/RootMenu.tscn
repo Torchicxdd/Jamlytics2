@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://mm6cdbbjh52d"]
+
+[ext_resource type="Script" uid="uid://mdkawf3pn88m" path="res://Stages/Menus/RootMenu/root_menu.gd" id="1_2gm4h"]
+[ext_resource type="Texture2D" uid="uid://b2c0eym76m4om" path="res://Stages/Menus/MainMenu/MainMenuBackground.png" id="2_pgulh"]
+[ext_resource type="PackedScene" uid="uid://4p08anivxumm" path="res://Stages/Menus/Settings/SettingsMenu.tscn" id="3_pgulh"]
+[ext_resource type="PackedScene" uid="uid://bkr8y5fs0wg8c" path="res://Stages/Menus/Audio/AudioMenu.tscn" id="4_o3j03"]
+[ext_resource type="PackedScene" uid="uid://c0dbq1ebhvpkq" path="res://Stages/Menus/Controller/ControllerMenu.tscn" id="5_vc10h"]
+[ext_resource type="PackedScene" uid="uid://c4mksxfwpkihk" path="res://Stages/Menus/Keyboard/KeyboardMenu.tscn" id="6_rxpjs"]
+
+[node name="RootMenu" type="Control" unique_id=1614342080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2gm4h")
+
+[node name="main_background" type="TextureRect" parent="." unique_id=450890519]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pgulh")
+
+[node name="pause_background" type="ColorRect" parent="." unique_id=2051202678]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="menu_wrapper" type="Control" parent="." unique_id=826089942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenu" parent="menu_wrapper" unique_id=1365611155 instance=ExtResource("3_pgulh")]
+visible = false
+layout_mode = 1
+
+[node name="ControllerMenu" parent="menu_wrapper" unique_id=323115437 instance=ExtResource("5_vc10h")]
+visible = false
+layout_mode = 1
+
+[node name="KeyboardMenu" parent="menu_wrapper" unique_id=1465772207 instance=ExtResource("6_rxpjs")]
+visible = false
+layout_mode = 1
+
+[node name="AudioMenu" parent="menu_wrapper" unique_id=703233102 instance=ExtResource("4_o3j03")]
+visible = false
+layout_mode = 1

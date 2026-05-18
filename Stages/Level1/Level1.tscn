@@ -9,7 +9,7 @@
 [node name="LevelLimit" parent="." unique_id=515817730 instance=ExtResource("1_7p6ks")]
 
 [node name="Spawner" parent="." unique_id=690138998 instance=ExtResource("2_b13i0")]
-position = Vector2(576, 80)
+position = Vector2(1544, 520)
 
 [node name="Player" parent="." unique_id=390965236 instance=ExtResource("3_433hs")]
-position = Vector2(584, 520)
+position = Vector2(224, 536)

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="jamlytics-2"
+run/main_scene="uid://lcq5bd3saii4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,13 +20,15 @@ config/icon="res://icon.svg"
 Global="*uid://brbsy22q1c82u"
 UISignalBus="*uid://cm2wkwlrm1vk"
 PoolManager="*uid://dn2rpfqwhx6r8"
+SceneLoader="*uid://c1w7584iu1ded"
+Constants="*uid://0sy33f7i6ilg"
+MenuManager="*uid://kcypk2i3go16"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [input]
 

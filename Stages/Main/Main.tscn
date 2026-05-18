@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://lcq5bd3saii4"]
+
+[ext_resource type="Script" uid="uid://cy156s2sk7a26" path="res://Stages/Main/ui.gd" id="1_babl8"]
+[ext_resource type="Script" uid="uid://bnkbotsvtlbca" path="res://Stages/Main/main.gd" id="1_so270"]
+
+[node name="Main" type="Node" unique_id=21017621]
+script = ExtResource("1_so270")
+
+[node name="UI" type="Control" parent="." unique_id=1485146578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_babl8")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bg7isouxjry64"]
+
+[ext_resource type="Texture2D" uid="uid://cjg064kjk7rub" path="res://Hud/HealthBar/health_bar_under.png" id="1_dcn8m"]
+[ext_resource type="Texture2D" uid="uid://bxydg4gxsepi7" path="res://Hud/HealthBar/health_bar_border.png" id="2_aygg5"]
+[ext_resource type="Texture2D" uid="uid://c4mvb5wb3x2rc" path="res://Hud/HealthBar/health_bar_progress.png" id="3_fc0hx"]
+[ext_resource type="Script" uid="uid://ctpehbt8r0u87" path="res://Hud/HealthBar/player_health_bar.gd" id="4_lis7q"]
+
+[node name="PlayerHealthBar" type="MarginContainer" unique_id=781142148]
+offset_right = 409.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("4_lis7q")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2140485673]
+layout_mode = 2
+max_value = 4.0
+value = 4.0
+texture_under = ExtResource("1_dcn8m")
+texture_over = ExtResource("2_aygg5")
+texture_progress = ExtResource("3_fc0hx")

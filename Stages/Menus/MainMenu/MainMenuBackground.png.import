@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcj4d41fcpxh1"
-path="res://.godot/imported/current_mode_background.png-55138004988f34ea854a368319d70a12.ctex"
+uid="uid://b2c0eym76m4om"
+path="res://.godot/imported/MainMenuBackground.png-81262f594e0ac88f4f08e6833d0bb014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hud/Player/CurrentMode/current_mode_background.png"
-dest_files=["res://.godot/imported/current_mode_background.png-55138004988f34ea854a368319d70a12.ctex"]
+source_file="res://Stages/Menus/MainMenu/MainMenuBackground.png"
+dest_files=["res://.godot/imported/MainMenuBackground.png-81262f594e0ac88f4f08e6833d0bb014.ctex"]
 
 [params]
 

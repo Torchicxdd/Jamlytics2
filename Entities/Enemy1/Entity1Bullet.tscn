@@ -1,23 +1,61 @@
 [gd_scene format=3 uid="uid://pr6f2mkb6s4u"]
 
-[ext_resource type="Texture2D" uid="uid://bnk1w67h0jtup" path="res://icon.svg" id="1_5divt"]
+[ext_resource type="Texture2D" uid="uid://y27qnnxygeea" path="res://Entities/Enemy1/Enemy1BulletSpriteSheet.png" id="1_sugca"]
 [ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="3_n7d7u"]
 [ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="3_sugca"]
 [ext_resource type="PackedScene" uid="uid://dj1v4athwo45n" path="res://Components/DamageComponent.tscn" id="4_sugca"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cxmb"]
+atlas = ExtResource("1_sugca")
+region = Rect2(0, 91, 91, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxbxg"]
+atlas = ExtResource("1_sugca")
+region = Rect2(91, 91, 91, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hno5"]
+atlas = ExtResource("1_sugca")
+region = Rect2(0, 0, 91, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46k31"]
+atlas = ExtResource("1_sugca")
+region = Rect2(91, 0, 91, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7d7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cxmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxbxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hno5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46k31")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugca"]
-radius = 13.0
+radius = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mstjn"]
-radius = 64.0
+radius = 89.99999
 
 [node name="Entity1Bullet" type="RigidBody2D" unique_id=231567729]
 collision_layer = 0
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=379773902]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_5divt")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1683359142]
+sprite_frames = SubResource("SpriteFrames_n7d7u")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.7716254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058114692]
 shape = SubResource("CircleShape2D_sugca")
@@ -25,6 +63,7 @@ shape = SubResource("CircleShape2D_sugca")
 [node name="DamageComponent" parent="." unique_id=162634644 instance=ExtResource("4_sugca")]
 collision_layer = 4
 collision_mask = 2
+damage = 1.0
 
 [node name="BulletCollision" type="CollisionShape2D" parent="DamageComponent" unique_id=328775204]
 scale = Vector2(0.2, 0.2)
