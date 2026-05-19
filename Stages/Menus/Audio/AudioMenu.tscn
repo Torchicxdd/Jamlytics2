@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bkr8y5fs0wg8c"]
 
 [ext_resource type="PackedScene" uid="uid://qmpdxhgufi7j" path="res://Stages/Menus/Common/AudioSlider.tscn" id="1_be2gv"]
+[ext_resource type="Script" uid="uid://yd0c38xaapwb" path="res://Stages/Menus/Audio/audio_menu.gd" id="1_trhvc"]
+[ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_vahf6"]
 
 [node name="AudioMenu" type="Control" unique_id=703233102]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_trhvc")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=480507233]
 layout_mode = 1
@@ -38,3 +41,17 @@ bus_name = "Music"
 [node name="AudioSlider3" parent="MarginContainer/VBoxContainer" unique_id=1320054587 instance=ExtResource("1_be2gv")]
 layout_mode = 2
 bus_name = "SFX"
+
+[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("2_vahf6")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -216.0
+offset_right = 43.5
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 0
