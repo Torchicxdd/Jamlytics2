@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvds4haedjhyw" path="res://Stages/Menus/Settings/settings_menu.gd" id="1_n1pje"]
 [ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="1_qffyb"]
+[ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="3_o3xyn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qffyb"]
 
@@ -12,16 +13,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6jad"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_el0qr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fpgw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myfgb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3jxbn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36pnm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hofac"]
 
 [node name="SettingsMenu" type="Control" unique_id=1365611155]
 layout_mode = 3
@@ -94,21 +85,13 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
 text = "Keyboard"
 
-[node name="Back" type="Button" parent="." unique_id=1437575137]
+[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("3_o3xyn")]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -216.0
-offset_bottom = -120.0
+offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_qffyb")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6fpgw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_myfgb")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_3jxbn")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_36pnm")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hofac")
-text = "Back"

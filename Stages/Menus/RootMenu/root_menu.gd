@@ -18,6 +18,7 @@ static func new_root_menu(menu_type: MenuManager.ROOT_MENU_TYPE) -> RootMenu:
 	return new_root_menu
 
 func _ready() -> void:
+	MenuManager.open_levels_menu.connect(_on_levels_menu_opened)
 	MenuManager.on_menu_back_pressed.connect(_on_menu_back_pressed)
 	MenuManager.open_settings.connect(_on_open_settings)
 	MenuManager.open_audio_settings.connect(_on_open_audio_settings)
@@ -39,6 +40,9 @@ func _ready() -> void:
 			var pause_menu = pause_menu_scene.instantiate()
 			menu_wrapper.add_child(pause_menu)
 			MenuManager.open_menu(pause_menu)
+
+func _on_levels_menu_opened() -> void:
+	queue_free()
 
 func _on_menu_back_pressed() -> void:
 	MenuManager.back()

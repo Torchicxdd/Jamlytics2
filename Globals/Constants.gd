@@ -7,7 +7,8 @@ const SCENE_PATHS: Dictionary = {
 const MENU_PATHS: Dictionary = {
 	"root_menu": "uid://mm6cdbbjh52d",
 	"main_menu": "uid://l7dpxxe5erbs",
-	"pause_menu": "",
+	"levels_menu": "uid://d0bl188p52ys7",
+	"pause_menu": "uid://dievgonlssmex",
 	"settings_menu": "uid://4p08anivxumm",
 	"audio_menu": "uid://bkr8y5fs0wg8c",
 	"controller_menu": "uid://c0dbq1ebhvpkq",

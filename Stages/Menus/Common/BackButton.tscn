@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bdt7axx6mm1ka"]
+
+[ext_resource type="Script" uid="uid://8gvpm843o3rc" path="res://Stages/Menus/Common/back_button.gd" id="1_egsep"]
+[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="1_kev64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63cwd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kev64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egsep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tly7a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn8rj"]
+
+[node name="BackButton" type="MarginContainer" unique_id=1723025850]
+script = ExtResource("1_egsep")
+
+[node name="Button" type="Button" parent="." unique_id=1500061091]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kev64")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_63cwd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kev64")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_egsep")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tly7a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wn8rj")
+text = "Back"

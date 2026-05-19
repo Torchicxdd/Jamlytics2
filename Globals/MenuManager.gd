@@ -1,12 +1,19 @@
 extends Node
 
+# Applicable to all signals
 signal on_menu_back_pressed()
+
+# Menu root signals/non-settings menus
 signal open_main_menu()
 signal open_pause_menu()
+signal open_levels_menu()
+
+# Settings menus signals
 signal open_settings()
 signal open_audio_settings()
 signal open_controller_settings()
 signal open_keyboard_settings()
+
 
 enum ROOT_MENU_TYPE {
 	MAIN,

@@ -10,7 +10,7 @@ func _ready() -> void:
 	exit.pressed.connect(_on_exit_pressed)
 
 func _on_levels_pressed() -> void:
-	pass
+	MenuManager.open_levels_menu.emit()
 	
 func _on_settings_pressed() -> void:
 	MenuManager.open_settings.emit()

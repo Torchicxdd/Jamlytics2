@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bkr8y5fs0wg8c"]
 
+[ext_resource type="PackedScene" uid="uid://qmpdxhgufi7j" path="res://Stages/Menus/Common/AudioSlider.tscn" id="1_be2gv"]
+
 [node name="AudioMenu" type="Control" unique_id=703233102]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=480507233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 52
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 52
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1677776608]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="AudioSlider" parent="MarginContainer/VBoxContainer" unique_id=726825691 instance=ExtResource("1_be2gv")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="AudioSlider2" parent="MarginContainer/VBoxContainer" unique_id=2005675480 instance=ExtResource("1_be2gv")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="AudioSlider3" parent="MarginContainer/VBoxContainer" unique_id=1320054587 instance=ExtResource("1_be2gv")]
+layout_mode = 2
+bus_name = "SFX"
