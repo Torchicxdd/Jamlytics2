@@ -7,11 +7,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kev64"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egsep"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tly7a"]
+bg_color = Color(0.8509804, 0.45490196, 0.6, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tly7a"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn8rj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egsep"]
+bg_color = Color(0.84999675, 0.45517558, 0.6002963, 1)
 
 [node name="BackButton" type="MarginContainer" unique_id=1723025850]
 script = ExtResource("1_egsep")
@@ -22,7 +24,7 @@ theme_override_fonts/font = ExtResource("1_kev64")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("StyleBoxEmpty_63cwd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_kev64")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_egsep")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tly7a")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_tly7a")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wn8rj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_egsep")
 text = "Back"

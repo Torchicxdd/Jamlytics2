@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c4mksxfwpkihk"]
+
+[ext_resource type="Script" uid="uid://bc6quqg0tfl2n" path="res://Stages/Menus/InputMenu/input_menu.gd" id="1_w4l86"]
+[ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_lkxvk"]
+
+[node name="InputMenu" type="Control" unique_id=1465772207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4l86")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=307828893]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 1920.0
+offset_bottom = 832.0
+theme_override_constants/margin_left = 208
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 208
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1435426853]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=741315648]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("2_lkxvk")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -216.0
+offset_right = 43.5
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 0

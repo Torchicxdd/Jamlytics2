@@ -11,8 +11,7 @@ signal open_levels_menu()
 # Settings menus signals
 signal open_settings()
 signal open_audio_settings()
-signal open_controller_settings()
-signal open_keyboard_settings()
+signal open_input_settings()
 
 
 enum ROOT_MENU_TYPE {

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dsa44yacw8cb3"]
+
+[ext_resource type="Script" uid="uid://c4a6k4meubcd2" path="res://Stages/Menus/Common/input_rebind.gd" id="1_j71rm"]
+[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="1_x414a"]
+
+[node name="InputRebind" type="HBoxContainer" unique_id=525273941]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -21.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j71rm")
+
+[node name="ActionName" type="Label" parent="." unique_id=717905052]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.75
+theme_override_fonts/font = ExtResource("1_x414a")
+theme_override_font_sizes/font_size = 36
+text = "Action"
+
+[node name="KeyboardInput" type="Button" parent="." unique_id=1608354533]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "A"
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=90079037]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ControllerInput" type="Button" parent="." unique_id=150435607]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "B"

@@ -63,7 +63,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
 text = "Audio"
 
-[node name="Controller" type="Button" parent="VBoxContainer" unique_id=298895074]
+[node name="InputSettings" type="Button" parent="VBoxContainer" unique_id=1016744064]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qffyb")
 theme_override_font_sizes/font_size = 42
@@ -72,18 +72,9 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_n1pje")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ae1dn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
-text = "Controller"
+text = "Input Settings
 
-[node name="Keyboard" type="Button" parent="VBoxContainer" unique_id=1016744064]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qffyb")
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qffyb")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_n1pje")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ae1dn")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_r6jad")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_el0qr")
-text = "Keyboard"
+"
 
 [node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("3_o3xyn")]
 layout_mode = 1

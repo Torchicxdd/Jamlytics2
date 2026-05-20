@@ -11,6 +11,6 @@ const MENU_PATHS: Dictionary = {
 	"pause_menu": "uid://dievgonlssmex",
 	"settings_menu": "uid://4p08anivxumm",
 	"audio_menu": "uid://bkr8y5fs0wg8c",
-	"controller_menu": "uid://c0dbq1ebhvpkq",
-	"keyboard_menu": "uid://c4mksxfwpkihk"
+	"input_menu": "uid://c4mksxfwpkihk",
+	"input_rebind": "uid://dsa44yacw8cb3"
 }

@@ -9,8 +9,7 @@ var root_menu_type: MenuManager.ROOT_MENU_TYPE
 @onready var menu_wrapper = $menu_wrapper
 @onready var settings_menu = $menu_wrapper/SettingsMenu
 @onready var audio_menu = $menu_wrapper/AudioMenu
-@onready var controller_menu = $menu_wrapper/ControllerMenu
-@onready var keyboard_menu = $menu_wrapper/KeyboardMenu
+@onready var input_menu = $menu_wrapper/InputMenu
 
 static func new_root_menu(menu_type: MenuManager.ROOT_MENU_TYPE) -> RootMenu:
 	var new_root_menu: RootMenu = ROOT_MENU_SCENE.instantiate()
@@ -22,8 +21,7 @@ func _ready() -> void:
 	MenuManager.on_menu_back_pressed.connect(_on_menu_back_pressed)
 	MenuManager.open_settings.connect(_on_open_settings)
 	MenuManager.open_audio_settings.connect(_on_open_audio_settings)
-	MenuManager.open_controller_settings.connect(_on_open_controller_settings)
-	MenuManager.open_keyboard_settings.connect(_on_open_keyboard_settings)
+	MenuManager.open_input_settings.connect(_on_open_input_settings)
 	
 	match root_menu_type:
 		MenuManager.ROOT_MENU_TYPE.MAIN:
@@ -53,8 +51,5 @@ func _on_open_settings() -> void:
 func _on_open_audio_settings():
 	MenuManager.open_menu(audio_menu)
 
-func _on_open_controller_settings():
-	MenuManager.open_menu(controller_menu)
-
-func _on_open_keyboard_settings():
-	MenuManager.open_menu(keyboard_menu)
+func _on_open_input_settings():
+	MenuManager.open_menu(input_menu)

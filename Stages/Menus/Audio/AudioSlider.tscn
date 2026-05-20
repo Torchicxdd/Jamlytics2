@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://qmpdxhgufi7j"]
 
-[ext_resource type="Script" uid="uid://ctu54634g0cy5" path="res://Stages/Menus/Common/audio_slider.gd" id="1_dc8dm"]
+[ext_resource type="Script" uid="uid://ctu54634g0cy5" path="res://Stages/Menus/Audio/audio_slider.gd" id="1_dc8dm"]
 [ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_w60xx"]
-[ext_resource type="Texture2D" uid="uid://e1rcxlsq7pnj" path="res://Stages/Menus/Common/volume_grabber.png" id="3_lpvcs"]
+[ext_resource type="Texture2D" uid="uid://e1rcxlsq7pnj" path="res://Stages/Menus/Audio/volume_grabber.png" id="3_lpvcs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpvcs"]
 bg_color = Color(1, 1, 1, 1)

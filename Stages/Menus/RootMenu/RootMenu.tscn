@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2c0eym76m4om" path="res://Stages/Menus/MainMenu/MainMenuBackground.png" id="2_pgulh"]
 [ext_resource type="PackedScene" uid="uid://4p08anivxumm" path="res://Stages/Menus/Settings/SettingsMenu.tscn" id="3_pgulh"]
 [ext_resource type="PackedScene" uid="uid://bkr8y5fs0wg8c" path="res://Stages/Menus/Audio/AudioMenu.tscn" id="4_o3j03"]
-[ext_resource type="PackedScene" uid="uid://c0dbq1ebhvpkq" path="res://Stages/Menus/Controller/ControllerMenu.tscn" id="5_vc10h"]
-[ext_resource type="PackedScene" uid="uid://c4mksxfwpkihk" path="res://Stages/Menus/Keyboard/KeyboardMenu.tscn" id="6_rxpjs"]
+[ext_resource type="PackedScene" uid="uid://c4mksxfwpkihk" path="res://Stages/Menus/InputMenu/InputMenu.tscn" id="6_rxpjs"]
 
 [node name="RootMenu" type="Control" unique_id=1614342080]
 layout_mode = 3
@@ -54,11 +53,7 @@ grow_vertical = 2
 visible = false
 layout_mode = 1
 
-[node name="ControllerMenu" parent="menu_wrapper" unique_id=323115437 instance=ExtResource("5_vc10h")]
-visible = false
-layout_mode = 1
-
-[node name="KeyboardMenu" parent="menu_wrapper" unique_id=1465772207 instance=ExtResource("6_rxpjs")]
+[node name="InputMenu" parent="menu_wrapper" unique_id=1465772207 instance=ExtResource("6_rxpjs")]
 visible = false
 layout_mode = 1
 
