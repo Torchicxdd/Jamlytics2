@@ -30,7 +30,7 @@ func _draw() -> void:
 
 	for i in range(num):
 		var pos := Vector2(w * i, 0)
-		draw_texture(background, pos, Color(1, 1, 1, 0.25))
+		draw_texture(background, pos, Color(1, 1, 1, 0.5))
 		draw_line(pos, pos + Vector2(0, h), Color(1, 1, 0, 0.8), 2.0)
 
 	draw_line(Vector2(total_distance, -20), Vector2(total_distance, h + 20), Color.RED, 4.0)

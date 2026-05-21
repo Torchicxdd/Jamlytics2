@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgjcptaxygbh7"]
 
 [ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
-[ext_resource type="Script" uid="uid://4f0a8a57ilrp" path="res://Stages/Common/parallax_length_helper.gd" id="1_owf0n"]
+[ext_resource type="PackedScene" uid="uid://bnxt8osvtnqdd" path="res://Stages/Helper/StageBackgroundVisualizer.tscn" id="1_owf0n"]
 [ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Level1/bg.png" id="2_3cwmo"]
 [ext_resource type="PackedScene" uid="uid://bg667a7oky02g" path="res://Entities/Spawner/Spawner.tscn" id="2_b13i0"]
 [ext_resource type="PackedScene" uid="uid://cf5q1scjv6lwt" path="res://Entities/Player/Player.tscn" id="3_433hs"]
@@ -10,8 +10,7 @@
 
 [node name="Level1" type="Node2D" unique_id=687571251]
 
-[node name="Node" type="Node2D" parent="." unique_id=1105309041]
-script = ExtResource("1_owf0n")
+[node name="StageBackgroundVisualizer" parent="." unique_id=76170381 instance=ExtResource("1_owf0n")]
 song = ExtResource("6_g6q1v")
 background = ExtResource("2_3cwmo")
 
