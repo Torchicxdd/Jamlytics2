@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c75a7hqy8htgf"]
+
+[ext_resource type="Script" uid="uid://mtrnpe3gwowm" path="res://Stages/Common/parallax_background.gd" id="1_xkxco"]
+
+[node name="ParallaxBackground" type="Node2D" unique_id=1683267933]
+script = ExtResource("1_xkxco")
+
+[node name="VisibleBackground" type="Sprite2D" parent="." unique_id=1058722048]
+centered = false
+
+[node name="NearBackground" type="Sprite2D" parent="." unique_id=906534234]
+centered = false
+
+[node name="FarBackground" type="Sprite2D" parent="." unique_id=450683468]
+centered = false
