@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bdboydyauxji7" path="res://Stages/Menus/Levels/levels_menu.gd" id="1_gyk2t"]
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="1_rt7xf"]
-[ext_resource type="PackedScene" uid="uid://dx85qtuluuqn8" path="res://Stages/Menus/Levels/SelectableLevel.tscn" id="2_cc3m5"]
 
 [node name="LevelsMenu" type="Control" unique_id=2113038213]
 layout_mode = 3
@@ -31,27 +30,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-
-[node name="SelectableLevel" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=783112533 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel2" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=216989478 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel3" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1830334417 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel4" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=220359164 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel5" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1455023322 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel6" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1721411269 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
-
-[node name="SelectableLevel7" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=420110841 instance=ExtResource("2_cc3m5")]
-layout_mode = 2
 
 [node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("1_rt7xf")]
 layout_mode = 1

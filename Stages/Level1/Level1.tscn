@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgjcptaxygbh7"]
 
 [ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
+[ext_resource type="Script" uid="uid://bvy5g3ny8kb0d" path="res://Stages/Level1/level_1.gd" id="1_l6h6a"]
 [ext_resource type="PackedScene" uid="uid://bnxt8osvtnqdd" path="res://Stages/Helper/StageBackgroundVisualizer.tscn" id="1_owf0n"]
 [ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Level1/bg.png" id="2_3cwmo"]
 [ext_resource type="PackedScene" uid="uid://bg667a7oky02g" path="res://Entities/Spawner/Spawner.tscn" id="2_b13i0"]
@@ -9,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://h6oaqngorq62" path="res://Stages/Level1/level_1_song.mp3" id="6_g6q1v"]
 
 [node name="Level1" type="Node2D" unique_id=687571251]
+script = ExtResource("1_l6h6a")
 
 [node name="StageBackgroundVisualizer" parent="." unique_id=76170381 instance=ExtResource("1_owf0n")]
 song = ExtResource("6_g6q1v")
@@ -29,6 +31,8 @@ is_enabled = true
 
 [node name="Spawner" parent="." unique_id=690138998 instance=ExtResource("2_b13i0")]
 position = Vector2(1544, 520)
+pattern = 0
+bullet_scale = Vector2(1, 1)
 
 [node name="Player" parent="." unique_id=390965236 instance=ExtResource("3_433hs")]
 position = Vector2(224, 536)

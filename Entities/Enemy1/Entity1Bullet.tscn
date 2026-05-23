@@ -1,29 +1,65 @@
 [gd_scene format=3 uid="uid://pr6f2mkb6s4u"]
 
-[ext_resource type="Texture2D" uid="uid://y27qnnxygeea" path="res://Entities/Enemy1/Enemy1BulletSpriteSheet.png" id="1_sugca"]
+[ext_resource type="Texture2D" uid="uid://cmad2bfv4uswe" path="res://Entities/Enemy1/bulletsheet 1.png" id="1_sugca"]
 [ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="3_n7d7u"]
 [ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="3_sugca"]
-[ext_resource type="PackedScene" uid="uid://dj1v4athwo45n" path="res://Components/DamageComponent.tscn" id="4_sugca"]
+[ext_resource type="PackedScene" uid="uid://rvy02wfavwv3" path="res://Components/ResizeComponent.tscn" id="5_7cxmb"]
+[ext_resource type="PackedScene" path="res://Components/CoverageHurtboxComponent.tscn" id="5_hxbxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sugca"]
+atlas = ExtResource("1_sugca")
+region = Rect2(0, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7cxmb"]
 atlas = ExtResource("1_sugca")
-region = Rect2(0, 91, 91, 91)
+region = Rect2(156, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxbxg"]
 atlas = ExtResource("1_sugca")
-region = Rect2(91, 91, 91, 91)
+region = Rect2(312, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hno5"]
 atlas = ExtResource("1_sugca")
-region = Rect2(0, 0, 91, 91)
+region = Rect2(468, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46k31"]
 atlas = ExtResource("1_sugca")
-region = Rect2(91, 0, 91, 91)
+region = Rect2(0, 156, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw4l8"]
+atlas = ExtResource("1_sugca")
+region = Rect2(156, 156, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igek5"]
+atlas = ExtResource("1_sugca")
+region = Rect2(312, 156, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5sfq"]
+atlas = ExtResource("1_sugca")
+region = Rect2(468, 156, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n25o"]
+atlas = ExtResource("1_sugca")
+region = Rect2(0, 312, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sux4b"]
+atlas = ExtResource("1_sugca")
+region = Rect2(156, 312, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujkyy"]
+atlas = ExtResource("1_sugca")
+region = Rect2(312, 312, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_762yb"]
+atlas = ExtResource("1_sugca")
+region = Rect2(468, 312, 144, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7d7u"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sugca")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7cxmb")
 }, {
@@ -35,45 +71,67 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_46k31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw4l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igek5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5sfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n25o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sux4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujkyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_762yb")
 }],
 "loop": true,
-"name": &"move",
-"speed": 8.0
+"name": &"default",
+"speed": 24.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sugca"]
-radius = 18.0
+radius = 64.12488
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mstjn"]
-radius = 89.99999
+radius = 320.03903
 
 [node name="Entity1Bullet" type="RigidBody2D" unique_id=231567729]
 collision_layer = 0
 collision_mask = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1683359142]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1194984171]
 sprite_frames = SubResource("SpriteFrames_n7d7u")
-animation = &"move"
-autoplay = "move"
-frame_progress = 0.7716254
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058114692]
 shape = SubResource("CircleShape2D_sugca")
 
-[node name="DamageComponent" parent="." unique_id=162634644 instance=ExtResource("4_sugca")]
-collision_layer = 4
-collision_mask = 2
-damage = 1.0
-
-[node name="BulletCollision" type="CollisionShape2D" parent="DamageComponent" unique_id=328775204]
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CircleShape2D_mstjn")
-
 [node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("3_n7d7u")]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=653392340]
+rect = Rect2(-74, -74, 148, 148)
 
 [node name="DespawnComponent" type="Node" parent="." unique_id=628881404 node_paths=PackedStringArray("visible_on_screen_notifier")]
 script = ExtResource("3_sugca")
 visible_on_screen_notifier = NodePath("../VisibleOnScreenNotifier2D")
 metadata/_custom_type_script = "uid://cq2s5aimu6dfn"
+
+[node name="ResizeComponent" parent="." unique_id=317617282 instance=ExtResource("5_7cxmb")]
+
+[node name="CoverageHurtboxComponent" parent="." unique_id=277223054 instance=ExtResource("5_hxbxg")]
+collision_layer = 4
+collision_mask = 2
+damage = 1.0
+
+[node name="BulletCollision" type="CollisionShape2D" parent="CoverageHurtboxComponent" unique_id=328775204]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_mstjn")

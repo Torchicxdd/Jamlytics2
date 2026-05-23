@@ -6,7 +6,9 @@
 
 [node name="Spawner" type="Node2D" unique_id=690138998]
 script = ExtResource("1_31b67")
+pattern = null
 bullet_scene = ExtResource("2_8qga2")
+bullet_scale = null
 rotation_speed = 3
 spawn_interval = 0.05
 

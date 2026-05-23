@@ -4,8 +4,14 @@ extends Control
 @onready var level_wrapper = $MarginContainer/ScrollContainer/VBoxContainer
 
 func _ready() -> void:
-	level_wrapper.get_child(0).grab_focus()
 	back_button.on_back_button_pressed_callable = _on_back_pressed
+
+	var levels = Global.LEVELS_RESOURCE
+	for i in range(levels.size()):
+		var instance = SelectableLevel.new_selectable_level(levels[i].new())
+		level_wrapper.add_child(instance)
+		if i == 0:
+			instance.grab_focus()
 
 func _on_back_pressed() -> void:
 	MenuManager.open_main_menu.emit()

@@ -37,5 +37,9 @@ func _process(_delta: float) -> void:
 			set_process(false)
 		ResourceLoader.THREAD_LOAD_LOADED:
 			loaded_resource = ResourceLoader.load_threaded_get(scene_path)
-			get_tree().change_scene_to_packed(loaded_resource)
+			var world = get_tree().current_scene.get_node("World")
+			for child in world.get_children():
+				child.queue_free()
+			world.add_child(loaded_resource.instantiate())
 			load_finished.emit()
+			set_process(false)

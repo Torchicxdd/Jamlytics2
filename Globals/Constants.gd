@@ -1,7 +1,9 @@
 extends Node
 
 const SCENE_PATHS: Dictionary = {
-	"loading_scene": "uid://cjyvyq6ibf8yc"
+	"loading_scene": "uid://cjyvyq6ibf8yc",
+	"game_hud": "uid://bkg4g88ho4mg0",
+	"level_1": "uid://dgjcptaxygbh7"
 }
 
 const MENU_PATHS: Dictionary = {
@@ -12,5 +14,10 @@ const MENU_PATHS: Dictionary = {
 	"settings_menu": "uid://4p08anivxumm",
 	"audio_menu": "uid://bkr8y5fs0wg8c",
 	"input_menu": "uid://c4mksxfwpkihk",
-	"input_rebind": "uid://dsa44yacw8cb3"
+	"input_rebind": "uid://dsa44yacw8cb3",
+	"selectable_level": "uid://dx85qtuluuqn8"
+}
+
+const COMPONENT_NAMES: Dictionary = {
+	"resize": "ResizeComponent"
 }
