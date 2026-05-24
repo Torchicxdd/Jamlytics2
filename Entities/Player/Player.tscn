@@ -52,10 +52,20 @@ scale = Vector2(0.041015625, 0.041015625)
 shape = SubResource("CircleShape2D_3uyv8")
 
 [node name="MovementComponent" parent="." unique_id=655246547 instance=ExtResource("3_an6q6")]
-speed = 500.0
+speed = 1000.0
+focus_speed_multiplier = 0.33
 
 [node name="HealthComponent" parent="." unique_id=1908907186 instance=ExtResource("5_hj1c0")]
 
-[node name="ShootingComponent" parent="." unique_id=1089542001 instance=ExtResource("8_x44r4")]
+[node name="ShootingComponent" parent="." unique_id=1089542001 node_paths=PackedStringArray("bullet_starting_positions") instance=ExtResource("8_x44r4")]
 bullet = ExtResource("9_761t5")
 bullet_scale = Vector2(0.3, 0.3)
+bullet_speed = 2000.0
+bullet_starting_positions = [NodePath("../ShootingPoint1"), NodePath("../ShootingPoint2")]
+shooting_delay = 0.15
+
+[node name="ShootingPoint1" type="Marker2D" parent="." unique_id=879642339]
+position = Vector2(0, -64)
+
+[node name="ShootingPoint2" type="Marker2D" parent="." unique_id=1610680201]
+position = Vector2(0, 64)

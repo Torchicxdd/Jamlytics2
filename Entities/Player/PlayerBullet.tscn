@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://blsfljbfq5l0o"]
 
-[ext_resource type="Script" uid="uid://ce6oydhcb44eg" path="res://Classes/bullet.gd" id="1_ywb5t"]
+[ext_resource type="Script" uid="uid://d3rkblwsmam3a" path="res://Entities/Player/player_bullet.gd" id="1_qjkoo"]
 [ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="2_dtqik"]
 [ext_resource type="Texture2D" uid="uid://dw1s1w1y2i54x" path="res://Entities/Enemy1/bulletsheet-12 1.png" id="2_u21yc"]
-[ext_resource type="PackedScene" uid="uid://rvy02wfavwv3" path="res://Components/ResizeComponent.tscn" id="3_j7iy4"]
 [ext_resource type="PackedScene" uid="uid://dt8iun8muas1e" path="res://Components/DespawnComponent.tscn" id="4_7q8as"]
 [ext_resource type="PackedScene" uid="uid://dj1v4athwo45n" path="res://Components/DamageComponent.tscn" id="6_qjkoo"]
 
@@ -105,15 +104,14 @@ radius = 64.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkoo"]
 radius = 64.0
 
-[node name="PlayerBullet" type="RigidBody2D" unique_id=437016154 node_paths=PackedStringArray("velocity_component", "resize_component")]
+[node name="PlayerBullet" type="Area2D" unique_id=437016154 node_paths=PackedStringArray("velocity_component")]
 collision_layer = 4
 collision_mask = 8
-lock_rotation = true
-script = ExtResource("1_ywb5t")
+script = ExtResource("1_qjkoo")
 velocity_component = NodePath("VelocityComponent")
-resize_component = NodePath("ResizeComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1851523848]
+scale = Vector2(0.97, 0.9832215)
 sprite_frames = SubResource("SpriteFrames_7q8as")
 autoplay = "default"
 frame = 2
@@ -124,18 +122,17 @@ shape = SubResource("CircleShape2D_u21yc")
 
 [node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("2_dtqik")]
 
-[node name="ResizeComponent" parent="." unique_id=317617282 instance=ExtResource("3_j7iy4")]
-
 [node name="DespawnComponent" parent="." unique_id=972114894 node_paths=PackedStringArray("visible_on_screen_notifier") instance=ExtResource("4_7q8as")]
 visible_on_screen_notifier = NodePath("../VisibleOnScreenNotifier2D")
 
 [node name="DamageComponent" parent="." unique_id=162634644 instance=ExtResource("6_qjkoo")]
 collision_layer = 4
 collision_mask = 8
-damage = 10.0
+damage = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageComponent" unique_id=318634431]
 shape = SubResource("CircleShape2D_qjkoo")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1502614390]
-rect = Rect2(-64, -64, 128, 128)
+visible = false
+rect = Rect2(-72, -72, 144, 144)

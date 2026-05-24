@@ -5,7 +5,7 @@ extends Node
 
 func _ready() -> void:
 	assert(visible_on_screen_notifier != null, "DespawnComponent must have a VisibleOnScreenNotifier2D provided.")
-	visible_on_screen_notifier.screen_exited.connect(on_screen_exited)
+	visible_on_screen_notifier.screen_exited.connect(_on_screen_exited)
 
-func on_screen_exited() -> void:
+func _on_screen_exited() -> void:
 	owner.queue_free()

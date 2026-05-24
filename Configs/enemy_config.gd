@@ -2,6 +2,11 @@ class_name EnemyConfig
 extends Resource
 
 @export var enemy_scene: PackedScene
+@export var health: int
+@export var despawn_timer: float
+@export var despawn_duration: float
+@export var despawn_style: DespawnOverTimeComponent.DespawnStyle
+
 @export var pattern: Spawner.Patterns
 @export var bullet_scene: PackedScene
 @export var bullet_scale: Vector2 = Vector2(1.0, 1.0)

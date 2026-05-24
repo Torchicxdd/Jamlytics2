@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bal2dqypf7j5g"]
+
+[ext_resource type="Script" uid="uid://cot2q3nc57wmt" path="res://Components/despawn_over_time_component.gd" id="1_w7q1d"]
+
+[node name="DespawnOverTimeComponent" type="Node" unique_id=1389539578]
+script = ExtResource("1_w7q1d")

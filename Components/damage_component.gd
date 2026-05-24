@@ -1,6 +1,8 @@
 class_name DamageComponent
 extends Area2D
 
+signal damaged()
+
 @export var damage: float = 0.0
 
 func _ready() -> void:
@@ -9,3 +11,4 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
 		area.receive_damage(damage)
+		damaged.emit()

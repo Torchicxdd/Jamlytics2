@@ -4,6 +4,7 @@ extends Area2D
 @export var damage: int = 0
 
 # Value between 0 and 1
+signal covered()
 signal grazing_changed(coverage: float, source: HurtboxComponent)
 
 var _tracked: Array[HurtboxComponent] = []
@@ -31,6 +32,7 @@ func _physics_process(_delta: float) -> void:
 		if coverage >= 1.0:
 			_tracked.erase(hurtbox)
 			hurtbox.receive_damage(damage)
+			covered.emit()
 		else:
 			grazing_changed.emit(coverage, hurtbox)
 

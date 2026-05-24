@@ -21,9 +21,12 @@ tracks/0/path = NodePath("FormationComponent")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(3, 6),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [ExtResource("7_fddum")],
+"method": &"spawn_formation"
+}, {
 "args": [ExtResource("7_fddum")],
 "method": &"spawn_formation"
 }]

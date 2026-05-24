@@ -21,8 +21,9 @@ func spawn_formation(
 ) -> void:
 	var positions = get_formation_positions(config.formation_type, config.enemy_count, config.enemy_spacing)
 	for i in range(positions.size()):
-		var enemy = config.enemies[i].enemy_scene.instantiate()
+		var enemy: Enemy = config.enemies[i].enemy_scene.instantiate()
 		get_parent().add_child(enemy)
+		enemy.configure(config.enemies[i])
 		var spawner = Spawner.new_spawner(
 			config.enemies[i].pattern,
 			config.enemies[i].bullet_scene,

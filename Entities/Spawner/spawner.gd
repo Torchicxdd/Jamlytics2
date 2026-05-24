@@ -60,7 +60,6 @@ func spawn_bullet() -> void:
 	var bullet: Bullet = bullet_scene.instantiate()
 	
 	get_tree().current_scene.get_node(Constants.MAIN_SCENE_NAMES.world).add_child(bullet)
-	bullet.resize_component.scale = bullet_scale
 	bullet.velocity_component.speed = bullet_speed
 
 	bullet.scale = bullet_scale
