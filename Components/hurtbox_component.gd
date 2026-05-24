@@ -6,5 +6,5 @@ extends Area2D
 func _ready() -> void:
 	assert(health_component != null, "HurtboxComponent must have a HealthComponent provided.")
 	
-func receive_damage(damage: float) -> void:
+func receive_damage(damage: int) -> void:
 	health_component.take_damage(damage)

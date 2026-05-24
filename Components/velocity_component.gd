@@ -8,11 +8,11 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if owner is CharacterBody2D:
-		var body := owner as CharacterBody2D
-		var direction := Vector2.from_angle(body.global_rotation)
+		var body: CharacterBody2D = owner
+		var direction: Vector2 = Vector2.from_angle(body.global_rotation)
 		body.velocity = direction * speed
 		body.move_and_slide()
 	elif owner is RigidBody2D:
-		var body := owner as RigidBody2D
-		var direction := Vector2.from_angle(body.global_rotation)
+		var body: RigidBody2D = owner
+		var direction: Vector2 = Vector2.from_angle(body.global_rotation)
 		body.linear_velocity = direction * speed

@@ -1,5 +1,10 @@
 extends Node
 
+const MAIN_SCENE_NAMES: Dictionary = {
+	"world": "World",
+	"ui": "UI"
+}
+
 const SCENE_PATHS: Dictionary = {
 	"loading_scene": "uid://cjyvyq6ibf8yc",
 	"game_hud": "uid://bkg4g88ho4mg0",

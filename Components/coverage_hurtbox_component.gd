@@ -1,7 +1,7 @@
 class_name CoverageHurtboxComponent
 extends Area2D
 
-@export var damage: float = 0.0
+@export var damage: int = 0
 
 # Value between 0 and 1
 signal grazing_changed(coverage: float, source: HurtboxComponent)
@@ -36,15 +36,15 @@ func _physics_process(_delta: float) -> void:
 
 # This function assumes the self circle radius is bigger than the hurtbox
 func _compute_coverage(hurtbox: HurtboxComponent) -> float:
-	var self_circle_radius : float = _get_circle_radius(self)
-	var hurtbox_circle_radius : float = _get_circle_radius(hurtbox)
+	var self_circle_radius: float = _get_circle_radius(self )
+	var hurtbox_circle_radius: float = _get_circle_radius(hurtbox)
 	var dist: float = global_position.distance_to(hurtbox.global_position)
 
 	if dist >= (self_circle_radius + hurtbox_circle_radius):
 		return 0.0
 
 	var overlapping_distance: float = dist + hurtbox_circle_radius
-	if (overlapping_distance <= self_circle_radius) :
+	if (overlapping_distance <= self_circle_radius):
 		return 1.0
 	
 	var max_dist: float = self_circle_radius + hurtbox_circle_radius

@@ -6,5 +6,6 @@ extends Resource
 @export var bullet_scene: PackedScene
 @export var bullet_scale: Vector2 = Vector2(1.0, 1.0)
 @export var bullet_speed: float = 200.0
+@export var shooting_start_delay: float = 0
 @export var rotation_speed: float = 2.0
 @export var spawn_interval: float = 0.5

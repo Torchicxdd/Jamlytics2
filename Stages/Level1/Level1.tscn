@@ -104,4 +104,4 @@ music = ExtResource("6_g6q1v")
 [node name="FormationComponent" parent="." unique_id=523317454 instance=ExtResource("7_v8ovw")]
 
 [node name="Player" parent="." unique_id=390965236 instance=ExtResource("3_433hs")]
-position = Vector2(224, 536)
+position = Vector2(304, 568)

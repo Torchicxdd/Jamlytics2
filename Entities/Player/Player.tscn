@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://bsy0x5npkt3xa" path="res://Entities/Player/player.gd" id="1_t38ms"]
 [ext_resource type="Texture2D" uid="uid://bnk1w67h0jtup" path="res://icon.svg" id="1_vweq0"]
 [ext_resource type="Texture2D" uid="uid://dft7m6kcflryf" path="res://Entities/Player/core.png" id="2_1des2"]
+[ext_resource type="Resource" uid="uid://be4a80mc1vpr3" path="res://Entities/Player/player_config.tres" id="2_hj1c0"]
 [ext_resource type="PackedScene" uid="uid://dgbpjt0auhbpc" path="res://Components/MovementComponent.tscn" id="3_an6q6"]
 [ext_resource type="PackedScene" uid="uid://djlxphyer30qi" path="res://Components/HurtboxComponent.tscn" id="3_t38ms"]
 [ext_resource type="PackedScene" uid="uid://gkyfmndrnava" path="res://Components/HealthComponent.tscn" id="5_hj1c0"]
+[ext_resource type="PackedScene" uid="uid://ckonqh3tsjbfv" path="res://Components/ShootingComponent.tscn" id="8_x44r4"]
+[ext_resource type="PackedScene" uid="uid://blsfljbfq5l0o" path="res://Entities/Player/PlayerBullet.tscn" id="9_761t5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vweq0"]
 size = Vector2(128, 128)
@@ -19,6 +22,7 @@ radius = 248.63791
 [node name="Player" type="CharacterBody2D" unique_id=390965236]
 collision_layer = 2
 script = ExtResource("1_t38ms")
+player_config = ExtResource("2_hj1c0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=553972160]
 texture = ExtResource("1_vweq0")
@@ -51,3 +55,7 @@ shape = SubResource("CircleShape2D_3uyv8")
 speed = 500.0
 
 [node name="HealthComponent" parent="." unique_id=1908907186 instance=ExtResource("5_hj1c0")]
+
+[node name="ShootingComponent" parent="." unique_id=1089542001 instance=ExtResource("8_x44r4")]
+bullet = ExtResource("9_761t5")
+bullet_scale = Vector2(0.3, 0.3)

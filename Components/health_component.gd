@@ -1,27 +1,31 @@
 class_name HealthComponent
 extends Node
 
-signal damaged(amount: float)
-signal healed(amount: float)
+signal damaged(amount: int)
+signal healed(amount: int)
 signal died()
 
-@export var max_health = 10
-var health: float
+@export var max_health: int = 10
+var _health: int
+var health: int:
+	set(value):
+		var old = _health
+		_health = clamp(value, 0.0, max_health)
+		var diff = _health - old
+		if diff < 0.0:
+			damaged.emit(-diff)
+			if _health <= 0.0:
+				died.emit()
+		elif diff > 0.0:
+			healed.emit(diff)
+	get:
+		return _health
 
 func _ready() -> void:
-	health = max_health
-	UISignalBus.player_max_health.emit(health)
-	UISignalBus.player_health_changed.emit(health)
-	
-func take_damage(amount: float) -> void:
+	_health = max_health
+
+func take_damage(amount: int) -> void:
 	health -= amount
-	damaged.emit(amount)
-	UISignalBus.player_health_changed.emit()
-	if health <= 0:
-		died.emit()
-		
-func heal(amount: float) -> void:
-	var pre_heal_health = health
-	health = minf(health + amount, max_health)
-	healed.emit(health - pre_heal_health)
-	UISignalBus.player_health_changed.emit()
+
+func heal(amount: int) -> void:
+	health += amount

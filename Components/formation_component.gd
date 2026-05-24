@@ -28,6 +28,7 @@ func spawn_formation(
 			config.enemies[i].bullet_scene,
 			config.enemies[i].bullet_scale,
 			config.enemies[i].bullet_speed,
+			config.enemies[i].shooting_start_delay,
 			config.enemies[i].rotation_speed,
 			config.enemies[i].spawn_interval
 		)
