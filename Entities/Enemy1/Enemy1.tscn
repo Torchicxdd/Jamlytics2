@@ -6,6 +6,9 @@
 size = Vector2(144, 144)
 
 [node name="Enemy1" type="RigidBody2D" unique_id=953458889]
+position = Vector2(0, -1)
+collision_layer = 8
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=896434430]
 texture = ExtResource("1_bp3pc")

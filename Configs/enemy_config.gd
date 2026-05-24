@@ -1,0 +1,10 @@
+class_name EnemyConfig
+extends Resource
+
+@export var enemy_scene: PackedScene
+@export var pattern: Spawner.Patterns
+@export var bullet_scene: PackedScene
+@export var bullet_scale: Vector2 = Vector2(1.0, 1.0)
+@export var bullet_speed: float = 200.0
+@export var rotation_speed: float = 2.0
+@export var spawn_interval: float = 0.5

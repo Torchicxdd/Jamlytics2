@@ -3,7 +3,8 @@ extends Node
 const SCENE_PATHS: Dictionary = {
 	"loading_scene": "uid://cjyvyq6ibf8yc",
 	"game_hud": "uid://bkg4g88ho4mg0",
-	"level_1": "uid://dgjcptaxygbh7"
+	"spawner": "uid://bg667a7oky02g",
+	"level_1": "uid://dgjcptaxygbh7",
 }
 
 const MENU_PATHS: Dictionary = {
@@ -19,5 +20,10 @@ const MENU_PATHS: Dictionary = {
 }
 
 const COMPONENT_NAMES: Dictionary = {
-	"resize": "ResizeComponent"
+	"resize": "ResizeComponent",
+	"velocity": "VelocityComponent"
+}
+
+const LEVEL_RESOURCE_PATHS: Dictionary = {
+	"level1": "uid://bma5jti7ne70g"
 }

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bvf7t20vwshqn"]
+
+[ext_resource type="Script" uid="uid://ca1skxmuu2abi" path="res://Components/formation_component.gd" id="1_1udda"]
+
+[node name="FormationComponent" type="Node2D" unique_id=523317454]
+script = ExtResource("1_1udda")

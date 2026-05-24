@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ce6o8am7n8ms4"]
+
+[ext_resource type="Script" uid="uid://cds5ts345tut1" path="res://Entities/WaveManager/wave_player.gd" id="1_qlf0o"]
+
+[node name="WavePlayer" type="AnimationPlayer" unique_id=1128560386]
+script = ExtResource("1_qlf0o")
