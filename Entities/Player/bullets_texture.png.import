@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y27qnnxygeea"
-path="res://.godot/imported/Enemy1BulletSpriteSheet.png-407a4f834e5befca1c23ed8a16decbda.ctex"
+uid="uid://drre8eqlian33"
+path="res://.godot/imported/bullets_texture.png-567796ca2142602629e38cdd586d9956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemy1/Enemy1BulletSpriteSheet.png"
-dest_files=["res://.godot/imported/Enemy1BulletSpriteSheet.png-407a4f834e5befca1c23ed8a16decbda.ctex"]
+source_file="res://Entities/Player/bullets_texture.png"
+dest_files=["res://.godot/imported/bullets_texture.png-567796ca2142602629e38cdd586d9956.ctex"]
 
 [params]
 

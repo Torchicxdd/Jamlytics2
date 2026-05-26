@@ -27,6 +27,8 @@ PoolManager="*uid://dn2rpfqwhx6r8"
 SceneLoader="*uid://c1w7584iu1ded"
 Constants="*uid://0sy33f7i6ilg"
 MenuManager="*uid://kcypk2i3go16"
+GameManager="*uid://ckjvmre75b8qg"
+SettingsManager="*uid://di8rylqouyfmy"
 
 [display]
 

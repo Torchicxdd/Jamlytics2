@@ -1,68 +1,63 @@
 [gd_scene format=3 uid="uid://pr6f2mkb6s4u"]
 
-[ext_resource type="Script" uid="uid://cowioay5efyot" path="res://Entities/Enemy1/entity_1_bullet.gd" id="1_hxbxg"]
-[ext_resource type="Texture2D" uid="uid://cmad2bfv4uswe" path="res://Entities/Enemy1/bulletsheet 1.png" id="1_sugca"]
-[ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="3_n7d7u"]
-[ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="3_sugca"]
-[ext_resource type="PackedScene" path="res://Components/CoverageHurtboxComponent.tscn" id="5_hxbxg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sugca"]
-atlas = ExtResource("1_sugca")
-region = Rect2(0, 0, 144, 144)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7cxmb"]
-atlas = ExtResource("1_sugca")
-region = Rect2(156, 0, 144, 144)
+[ext_resource type="Script" uid="uid://cowioay5efyot" path="res://Entities/EnemyBullet/entity_1_bullet.gd" id="1_dpxf8"]
+[ext_resource type="SpriteFrames" uid="uid://p5oncpaxhpyx" path="res://Entities/EnemyBullet/wolf_minion_bullets.tres" id="2_tlwvb"]
+[ext_resource type="Texture2D" uid="uid://c3mbby6l4gf2l" path="res://Entities/EnemyBullet/wolf_minion_bullets.png" id="3_53u5p"]
+[ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="4_m0jij"]
+[ext_resource type="Script" uid="uid://cq2s5aimu6dfn" path="res://Components/despawn_component.gd" id="5_bf0w3"]
+[ext_resource type="PackedScene" path="res://Components/CoverageHurtboxComponent.tscn" id="6_dtidn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxbxg"]
-atlas = ExtResource("1_sugca")
-region = Rect2(312, 0, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(0, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hno5"]
-atlas = ExtResource("1_sugca")
-region = Rect2(468, 0, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(156, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46k31"]
-atlas = ExtResource("1_sugca")
-region = Rect2(0, 156, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(312, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aw4l8"]
-atlas = ExtResource("1_sugca")
-region = Rect2(156, 156, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(468, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igek5"]
-atlas = ExtResource("1_sugca")
-region = Rect2(312, 156, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(0, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c5sfq"]
-atlas = ExtResource("1_sugca")
-region = Rect2(468, 156, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(156, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n25o"]
-atlas = ExtResource("1_sugca")
-region = Rect2(0, 312, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(312, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sux4b"]
-atlas = ExtResource("1_sugca")
-region = Rect2(156, 312, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(468, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujkyy"]
-atlas = ExtResource("1_sugca")
-region = Rect2(312, 312, 144, 144)
+atlas = ExtResource("3_53u5p")
+region = Rect2(0, 312, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_762yb"]
-atlas = ExtResource("1_sugca")
+atlas = ExtResource("3_53u5p")
+region = Rect2(156, 312, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6wpf"]
+atlas = ExtResource("3_53u5p")
+region = Rect2(312, 312, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6myav"]
+atlas = ExtResource("3_53u5p")
 region = Rect2(468, 312, 144, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7d7u"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sugca")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7cxmb")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hxbxg")
 }, {
@@ -92,6 +87,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_762yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6wpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6myav")
 }],
 "loop": true,
 "name": &"default",
@@ -104,10 +105,11 @@ radius = 64.12488
 [sub_resource type="CircleShape2D" id="CircleShape2D_mstjn"]
 radius = 320.03903
 
-[node name="Entity1Bullet" type="Area2D" unique_id=231567729 node_paths=PackedStringArray("velocity_component")]
+[node name="EnemyBullet" type="Area2D" unique_id=231567729 node_paths=PackedStringArray("velocity_component")]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_hxbxg")
+script = ExtResource("1_dpxf8")
+bullet_sprite_frames = ExtResource("2_tlwvb")
 velocity_component = NodePath("VelocityComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1194984171]
@@ -117,18 +119,17 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058114692]
 shape = SubResource("CircleShape2D_sugca")
 
-[node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("3_n7d7u")]
+[node name="VelocityComponent" parent="." unique_id=1194083062 instance=ExtResource("4_m0jij")]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=653392340]
-visible = false
 rect = Rect2(-72, -72, 144, 146)
 
 [node name="DespawnComponent" type="Node" parent="." unique_id=628881404 node_paths=PackedStringArray("visible_on_screen_notifier")]
-script = ExtResource("3_sugca")
+script = ExtResource("5_bf0w3")
 visible_on_screen_notifier = NodePath("../VisibleOnScreenNotifier2D")
 metadata/_custom_type_script = "uid://cq2s5aimu6dfn"
 
-[node name="CoverageHurtboxComponent" parent="." unique_id=277223054 instance=ExtResource("5_hxbxg")]
+[node name="CoverageHurtboxComponent" parent="." unique_id=277223054 instance=ExtResource("6_dtidn")]
 collision_layer = 4
 collision_mask = 2
 damage = 1

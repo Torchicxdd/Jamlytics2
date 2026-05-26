@@ -43,7 +43,6 @@ func get_controller_event_name() -> String:
 	return "Not Set"
 
 func _on_keyboard_btn_pressed() -> void:
-	print("pressed")
 	listening = true
 	listening_device = InputTypes.KEYANDM
 	keyboard_btn.text = "Press a key..."
@@ -83,7 +82,9 @@ func _remap(event: InputEvent) -> void:
 				InputMap.action_erase_event(action, old_event)
 	
 	InputMap.action_add_event(action, event)
-	
+
+	SettingsManager.save_input(action)
+
 	keyboard_btn.text = get_keyboard_event_name()
 	controller_btn.text = get_controller_event_name()
 

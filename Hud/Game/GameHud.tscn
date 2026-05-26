@@ -34,7 +34,7 @@ layout_mode = 0
 
 [node name="PlayerPoints" parent="MarginContainer/Control" unique_id=495870180 instance=ExtResource("3_v4ukh")]
 layout_mode = 0
-offset_left = 134.0
+offset_left = 66.0
 offset_top = 54.0
 offset_right = 347.0
 offset_bottom = 103.0

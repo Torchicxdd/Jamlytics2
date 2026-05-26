@@ -27,13 +27,19 @@ func spawn_formation(
 		var spawner = Spawner.new_spawner(
 			config.enemies[i].pattern,
 			config.enemies[i].bullet_scene,
+			config.enemies[i].bullet_sprite_frames,
 			config.enemies[i].bullet_scale,
 			config.enemies[i].bullet_speed,
+			config.enemies[i].bullet_count,
 			config.enemies[i].shooting_start_delay,
+			config.enemies[i].is_rotating,
+			config.enemies[i].is_oscillating,
 			config.enemies[i].rotation_speed,
-			config.enemies[i].spawn_interval
+			config.enemies[i].spawn_interval,
+			config.enemies[i].arc_angle
 		)
 		enemy.add_child(spawner)
+		spawner.global_position = enemy.bullet_marker.global_position
 		var target = config.formation_center + positions[i]
 		enemy.global_position = _get_entry_position(target, config.entry_style, i)
 		_tween_enemy_in(enemy, target)

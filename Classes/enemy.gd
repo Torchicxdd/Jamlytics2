@@ -3,6 +3,7 @@ extends RigidBody2D
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var despawn_over_time_component: DespawnOverTimeComponent = $DespawnOverTimeComponent
+@onready var bullet_marker: Marker2D = $BulletMarker
 
 var config: EnemyConfig
 

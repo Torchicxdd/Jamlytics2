@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://l7dpxxe5erbs"]
 
 [ext_resource type="Script" uid="uid://di26qhqeujt0e" path="res://Stages/Menus/MainMenu/main_menu.gd" id="1_w0tgi"]
+[ext_resource type="Texture2D" uid="uid://j0x3pk7spdk8" path="res://Stages/Menus/MainMenu/game_logo.png" id="2_3wlyv"]
 [ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_mo46c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxv1a"]
@@ -42,40 +43,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w0tgi")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1079165569]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=999218995]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -30.333334
-offset_right = 466.0
-offset_bottom = 30.333334
+offset_left = -157.0
+offset_top = -266.0
+offset_right = 157.0
+offset_bottom = 266.0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 52
+theme_override_constants/separation = 48
 
-[node name="Title" type="Label" parent="MarginContainer" unique_id=85145940]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=1647801767]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_mo46c")
-theme_override_font_sizes/font_size = 52
-text = "Tropi: Random Title"
+texture = ExtResource("2_3wlyv")
 
-[node name="ButtonsWrapper" type="MarginContainer" parent="." unique_id=211910224]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -363.0
-offset_right = 518.0
-grow_vertical = 0
-theme_override_constants/margin_left = 52
-theme_override_constants/margin_bottom = 104
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsWrapper" unique_id=1950764122]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=1950764122]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 52
 
-[node name="Levels" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=242768162]
+[node name="Levels" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=242768162]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_mo46c")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jxv1a")
@@ -86,8 +80,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6ofch")
 text = "Levels"
 alignment = 0
 
-[node name="Settings" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=1153131273]
+[node name="Settings" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131273]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_mo46c")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mo46c")
@@ -98,8 +93,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_1bsbk")
 text = "Settings"
 alignment = 0
 
-[node name="ExitGame" type="Button" parent="ButtonsWrapper/VBoxContainer" unique_id=168272511]
+[node name="ExitGame" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=168272511]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_mo46c")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mpjn0")

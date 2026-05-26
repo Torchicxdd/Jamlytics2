@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw1s1w1y2i54x"
-path="res://.godot/imported/bulletsheet-12 1.png-380049b239266434cc941270d6df354b.ctex"
+uid="uid://c3mbby6l4gf2l"
+path="res://.godot/imported/wolf_minion_bullets.png-d8629e7a2097b2cecc1a3ff9cfd90f02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemy1/bulletsheet-12 1.png"
-dest_files=["res://.godot/imported/bulletsheet-12 1.png-380049b239266434cc941270d6df354b.ctex"]
+source_file="res://Entities/EnemyBullet/wolf_minion_bullets.png"
+dest_files=["res://.godot/imported/wolf_minion_bullets.png-d8629e7a2097b2cecc1a3ff9cfd90f02.ctex"]
 
 [params]
 

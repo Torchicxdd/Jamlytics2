@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmad2bfv4uswe"
-path="res://.godot/imported/bulletsheet 1.png-f2e147c426960e1db4c83d376ad9c529.ctex"
+uid="uid://j0x3pk7spdk8"
+path="res://.godot/imported/game_logo.png-9618608812b201c523845e6bf8b68749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemy1/bulletsheet 1.png"
-dest_files=["res://.godot/imported/bulletsheet 1.png-f2e147c426960e1db4c83d376ad9c529.ctex"]
+source_file="res://Stages/Menus/MainMenu/game_logo.png"
+dest_files=["res://.godot/imported/game_logo.png-9618608812b201c523845e6bf8b68749.ctex"]
 
 [params]
 

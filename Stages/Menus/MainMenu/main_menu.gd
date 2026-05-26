@@ -1,8 +1,8 @@
 extends Control
 
-@onready var levels = $ButtonsWrapper/VBoxContainer/Levels
-@onready var settings = $ButtonsWrapper/VBoxContainer/Settings
-@onready var exit = $ButtonsWrapper/VBoxContainer/ExitGame
+@onready var levels = $VBoxContainer2/VBoxContainer/Levels
+@onready var settings = $VBoxContainer2/VBoxContainer/Settings
+@onready var exit = $VBoxContainer2/VBoxContainer/ExitGame
 
 func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)

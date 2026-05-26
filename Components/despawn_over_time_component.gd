@@ -30,8 +30,8 @@ func _despawn() -> void:
 	var screen = get_viewport().get_visible_rect().size
 	match despawn_style:
 		DespawnStyle.FROM_TOP:
-			tween.tween_property(owner, "global_position:y", -screen.y, despawn_duration)
+			tween.tween_property(owner, "global_position:y", -screen.y - screen.y, despawn_duration)
 		DespawnStyle.FROM_BOTTOM:
-			tween.tween_property(owner, "global_position:y", screen.y, despawn_duration)
+			tween.tween_property(owner, "global_position:y", screen.y + screen.y, despawn_duration)
 		DespawnStyle.FROM_RIGHT:
-			tween.tween_property(owner, "global_position:x", screen.x, despawn_duration)
+			tween.tween_property(owner, "global_position:x", screen.x + screen.x, despawn_duration)

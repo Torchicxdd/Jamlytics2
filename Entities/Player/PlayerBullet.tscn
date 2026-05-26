@@ -2,57 +2,57 @@
 
 [ext_resource type="Script" uid="uid://d3rkblwsmam3a" path="res://Entities/Player/player_bullet.gd" id="1_qjkoo"]
 [ext_resource type="PackedScene" uid="uid://b1j3kg55qr5tb" path="res://Components/VelocityComponent.tscn" id="2_dtqik"]
-[ext_resource type="Texture2D" uid="uid://dw1s1w1y2i54x" path="res://Entities/Enemy1/bulletsheet-12 1.png" id="2_u21yc"]
+[ext_resource type="Texture2D" uid="uid://drre8eqlian33" path="res://Entities/Player/bullets_texture.png" id="2_u21yc"]
 [ext_resource type="PackedScene" uid="uid://dt8iun8muas1e" path="res://Components/DespawnComponent.tscn" id="4_7q8as"]
 [ext_resource type="PackedScene" uid="uid://dj1v4athwo45n" path="res://Components/DamageComponent.tscn" id="6_qjkoo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjkoo"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(0, 0, 150, 149)
+region = Rect2(0, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofwq8"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(154, 0, 150, 149)
+region = Rect2(156, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ptve"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(308, 0, 150, 149)
+region = Rect2(312, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjlv8"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(462, 0, 150, 149)
+region = Rect2(468, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn1ii"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(0, 153, 150, 149)
+region = Rect2(0, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42r0k"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(154, 153, 150, 149)
+region = Rect2(156, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_koc6f"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(308, 153, 150, 149)
+region = Rect2(312, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53r18"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(462, 153, 150, 149)
+region = Rect2(468, 156, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8v24i"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(0, 306, 150, 149)
+region = Rect2(0, 312, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur4sp"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(154, 306, 150, 149)
+region = Rect2(156, 312, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogkv1"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(308, 306, 150, 149)
+region = Rect2(312, 312, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojo2y"]
 atlas = ExtResource("2_u21yc")
-region = Rect2(462, 306, 150, 149)
+region = Rect2(468, 312, 144, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7q8as"]
 animations = [{
@@ -99,10 +99,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u21yc"]
-radius = 64.0
+radius = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkoo"]
-radius = 64.0
+radius = 60.0
 
 [node name="PlayerBullet" type="Area2D" unique_id=437016154 node_paths=PackedStringArray("velocity_component")]
 collision_layer = 4
@@ -114,8 +114,7 @@ velocity_component = NodePath("VelocityComponent")
 scale = Vector2(0.97, 0.9832215)
 sprite_frames = SubResource("SpriteFrames_7q8as")
 autoplay = "default"
-frame = 2
-frame_progress = 0.027393743
+frame_progress = 0.36891228
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579166146]
 shape = SubResource("CircleShape2D_u21yc")
@@ -134,5 +133,4 @@ damage = 1.0
 shape = SubResource("CircleShape2D_qjkoo")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1502614390]
-visible = false
 rect = Rect2(-72, -72, 144, 144)
