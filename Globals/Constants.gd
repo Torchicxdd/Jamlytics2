@@ -17,7 +17,7 @@ const MENU_PATHS: Dictionary = {
 	"main_menu": "uid://l7dpxxe5erbs",
 	"levels_menu": "uid://d0bl188p52ys7",
 	"pause_menu": "uid://dievgonlssmex",
-	"settings_menu": "uid://4p08anivxumm",
+	"death_menu": "uid://ogx838g03aij",
 	"audio_menu": "uid://bkr8y5fs0wg8c",
 	"input_menu": "uid://c4mksxfwpkihk",
 	"input_rebind": "uid://dsa44yacw8cb3",
@@ -30,5 +30,12 @@ const COMPONENT_NAMES: Dictionary = {
 }
 
 const LEVEL_RESOURCE_PATHS: Dictionary = {
-	"level1": "uid://bma5jti7ne70g"
+	"level1": "uid://bma5jti7ne70g",
+	"level2": "uid://sivyfq6pxo8i",
+	"level3": "uid://chyae3jw407if",
+	"level4": "uid://cghmepn6rcxcj",
+	"level5": "uid://dep7bn208atqy",
+	"level6": "uid://chw12jq5nis3q",
+	"level7": "uid://b065tlrou1dwd",
+	"level8": "uid://be17cdi8vnc5g",
 }

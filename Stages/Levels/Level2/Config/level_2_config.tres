@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://sivyfq6pxo8i"]
+
+[ext_resource type="Script" uid="uid://warx1l6000ef" path="res://Configs/formation_config.gd" id="1_x26qo"]
+[ext_resource type="Texture2D" uid="uid://ds5ypev1nhotf" path="res://Stages/Levels/Level2/Config/Level2NormalTexture.png" id="2_edefy"]
+[ext_resource type="Texture2D" uid="uid://dtyuyi25svkc4" path="res://Stages/Levels/Level2/Config/Level2FocusedTexture.png" id="2_ldoso"]
+[ext_resource type="Script" uid="uid://bpggn603dypgg" path="res://Configs/level_config.gd" id="3_ldoso"]
+
+[resource]
+script = ExtResource("3_ldoso")
+level_normal_image = ExtResource("2_edefy")
+level_focused_image = ExtResource("2_ldoso")
+metadata/_custom_type_script = "uid://bpggn603dypgg"

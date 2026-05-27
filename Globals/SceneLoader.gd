@@ -12,6 +12,23 @@ var use_sub_threads: bool = true
 func _ready() -> void:
 	set_process(false)
 
+func unload_scene() -> void:
+	var new_load_screen = loading_screen.instantiate()
+	add_child(new_load_screen)
+	progress_changed.connect(new_load_screen._on_progress_changed)
+	load_finished.connect(new_load_screen._on_load_finished)
+
+	await new_load_screen.loading_screen_ready
+
+	var world = get_tree().current_scene.get_node(Constants.MAIN_SCENE_NAMES.world)
+	for child in world.get_children():
+		child.queue_free()
+
+	await get_tree().process_frame
+
+	progress_changed.emit(1.0)
+	load_finished.emit()
+
 func load_scene(_scene_path: String) -> void:
 	scene_path = _scene_path
 	
@@ -40,6 +57,7 @@ func _process(_delta: float) -> void:
 			var world = get_tree().current_scene.get_node(Constants.MAIN_SCENE_NAMES.world)
 			for child in world.get_children():
 				child.queue_free()
+				
 			world.add_child(loaded_resource.instantiate())
 			load_finished.emit()
 			set_process(false)

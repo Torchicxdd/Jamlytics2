@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdboydyauxji7" path="res://Stages/Menus/Levels/levels_menu.gd" id="1_gyk2t"]
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="1_rt7xf"]
+[ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Levels/Level1/bg.png" id="2_4edty"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_87ch2"]
+[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="2_focus"]
 
 [node name="LevelsMenu" type="Control" unique_id=2113038213]
 layout_mode = 3
@@ -12,6 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gyk2t")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=299450993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4edty")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1853683326]
 layout_mode = 1
 anchors_preset = 15
@@ -19,25 +31,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 245
-theme_override_constants/margin_right = 45
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=2050906737]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1905349567]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=1596262185]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1634435977]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 32
 
-[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("1_rt7xf")]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=578965984]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_87ch2")
+text = "Levels"
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1964362046]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 4
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=468651705]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" parent="MarginContainer/HBoxContainer/Control" unique_id=1723025850 instance=ExtResource("1_rt7xf")]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -49.0
-offset_right = 87.0
+offset_left = -118.0
+offset_top = -38.0
+grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_left = 90
-theme_override_constants/margin_bottom = 90
+
+[node name="MenuFocusController" type="Node" parent="." unique_id=4]
+script = ExtResource("2_focus")

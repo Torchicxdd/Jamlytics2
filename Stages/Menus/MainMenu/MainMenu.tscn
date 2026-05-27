@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://di26qhqeujt0e" path="res://Stages/Menus/MainMenu/main_menu.gd" id="1_w0tgi"]
 [ext_resource type="Texture2D" uid="uid://j0x3pk7spdk8" path="res://Stages/Menus/MainMenu/game_logo.png" id="2_3wlyv"]
-[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_mo46c"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="3_67dbw"]
+[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="4_focus"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxv1a"]
 
@@ -23,6 +24,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3gmw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bsbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpjn0"]
 
@@ -60,18 +71,23 @@ theme_override_constants/separation = 48
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=1647801767]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_3wlyv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=1950764122]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 52
 
 [node name="Levels" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=242768162]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_mo46c")
-theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jxv1a")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_niikg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_k7ap5")
@@ -80,24 +96,46 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6ofch")
 text = "Levels"
 alignment = 0
 
-[node name="Settings" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131273]
+[node name="Audio" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131273]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_mo46c")
-theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mo46c")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_w0tgi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ov3bf")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3gmw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1bsbk")
-text = "Settings"
+text = "Audio"
+alignment = 0
+
+[node name="InputSettings" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131274]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_in1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_in2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_in3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_in4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_in5")
+text = "Input Settings"
 alignment = 0
 
 [node name="ExitGame" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=168272511]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_mo46c")
-theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mpjn0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ooylj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_k73os")
@@ -106,3 +144,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_xuy58")
 text = "Exit Game
 "
 alignment = 0
+
+[node name="MenuFocusController" type="Node" parent="." unique_id=1]
+script = ExtResource("4_focus")

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bc6quqg0tfl2n" path="res://Stages/Menus/InputMenu/input_menu.gd" id="1_w4l86"]
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_lkxvk"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_md53g"]
+[ext_resource type="Texture2D" uid="uid://25dn03picy8a" path="res://Stages/Menus/InputMenu/InputVerticalBar.png" id="3_md53g"]
+[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="4_focus"]
 
 [node name="InputMenu" type="Control" unique_id=1465772207]
 layout_mode = 3
@@ -13,34 +16,89 @@ grow_vertical = 2
 script = ExtResource("1_w4l86")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=307828893]
-layout_mode = 0
-offset_top = 192.0
-offset_right = 1920.0
-offset_bottom = 832.0
-theme_override_constants/margin_left = 208
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 208
-theme_override_constants/margin_bottom = 24
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1435426853]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=398308617]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=741315648]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=328123070]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 24
+size_flags_vertical = 8
+size_flags_stretch_ratio = 8.0
+theme_override_constants/separation = 32
+alignment = 2
 
-[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("2_lkxvk")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=222141952]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=704779652]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_md53g")
+text = "Input Settings"
+uppercase = true
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1000572265]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_md53g")
+text = "Keyboard Inputs"
+uppercase = true
+
+[node name="ControllerLabelMargin" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1924025772]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/ControllerLabelMargin" unique_id=1924025771]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_md53g")
+text = "Controller Inputs"
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=807572556]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=488399133]
+layout_mode = 2
+texture = ExtResource("3_md53g")
+
+[node name="InputVbox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=962397582]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1311156927]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="BackButton" parent="MarginContainer/HBoxContainer/Control" unique_id=1723025850 instance=ExtResource("2_lkxvk")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -43.5
-offset_top = -216.0
-offset_right = 43.5
-offset_bottom = -167.0
-grow_horizontal = 2
+offset_left = -118.0
+offset_top = -38.0
+grow_horizontal = 0
 grow_vertical = 0
+
+[node name="MenuFocusController" type="Node" parent="." unique_id=2]
+script = ExtResource("4_focus")

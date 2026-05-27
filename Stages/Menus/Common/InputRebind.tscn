@@ -1,39 +1,52 @@
 [gd_scene format=3 uid="uid://dsa44yacw8cb3"]
 
 [ext_resource type="Script" uid="uid://c4a6k4meubcd2" path="res://Stages/Menus/Common/input_rebind.gd" id="1_j71rm"]
-[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="1_x414a"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_watig"]
+[ext_resource type="Texture2D" uid="uid://duu7ex6s2ctyr" path="res://Stages/Menus/InputMenu/InputBackground.png" id="3_t82wb"]
+[ext_resource type="Texture2D" uid="uid://dnkbuwq1rai5t" path="res://Stages/Menus/InputMenu/InputSeparator.png" id="3_watig"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_watig"]
+texture = ExtResource("3_t82wb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j71rm"]
+texture = ExtResource("3_watig")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t82wb"]
+texture = ExtResource("3_t82wb")
 
 [node name="InputRebind" type="HBoxContainer" unique_id=525273941]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -21.0
-offset_bottom = 79.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(0, 49)
+offset_right = 191.0
+offset_bottom = 100.0
 script = ExtResource("1_j71rm")
 
 [node name="ActionName" type="Label" parent="." unique_id=717905052]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.75
-theme_override_fonts/font = ExtResource("1_x414a")
-theme_override_font_sizes/font_size = 36
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/font = ExtResource("2_watig")
+theme_override_font_sizes/font_size = 24
 text = "Action"
 
 [node name="KeyboardInput" type="Button" parent="." unique_id=1608354533]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 36
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_watig")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_watig")
 text = "A"
 
 [node name="VSeparator" type="VSeparator" parent="." unique_id=90079037]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 33
+theme_override_styles/separator = SubResource("StyleBoxTexture_j71rm")
 
 [node name="ControllerInput" type="Button" parent="." unique_id=150435607]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 36
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_watig")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_t82wb")
 text = "B"

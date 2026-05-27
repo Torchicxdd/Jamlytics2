@@ -1,54 +1,60 @@
 [gd_scene format=3 uid="uid://qmpdxhgufi7j"]
 
 [ext_resource type="Script" uid="uid://ctu54634g0cy5" path="res://Stages/Menus/Audio/audio_slider.gd" id="1_dc8dm"]
-[ext_resource type="FontFile" uid="uid://bfrsr5mt4kkgv" path="res://themes/Fonts/Underdog/Underdog-Regular.ttf" id="2_w60xx"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_4myqo"]
+[ext_resource type="Texture2D" uid="uid://c3d676wr5jdkn" path="res://Stages/Menus/Audio/AudioSymbol.png" id="2_y5ryp"]
 [ext_resource type="Texture2D" uid="uid://e1rcxlsq7pnj" path="res://Stages/Menus/Audio/volume_grabber.png" id="3_lpvcs"]
+[ext_resource type="Texture2D" uid="uid://dn7nkfxh6cs15" path="res://Stages/Menus/Audio/empty_grabber_area.png" id="5_y5ryp"]
+[ext_resource type="Texture2D" uid="uid://bwx2tmmvk1t0b" path="res://Stages/Menus/Audio/filled_grabber_area.png" id="6_05lx6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpvcs"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4myqo"]
+content_margin_top = 7.5
+content_margin_bottom = 7.5
+texture = ExtResource("5_y5ryp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc8dm"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5ryp"]
+content_margin_top = 7.5
+content_margin_bottom = 7.5
+texture = ExtResource("6_05lx6")
 
 [node name="AudioSlider" type="HBoxContainer" unique_id=726825691]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -24.5
-offset_bottom = 24.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 330.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
 theme_override_constants/separation = 24
 script = ExtResource("1_dc8dm")
 
-[node name="Name" type="Label" parent="." unique_id=1364431066]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=673199516]
 layout_mode = 2
-size_flags_horizontal = 2
+texture = ExtResource("2_y5ryp")
+
+[node name="Name" type="Label" parent="." unique_id=1364431066]
+custom_minimum_size = Vector2(214, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_w60xx")
-theme_override_font_sizes/font_size = 36
+theme_override_fonts/font = ExtResource("2_4myqo")
+theme_override_font_sizes/font_size = 29
 text = "Master Volume"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=122184769]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="HSlider" type="HSlider" parent="MarginContainer" unique_id=499679184]
+[node name="HSlider" type="HSlider" parent="." unique_id=499679184]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_icons/grabber = ExtResource("3_lpvcs")
 theme_override_icons/grabber_highlight = ExtResource("3_lpvcs")
 theme_override_icons/grabber_disabled = ExtResource("3_lpvcs")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lpvcs")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_dc8dm")
+theme_override_styles/slider = SubResource("StyleBoxTexture_4myqo")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_y5ryp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_y5ryp")
 
-[node name="Value" type="Label" parent="." unique_id=480756146]
+[node name="Value" type="Label" parent="." unique_id=648565947]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_w60xx")
-theme_override_font_sizes/font_size = 36
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_4myqo")
+theme_override_font_sizes/font_size = 29
 text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

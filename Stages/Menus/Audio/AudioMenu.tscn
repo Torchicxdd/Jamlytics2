@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://qmpdxhgufi7j" path="res://Stages/Menus/Audio/AudioSlider.tscn" id="1_be2gv"]
 [ext_resource type="Script" uid="uid://yd0c38xaapwb" path="res://Stages/Menus/Audio/audio_menu.gd" id="1_trhvc"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_mn407"]
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_vahf6"]
+[ext_resource type="Texture2D" uid="uid://vg8pqaxtwa4n" path="res://Stages/Menus/Audio/AudioVerticalBar.png" id="3_ch5qv"]
+[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="4_focus"]
 
 [node name="AudioMenu" type="Control" unique_id=703233102]
 layout_mode = 3
@@ -20,38 +23,85 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 52
-theme_override_constants/margin_top = 52
-theme_override_constants/margin_right = 52
-theme_override_constants/margin_bottom = 52
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1677776608]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=966149533]
 layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=182436551]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 8.0
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=914682921]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_mn407")
+text = "Audio Settings"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=858041464]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1767662367]
+layout_mode = 2
+texture = ExtResource("3_ch5qv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1677776608]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_constants/separation = 48
-alignment = 1
+alignment = 2
 
-[node name="Master" parent="MarginContainer/VBoxContainer" unique_id=726825691 instance=ExtResource("1_be2gv")]
+[node name="Master" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=726825691 instance=ExtResource("1_be2gv")]
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../../Control/BackButton")
+focus_neighbor_bottom = NodePath("../Music")
+focus_next = NodePath("../Music")
+focus_previous = NodePath("../SFX")
 bus_name = "Master"
 
-[node name="Music" parent="MarginContainer/VBoxContainer" unique_id=2005675480 instance=ExtResource("1_be2gv")]
+[node name="Music" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=2005675480 instance=ExtResource("1_be2gv")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Master")
+focus_neighbor_right = NodePath("../../../../Control/BackButton")
+focus_neighbor_bottom = NodePath("../SFX")
+focus_next = NodePath("../SFX")
+focus_previous = NodePath("../Master")
 bus_name = "Music"
 
-[node name="SFX" parent="MarginContainer/VBoxContainer" unique_id=1320054587 instance=ExtResource("1_be2gv")]
+[node name="SFX" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1320054587 instance=ExtResource("1_be2gv")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Music")
+focus_neighbor_right = NodePath("../../../../Control/BackButton")
+focus_next = NodePath("../Master")
+focus_previous = NodePath("../Music")
 bus_name = "SFX"
 
-[node name="BackButton" parent="." unique_id=1723025850 instance=ExtResource("2_vahf6")]
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=411478929]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 4.0
+
+[node name="BackButton" parent="MarginContainer/HBoxContainer/Control" unique_id=1723025850 instance=ExtResource("2_vahf6")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -43.5
-offset_top = -216.0
-offset_right = 43.5
-offset_bottom = -167.0
-grow_horizontal = 2
+offset_left = -118.0
+offset_top = -38.0
+grow_horizontal = 0
 grow_vertical = 0
+
+[node name="MenuFocusController" type="Node" parent="." unique_id=3]
+script = ExtResource("4_focus")

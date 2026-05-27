@@ -1,5 +1,7 @@
 extends Node
 
+var is_game_started: bool = false
+
 var level_points: int = 0
 
 func reset_level_points() -> void:

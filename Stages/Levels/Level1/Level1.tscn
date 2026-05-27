@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://dgjcptaxygbh7"]
+
+[ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
+[ext_resource type="Script" uid="uid://bvy5g3ny8kb0d" path="res://Stages/Levels/Level1/level_1.gd" id="1_l6h6a"]
+[ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Levels/Level1/bg.png" id="2_3cwmo"]
+[ext_resource type="PackedScene" uid="uid://cf5q1scjv6lwt" path="res://Entities/Player/Player.tscn" id="3_433hs"]
+[ext_resource type="PackedScene" uid="uid://c75a7hqy8htgf" path="res://Stages/Common/ParallaxBackground.tscn" id="4_ancos"]
+[ext_resource type="AudioStream" uid="uid://h6oaqngorq62" path="res://Stages/Levels/Level1/level_1_song.mp3" id="6_g6q1v"]
+[ext_resource type="Resource" uid="uid://b546fs77kucwu" path="res://Stages/Levels/Level1/Formations/1/formation_1.tres" id="7_fddum"]
+[ext_resource type="PackedScene" uid="uid://c7vxopvmy4fos" path="res://Entities/Enemy1/Enemy1.tscn" id="7_l6h6a"]
+[ext_resource type="PackedScene" uid="uid://bvf7t20vwshqn" path="res://Components/FormationComponent.tscn" id="7_v8ovw"]
+[ext_resource type="Resource" uid="uid://cd5odopmnggyk" path="res://Stages/Levels/Level1/Formations/2/formation_2.tres" id="8_fddum"]
+[ext_resource type="PackedScene" uid="uid://ce6o8am7n8ms4" path="res://Entities/WaveManager/WavePlayer.tscn" id="8_l6h6a"]
+[ext_resource type="Resource" uid="uid://d3sfm6rkt2ac1" path="res://Stages/Levels/Level1/Formations/3/formation_3.tres" id="9_form3"]
+[ext_resource type="Resource" uid="uid://d4cgwa17nahxb" path="res://Stages/Levels/Level1/Formations/4/formation_4.tres" id="10_form4"]
+[ext_resource type="Resource" uid="uid://bioutrfoaf10" path="res://Stages/Levels/Level1/Formations/5/formation_5.tres" id="11_form5"]
+[ext_resource type="Resource" uid="uid://cftbx6b52xbn" path="res://Stages/Levels/Level1/Formations/6/formation_6.tres" id="12_form6"]
+
+[sub_resource type="Animation" id="Animation_v8ovw"]
+length = 147.528
+step = 0.25
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FormationComponent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.25, 12.25, 24.6, 36.9, 49.2, 61.5, 73.8, 86.1, 98.4, 110.7, 123, 135.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("7_fddum")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("8_fddum")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("9_form3")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("10_form4")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("11_form5")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("12_form6")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("9_form3")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("10_form4")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("11_form5")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("12_form6")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("11_form5")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("12_form6")],
+"method": &"spawn_formation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l6h6a"]
+resource_name = "enemy_waves"
+length = 147.528
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FormationComponent:enemy_scene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_l6h6a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormationComponent:formation_center")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1440, 540)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FormationComponent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4, 6, 120.0],
+"method": &"spawn_formation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tw08"]
+_data = {
+&"RESET": SubResource("Animation_v8ovw"),
+&"enemy_waves": SubResource("Animation_l6h6a")
+}
+
+[node name="Level1" type="Node2D" unique_id=687571251]
+script = ExtResource("1_l6h6a")
+
+[node name="LevelArchitecture" type="Node2D" parent="." unique_id=1481029243]
+
+[node name="ParallaxBackground" parent="LevelArchitecture" unique_id=1683267933 instance=ExtResource("4_ancos")]
+visible_background = ExtResource("2_3cwmo")
+near_background = ExtResource("2_3cwmo")
+far_background = ExtResource("2_3cwmo")
+is_enabled = true
+
+[node name="LevelLimit" parent="LevelArchitecture" unique_id=515817730 instance=ExtResource("1_7p6ks")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1071119540]
+stream = ExtResource("6_g6q1v")
+autoplay = true
+bus = &"Music"
+
+[node name="WavePlayer" parent="." unique_id=1128560386 instance=ExtResource("8_l6h6a")]
+libraries/ = SubResource("AnimationLibrary_8tw08")
+autoplay = &"RESET"
+music = ExtResource("6_g6q1v")
+
+[node name="FormationComponent" parent="." unique_id=523317454 instance=ExtResource("7_v8ovw")]
+
+[node name="Player" parent="." unique_id=390965236 instance=ExtResource("3_433hs")]
+position = Vector2(304, 568)

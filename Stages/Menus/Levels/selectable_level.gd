@@ -1,12 +1,9 @@
 class_name SelectableLevel
-extends Button
+extends TextureButton
 
 const SELECTABLE_LEVEL_SCENE: PackedScene = preload(Constants.MENU_PATHS.selectable_level)
 
 @export var level_config: LevelConfig
-
-@onready var name_label = $HBoxContainer/Label
-@onready var image = $HBoxContainer/TextureRect
 
 static func new_selectable_level(level_config: LevelConfig) -> SelectableLevel:
 	var new_instance: SelectableLevel = SELECTABLE_LEVEL_SCENE.instantiate()
@@ -15,7 +12,10 @@ static func new_selectable_level(level_config: LevelConfig) -> SelectableLevel:
 
 func _ready() -> void:
 	focus_mode = Control.FOCUS_ALL
-	pressed.connect(SceneLoader.load_scene.bind(level_config.level_path))
 	
-	name_label.text = level_config.level_name
-	image.texture = level_config.level_image
+	if not level_config.level_path.is_empty():
+		pressed.connect(SceneLoader.load_scene.bind(level_config.level_path))
+	
+	texture_normal = level_config.level_normal_image
+	texture_focused = level_config.level_focused_image
+	texture_hover = level_config.level_focused_image

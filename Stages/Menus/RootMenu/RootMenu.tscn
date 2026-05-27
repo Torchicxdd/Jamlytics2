@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mdkawf3pn88m" path="res://Stages/Menus/RootMenu/root_menu.gd" id="1_2gm4h"]
 [ext_resource type="Texture2D" uid="uid://b2c0eym76m4om" path="res://Stages/Menus/MainMenu/MainMenuBackground.png" id="2_pgulh"]
-[ext_resource type="PackedScene" uid="uid://4p08anivxumm" path="res://Stages/Menus/Settings/SettingsMenu.tscn" id="3_pgulh"]
+[ext_resource type="Texture2D" uid="uid://bvkg18v8eerfb" path="res://Stages/Menus/DeathMenu/death_background.png" id="3_j1236"]
 [ext_resource type="PackedScene" uid="uid://bkr8y5fs0wg8c" path="res://Stages/Menus/Audio/AudioMenu.tscn" id="4_o3j03"]
 [ext_resource type="PackedScene" uid="uid://c4mksxfwpkihk" path="res://Stages/Menus/InputMenu/InputMenu.tscn" id="6_rxpjs"]
 
@@ -41,6 +41,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.27450982)
 
+[node name="death_background" type="TextureRect" parent="." unique_id=1442424619]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_j1236")
+
 [node name="menu_wrapper" type="Control" parent="." unique_id=826089942]
 layout_mode = 1
 anchors_preset = 15
@@ -48,10 +55,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="SettingsMenu" parent="menu_wrapper" unique_id=1365611155 instance=ExtResource("3_pgulh")]
-visible = false
-layout_mode = 1
 
 [node name="InputMenu" parent="menu_wrapper" unique_id=1465772207 instance=ExtResource("6_rxpjs")]
 visible = false
