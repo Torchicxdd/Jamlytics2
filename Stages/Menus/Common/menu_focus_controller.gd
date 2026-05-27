@@ -67,18 +67,19 @@ func _input(event: InputEvent) -> void:
 	elif _is_keyboard_input(event):
 		_using_mouse = false
 		_set_joypad_mode(false)
-		_restore_focus_if_needed()
+		_restore_focus_if_needed(event)
 	elif _is_joypad_input(event):
 		_using_mouse = false
 		_set_joypad_mode(true)
-		_restore_focus_if_needed()
+		_restore_focus_if_needed(event)
 
-func _restore_focus_if_needed() -> void:
+func _restore_focus_if_needed(event: InputEvent = null) -> void:
 	if get_viewport().gui_get_focus_owner() == null:
 		var target := _pick_focus_target()
 		if target:
 			target.grab_focus()
-			get_viewport().set_input_as_handled()
+			if event == null or not event.is_action("ui_cancel"):
+				get_viewport().set_input_as_handled()
 
 func _pick_focus_target() -> Control:
 	var candidate := _last_focused if _last_focused else default_focusable

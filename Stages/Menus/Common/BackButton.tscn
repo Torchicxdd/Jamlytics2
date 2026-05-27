@@ -28,4 +28,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tly7a")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wn8rj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_sqtdn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_klmbc")
-text = "Go Back"
+text = "Back"

@@ -36,6 +36,7 @@ theme_override_fonts/font = ExtResource("2_watig")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_watig")
 text = "A"
+icon_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="." unique_id=90079037]
 layout_mode = 2
@@ -50,3 +51,4 @@ theme_override_fonts/font = ExtResource("2_watig")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_t82wb")
 text = "B"
+icon_alignment = 1
