@@ -5,6 +5,7 @@ signal damaged(amount: int)
 signal healed(amount: int)
 signal died()
 
+@export var is_damageable: bool = true
 @export var max_health: int = 10
 var _health: int
 var health: int:
@@ -25,7 +26,8 @@ func _ready() -> void:
 	_health = max_health
 
 func take_damage(amount: int) -> void:
-	health -= amount
+	if is_damageable:
+		health -= amount
 
 func heal(amount: int) -> void:
 	health += amount

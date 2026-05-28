@@ -10,6 +10,7 @@ var config: EnemyConfig
 func configure(cfg: EnemyConfig) -> void:
 	config = cfg
 	health_component.health = cfg.health
+	health_component.is_damageable = cfg.is_killable
 	despawn_over_time_component.despawn_timer = cfg.despawn_timer
 	despawn_over_time_component.despawn_duration = cfg.despawn_duration
 	despawn_over_time_component.despawn_style = cfg.despawn_style

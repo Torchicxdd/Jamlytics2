@@ -3,6 +3,7 @@ extends Node
 signal brand_changed()
 
 const _BASE := "res://themes/InputPromptsAssets/kenney_input-prompts_1.5/"
+const _DEFAULT_BRAND := "PlayStation Series"
 
 const _BRAND_FOLDERS: Dictionary = {
 	"Xbox Series": "Xbox Series",
@@ -24,7 +25,7 @@ const _BRAND_DETECTION: Array = [
 	["PlayStation Series", ["playstation", "sony", "dualshock", "dualsense", "ps4", "ps5"]],
 ]
 
-var _active_brand: String = "Generic"
+var _active_brand: String = _DEFAULT_BRAND
 var _cache: Dictionary = {}
 var _keyboard_map: Dictionary = {}
 var _mouse_map: Dictionary = {}
@@ -142,8 +143,6 @@ func _build_maps() -> void:
 			JOY_BUTTON_DPAD_LEFT: "playstation_dpad_left",
 			JOY_BUTTON_DPAD_RIGHT: "playstation_dpad_right",
 		},
-		# Intentional face button inversion: Godot standardises to Xbox physical positions,
-		# but Switch labels south=B, east=A, west=Y, north=X
 		"Nintendo Switch": {
 			JOY_BUTTON_A: "switch_button_b",
 			JOY_BUTTON_B: "switch_button_a",
@@ -265,7 +264,7 @@ func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
 
 func _detect_brand() -> void:
 	var joypads := Input.get_connected_joypads()
-	var new_brand := "Generic"
+	var new_brand := _DEFAULT_BRAND
 	if joypads.size() > 0:
 		new_brand = _name_to_brand(Input.get_joy_name(joypads[0]))
 	if new_brand != _active_brand:
@@ -278,7 +277,7 @@ func _name_to_brand(joy_name: String) -> String:
 		for match_str: String in entry[1]:
 			if match_str in lower:
 				return entry[0]
-	return "Generic"
+	return _DEFAULT_BRAND
 
 func get_active_brand() -> String:
 	return _active_brand
@@ -300,14 +299,14 @@ func get_controller_icon(event: InputEvent) -> Texture2D:
 	if event is InputEventJoypadButton:
 		stem = _button_maps.get(_active_brand, {}).get(event.button_index, "")
 		if stem.is_empty():
-			stem = _button_maps.get("Generic", {}).get(event.button_index, "")
+			stem = _button_maps.get(_DEFAULT_BRAND, {}).get(event.button_index, "")
 	elif event is InputEventJoypadMotion:
 		stem = _axis_maps.get(_active_brand, {}).get(event.axis, "")
 		if stem.is_empty():
-			stem = _axis_maps.get("Generic", {}).get(event.axis, "")
+			stem = _axis_maps.get(_DEFAULT_BRAND, {}).get(event.axis, "")
 	if stem.is_empty():
 		return null
-	var folder: String = _BRAND_FOLDERS.get(_active_brand, "Generic")
+	var folder: String = _BRAND_FOLDERS.get(_active_brand, _DEFAULT_BRAND)
 	return _get_texture(stem, folder)
 
 func get_action_keyboard_icon(action: String) -> Texture2D:
@@ -330,6 +329,7 @@ func get_action_icon(action: String) -> Texture2D:
 	return get_action_keyboard_icon(action)
 
 func _get_texture(stem: String, folder: String) -> Texture2D:
+	print(stem + " " + folder)
 	var path := _BASE + folder + "/Default/" + stem + ".png"
 	if _cache.has(path):
 		return _cache[path]

@@ -9,6 +9,7 @@
 script = ExtResource("3_c0uub")
 enemy_scene = ExtResource("2_h704c")
 health = 10
+is_killable = false
 despawn_timer = 8.0
 despawn_duration = 1.0
 despawn_style = 2

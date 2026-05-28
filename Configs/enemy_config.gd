@@ -3,6 +3,7 @@ extends Resource
 
 @export var enemy_scene: PackedScene
 @export var health: int
+@export var is_killable: bool
 @export var despawn_timer: float
 @export var despawn_duration: float
 @export var despawn_style: DespawnOverTimeComponent.DespawnStyle
