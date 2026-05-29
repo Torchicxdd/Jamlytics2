@@ -43,7 +43,7 @@ func _ready() -> void:
 			menu_wrapper.add_child(pause_menu)
 			MenuManager.open_menu(pause_menu)
 			current_menu = pause_menu
-			MenuManager.resume_game.connect(_on_resume_game)
+			MenuManager.game_resumed.connect(_on_game_resumed)
 		MenuManager.ROOT_MENU_TYPE.DEATH:
 			main_background.hide()
 			pause_background.hide()
@@ -53,8 +53,9 @@ func _ready() -> void:
 			menu_wrapper.add_child(death_menu)
 			MenuManager.open_menu(death_menu)
 			current_menu = death_menu
+			MenuManager.game_resumed.connect(_on_game_resumed)
 
-func _on_resume_game() -> void:
+func _on_game_resumed() -> void:
 	MenuManager.menu_stack_remove_node(current_menu)
 	queue_free()
 

@@ -14,7 +14,11 @@ func _ready() -> void:
 	focus_mode = Control.FOCUS_ALL
 	
 	if not level_config.level_path.is_empty():
-		pressed.connect(SceneLoader.load_scene.bind(level_config.level_path))
+		var on_level_click = func() -> void:
+			GameManager.current_level_config = level_config
+			SceneLoader.load_scene(level_config.level_path)
+			
+		pressed.connect(on_level_click)
 	
 	texture_normal = level_config.level_normal_image
 	texture_focused = level_config.level_focused_image

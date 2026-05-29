@@ -6,6 +6,7 @@ signal on_menu_back_pressed()
 # Menu root signals/non-settings menus
 signal open_main_menu()
 signal open_levels_menu()
+signal open_death_menu()
 
 # Settings menus signals
 signal open_audio_settings()
@@ -13,6 +14,7 @@ signal open_input_settings()
 
 # Pause signals
 signal resume_game()
+signal game_resumed()
 
 
 enum ROOT_MENU_TYPE {

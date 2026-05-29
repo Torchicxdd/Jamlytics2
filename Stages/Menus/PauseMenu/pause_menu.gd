@@ -19,7 +19,7 @@ func _on_continue_pressed() -> void:
 	MenuManager.resume_game.emit()
 
 func _on_restart_pressed() -> void:
-	pass
+	GameManager.restart_level()
 
 func _on_levels_pressed() -> void:
 	await SceneLoader.unload_scene()

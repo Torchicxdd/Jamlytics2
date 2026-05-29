@@ -14,7 +14,7 @@ func _ready() -> void:
 	quit_button.pressed.connect(_on_quit_pressed)
 
 func _on_restart_pressed() -> void:
-	pass
+	GameManager.restart_level()
 
 func _on_levels_pressed() -> void:
 	await SceneLoader.unload_scene()

@@ -11,13 +11,13 @@ var _health: int
 var health: int:
 	set(value):
 		var old = _health
-		_health = clamp(value, 0.0, max_health)
+		_health = clamp(value, 0, max_health)
 		var diff = _health - old
-		if diff < 0.0:
+		if diff < 0:
 			damaged.emit(-diff)
-			if _health <= 0.0:
+			if _health <= 0:
 				died.emit()
-		elif diff > 0.0:
+		elif diff > 0:
 			healed.emit(diff)
 	get:
 		return _health
