@@ -18,7 +18,7 @@ func _on_restart_pressed() -> void:
 
 func _on_levels_pressed() -> void:
 	await SceneLoader.unload_scene()
-	MenuManager.open_levels_menu.emit()
+	MenuManager.open_levels_menu.emit(false)
 
 func _on_audio_pressed() -> void:
 	MenuManager.open_audio_settings.emit()

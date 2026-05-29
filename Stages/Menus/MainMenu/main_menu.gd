@@ -12,7 +12,7 @@ func _ready() -> void:
 	exit.pressed.connect(_on_exit_pressed)
 
 func _on_levels_pressed() -> void:
-	MenuManager.open_levels_menu.emit()
+	MenuManager.open_levels_menu.emit(true)
 
 func _on_audio_pressed() -> void:
 	MenuManager.open_audio_settings.emit()

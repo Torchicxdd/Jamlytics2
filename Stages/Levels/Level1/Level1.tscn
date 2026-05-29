@@ -116,8 +116,9 @@ _data = {
 &"enemy_waves": SubResource("Animation_l6h6a")
 }
 
-[node name="Level1" type="Node2D" unique_id=687571251]
+[node name="Level1" type="Node2D" unique_id=687571251 node_paths=PackedStringArray("music_player")]
 script = ExtResource("1_l6h6a")
+music_player = NodePath("AudioStreamPlayer")
 
 [node name="LevelArchitecture" type="Node2D" parent="." unique_id=1481029243]
 

@@ -22,13 +22,22 @@ func _on_main_menu_open() -> void:
 	GameManager.is_game_started = false
 	_on_menu_open(MenuManager.ROOT_MENU_TYPE.MAIN)
 
-func _on_levels_menu_open() -> void:
-	_unpause_world()
-	GameManager.is_game_started = false
-	MenuManager.menu_stack_clear()
-	var level_scene = load(Constants.MENU_PATHS.levels_menu).instantiate()
-	MenuManager.open_menu(level_scene)
-	add_child(level_scene)
+func _on_levels_menu_open(is_faded: bool) -> void:
+	var open_levels = func():
+		var existing_root_menu = find_child("RootMenu")
+		if existing_root_menu != null:
+			existing_root_menu.queue_free()
+		_unpause_world()
+		GameManager.is_game_started = false
+		MenuManager.menu_stack_clear()
+		var level_scene = load(Constants.MENU_PATHS.levels_menu).instantiate()
+		MenuManager.open_menu(level_scene, false)
+		add_child(level_scene)
+	
+	if is_faded :
+		MenuManager.screen_fade_transition(open_levels)
+	else:
+		open_levels.call()
 
 func _on_death_menu_open() -> void:
 	_toggle_pause_world(true, MenuManager.ROOT_MENU_TYPE.DEATH)

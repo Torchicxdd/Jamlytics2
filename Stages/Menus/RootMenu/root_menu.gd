@@ -19,7 +19,6 @@ static func new_root_menu(menu_type: MenuManager.ROOT_MENU_TYPE) -> RootMenu:
 	return new_root_menu
 
 func _ready() -> void:
-	MenuManager.open_levels_menu.connect(_on_levels_menu_opened)
 	MenuManager.on_menu_back_pressed.connect(_on_menu_back_pressed)
 	MenuManager.open_audio_settings.connect(_on_open_audio_settings)
 	MenuManager.open_input_settings.connect(_on_open_input_settings)
@@ -56,10 +55,6 @@ func _ready() -> void:
 			MenuManager.game_resumed.connect(_on_game_resumed)
 
 func _on_game_resumed() -> void:
-	MenuManager.menu_stack_remove_node(current_menu)
-	queue_free()
-
-func _on_levels_menu_opened() -> void:
 	MenuManager.menu_stack_remove_node(current_menu)
 	queue_free()
 

@@ -11,6 +11,8 @@ func _ready() -> void:
 		grid.add_child(instance)
 
 func _on_back_pressed() -> void:
-	MenuManager.open_main_menu.emit()
-	MenuManager.menu_stack_remove_node(self)
-	queue_free()
+	MenuManager.screen_fade_transition(func():
+		MenuManager.open_main_menu.emit()
+		MenuManager.menu_stack_remove_node(self)
+		queue_free()
+	)

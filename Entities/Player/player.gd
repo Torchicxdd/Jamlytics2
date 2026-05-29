@@ -21,4 +21,4 @@ func _on_player_healed(amount: int) -> void:
 	
 func _on_player_died() -> void:
 	UISignalBus.player_health_changed.emit(health_component.health)
-	MenuManager.open_death_menu.emit()
+	UISignalBus.player_died.emit()
