@@ -7,5 +7,5 @@ func _ready() -> void:
 	damage_component.damaged.connect(_on_damaged)
 
 func _on_damaged() -> void:
-	GameManager.add_points(base_point_increase)
+	GameManager.add_points(GameManager.Powerup.FURY, base_point_increase)
 	queue_free()

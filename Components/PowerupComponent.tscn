@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyxlfo5h57jb1"]
+
+[ext_resource type="Script" uid="uid://bb5syfseu38y4" path="res://Components/powerup_component.gd" id="1_h1s6y"]
+
+[node name="PowerupComponent" type="Node" unique_id=197710033]
+script = ExtResource("1_h1s6y")

@@ -329,7 +329,6 @@ func get_action_icon(action: String) -> Texture2D:
 	return get_action_keyboard_icon(action)
 
 func _get_texture(stem: String, folder: String) -> Texture2D:
-	print(stem + " " + folder)
 	var path := _BASE + folder + "/Default/" + stem + ".png"
 	if _cache.has(path):
 		return _cache[path]

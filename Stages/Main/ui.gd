@@ -1,7 +1,6 @@
 extends Control
 
 @export var world: Node2D
-var world_paused: bool = false
 
 func _ready() -> void:
 	UISignalBus.add_level_ui.connect(_add_level_ui)
@@ -34,7 +33,7 @@ func _on_levels_menu_open(is_faded: bool) -> void:
 		MenuManager.open_menu(level_scene, false)
 		add_child(level_scene)
 	
-	if is_faded :
+	if is_faded:
 		MenuManager.screen_fade_transition(open_levels)
 	else:
 		open_levels.call()
@@ -43,8 +42,8 @@ func _on_death_menu_open() -> void:
 	_toggle_pause_world(true, MenuManager.ROOT_MENU_TYPE.DEATH)
 
 func _unpause_world() -> void:
-	if world_paused:
-		world_paused = false
+	if GameManager.is_world_paused:
+		GameManager.is_world_paused = false
 		_set_process_mode_recursive(world, Node.PROCESS_MODE_INHERIT)
 
 func _add_level_ui(control_node: Control) -> void:
@@ -62,13 +61,13 @@ func _input(event: InputEvent) -> void:
 		if not GameManager.is_game_started:
 			return
 
-		_toggle_pause_world(!world_paused, MenuManager.ROOT_MENU_TYPE.PAUSE)
+		_toggle_pause_world(!GameManager.is_world_paused, MenuManager.ROOT_MENU_TYPE.PAUSE)
 
 func _toggle_pause_world(is_paused: bool, root_menu_type = null) -> void:
-	world_paused = is_paused
-	var mode = Node.PROCESS_MODE_DISABLED if world_paused else Node.PROCESS_MODE_INHERIT
+	GameManager.is_world_paused = is_paused
+	var mode = Node.PROCESS_MODE_DISABLED if GameManager.is_world_paused else Node.PROCESS_MODE_INHERIT
 	_set_process_mode_recursive(world, mode)
-	if world_paused and root_menu_type != null:
+	if GameManager.is_world_paused and root_menu_type != null:
 		_on_menu_open(root_menu_type)
 	else:
 		_on_resume_game()

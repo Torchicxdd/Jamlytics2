@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gkyfmndrnava" path="res://Components/HealthComponent.tscn" id="5_hj1c0"]
 [ext_resource type="PackedScene" uid="uid://ckonqh3tsjbfv" path="res://Components/ShootingComponent.tscn" id="8_x44r4"]
 [ext_resource type="PackedScene" uid="uid://blsfljbfq5l0o" path="res://Entities/Player/PlayerBullet.tscn" id="9_761t5"]
+[ext_resource type="PackedScene" uid="uid://cyxlfo5h57jb1" path="res://Components/PowerupComponent.tscn" id="11_pwrup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vweq0"]
 size = Vector2(128, 128)
@@ -30,12 +31,12 @@ texture = ExtResource("1_vweq0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736249246]
 shape = SubResource("RectangleShape2D_vweq0")
 
-[node name="ScrapingArea" type="Area2D" parent="." unique_id=1472998312]
+[node name="GrazingArea" type="Area2D" parent="." unique_id=1472998312]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("4_hacra")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrapingArea" unique_id=1990884535]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrazingArea" unique_id=1990884535]
 shape = SubResource("CircleShape2D_lu8i8")
 
 [node name="CoreSprite" type="Sprite2D" parent="." unique_id=1932929985]
@@ -64,11 +65,16 @@ focus_speed_multiplier = 0.33
 bullet = ExtResource("9_761t5")
 bullet_scale = Vector2(0.3, 0.3)
 bullet_speed = 2000.0
-bullet_starting_positions = [NodePath("../ShootingPoint1"), NodePath("../ShootingPoint2")]
+bullet_starting_positions = [NodePath("../NormalShootingPoint"), NodePath("../NormalShootingPoint2")]
 shooting_delay = 0.15
 
-[node name="ShootingPoint1" type="Marker2D" parent="." unique_id=879642339]
+[node name="NormalShootingPoint" type="Marker2D" parent="." unique_id=879642339]
 position = Vector2(0, -64)
 
-[node name="ShootingPoint2" type="Marker2D" parent="." unique_id=1610680201]
+[node name="NormalShootingPoint2" type="Marker2D" parent="." unique_id=1610680201]
 position = Vector2(0, 64)
+
+[node name="PowerupComponent" parent="." unique_id=1202635372 node_paths=PackedStringArray("shooting_component", "health_component", "grazing_area") instance=ExtResource("11_pwrup")]
+shooting_component = NodePath("../ShootingComponent")
+health_component = NodePath("../HealthComponent")
+grazing_area = NodePath("../GrazingArea")
