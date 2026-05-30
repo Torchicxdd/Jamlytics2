@@ -10,10 +10,14 @@ func _ready() -> void:
 	MenuManager.open_death_menu.connect(_on_death_menu_open)
 
 func _on_menu_open(menu_type: MenuManager.ROOT_MENU_TYPE) -> void:
-	var existing = find_child("RootMenu")
-	if existing != null:
-		existing.queue_free()
-		MenuManager.menu_stack_clear()
+	if menu_type != MenuManager.ROOT_MENU_TYPE.MAIN:
+		var existing = find_child("RootMenu")
+		if existing != null:
+			existing.queue_free()
+			MenuManager.menu_stack_clear()
+	else:
+		for child in get_children():
+			child.queue_free()
 	add_child(RootMenu.new_root_menu(menu_type))
 
 func _on_main_menu_open() -> void:
@@ -23,9 +27,8 @@ func _on_main_menu_open() -> void:
 
 func _on_levels_menu_open(is_faded: bool) -> void:
 	var open_levels = func():
-		var existing_root_menu = find_child("RootMenu")
-		if existing_root_menu != null:
-			existing_root_menu.queue_free()
+		for child in get_children():
+			child.queue_free()
 		_unpause_world()
 		GameManager.is_game_started = false
 		MenuManager.menu_stack_clear()

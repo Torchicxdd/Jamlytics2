@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 		no_damage_timer -= NO_DAMAGE_TICK_INTERVAL
 		add_points(Powerup.FLOW, NO_DAMAGE_BASE_POINTS * no_damage_multiplier)
 		no_damage_multiplier += 1
+		UISignalBus.no_damage_multiplier_changed.emit(no_damage_multiplier)
 	
 	var deactivated: Array[Powerup] = []
 	for powerup in powerup_states.keys():
@@ -61,6 +62,7 @@ func _process(delta: float) -> void:
 func reset_no_damage_streak() -> void:
 	no_damage_timer = 0.0
 	no_damage_multiplier = 1
+	UISignalBus.no_damage_multiplier_changed.emit(no_damage_multiplier)
 
 func _input(event: InputEvent) -> void:
 	if not is_game_started:
@@ -88,7 +90,7 @@ func reset_level_states() -> void:
 		reset_powerup_state(powerup)
 
 func reset_powerup_state(powerup: Powerup) -> void:
-	powerup_states[powerup]["current_points"] = false
+	powerup_states[powerup]["current_points"] = 0
 	powerup_states[powerup]["powerup_value"] = 0
 	powerup_states[powerup]["is_activated"] = false
 

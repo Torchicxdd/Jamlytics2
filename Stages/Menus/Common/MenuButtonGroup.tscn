@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://djf7xknacbn2e"]
+
+[ext_resource type="Script" uid="uid://bv3xmn0q8y5ka" path="res://Stages/Menus/Common/menu_button_group.gd" id="1_btn01"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_btn01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_normal"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pressed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hover"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_disabled"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[node name="MenuButtonGroup" type="VBoxContainer" unique_id=584852109]
+theme_override_constants/separation = 16
+script = ExtResource("1_btn01")
+
+[node name="Continue" type="Button" parent="." unique_id=2011721465]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Continue"
+
+[node name="Restart" type="Button" parent="." unique_id=1998329222]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Restart"
+
+[node name="Levels" type="Button" parent="." unique_id=1198767381]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Levels"
+
+[node name="Audio" type="Button" parent="." unique_id=657603886]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Audio"
+
+[node name="Options" type="Button" parent="." unique_id=1549562211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Options"
+
+[node name="Quit To Menu" type="Button" parent="." unique_id=1367377077]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_btn01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_normal")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Quit To Menu"

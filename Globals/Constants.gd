@@ -24,6 +24,15 @@ const MENU_PATHS: Dictionary = {
 	"selectable_level": "uid://dx85qtuluuqn8"
 }
 
+const TEXTURE_PATHS: Dictionary = {
+	"fury_progress": "uid://bj180c6jv2hkx",
+	"poise_progress": "uid://ddjj6hrktgeq3",
+	"flow_progress": "uid://dv7n1vxp4gisy",
+	"fury_icon": "uid://djw6egk7jc8kl",
+	"poise_icon": "uid://dlahqososx607",
+	"flow_icon": "uid://diq3ykc72of7b"
+}
+
 const COMPONENT_NAMES: Dictionary = {
 	"resize": "ResizeComponent",
 	"velocity": "VelocityComponent"

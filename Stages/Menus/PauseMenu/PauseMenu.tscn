@@ -1,19 +1,8 @@
 [gd_scene format=3 uid="uid://dievgonlssmex"]
 
 [ext_resource type="Texture2D" uid="uid://c6s2lg8n4aoc8" path="res://Stages/Menus/PauseMenu/PauseTexture.png" id="1_8jwyd"]
-[ext_resource type="Script" uid="uid://cga1xsakrevj7" path="res://Stages/Menus/PauseMenu/pause_menu.gd" id="1_jt6le"]
-[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_8ou3k"]
+[ext_resource type="PackedScene" uid="uid://djf7xknacbn2e" path="res://Stages/Menus/Common/MenuButtonGroup.tscn" id="2_pause"]
 [ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="3_osrhi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jwyd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ou3k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osrhi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jt6le"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4un4r"]
 
 [node name="PauseMenu" type="Control" unique_id=2035707998]
 layout_mode = 3
@@ -22,111 +11,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jt6le")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1000557935]
-layout_mode = 0
-offset_left = 519.0
-offset_top = 384.0
-offset_right = 559.0
-offset_bottom = 424.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.5
+offset_top = -250.5
+offset_right = 470.5
+offset_bottom = 250.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 32
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=492826653]
 layout_mode = 2
 texture = ExtResource("1_8jwyd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=811609930]
+[node name="MenuButtonGroup" parent="VBoxContainer" unique_id=817992795 instance=ExtResource("2_pause")]
 layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Continue" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1230847798]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Continue"
-
-[node name="Restart" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=607579167]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Restart"
-
-[node name="Levels" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=421234616]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Levels
-"
-
-[node name="Audio" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=154075308]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Audio
-"
-
-[node name="Options" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=451037080]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Options
-"
-
-[node name="Quit To Menu" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1627723691]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
-theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
-theme_override_fonts/font = ExtResource("2_8ou3k")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8jwyd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ou3k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_osrhi")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jt6le")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4un4r")
-text = "Quit To Menu
-"
 
 [node name="Node" type="Node" parent="." unique_id=1267948028]
 script = ExtResource("3_osrhi")

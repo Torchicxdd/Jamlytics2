@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bkg4g88ho4mg0"]
 
-[ext_resource type="PackedScene" uid="uid://c5vlidextufyg" path="res://Hud/CurrentMode/PlayerCurrentMode.tscn" id="1_vkcr1"]
+[ext_resource type="Texture2D" uid="uid://cfkfiljfqhaqq" path="res://Hud/Game/CharacterTexture.png" id="1_v4ukh"]
+[ext_resource type="Texture2D" uid="uid://jym21l0i76on" path="res://Hud/Game/separatorTexture.png" id="2_7jhv2"]
 [ext_resource type="PackedScene" uid="uid://bg7isouxjry64" path="res://Hud/HealthBar/PlayerHealthBar.tscn" id="2_sfqjq"]
 [ext_resource type="PackedScene" uid="uid://b6apwrnfuiplj" path="res://Hud/Points/PlayerPoints.tscn" id="3_v4ukh"]
 [ext_resource type="PackedScene" uid="uid://0c6hiflpvv6l" path="res://Hud/AbilityMeter/AbilityMeter.tscn" id="4_7jhv2"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="6_gaqtg"]
+[ext_resource type="Script" uid="uid://ddiq3p0texvku" path="res://Hud/Game/flow_multiplier.gd" id="7_xcl6o"]
 
 [node name="GameHud" type="Control" unique_id=1085315455]
 layout_mode = 3
@@ -30,33 +33,67 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Control" unique_id=715844382]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 63.0
+offset_bottom = 64.0
+texture = ExtResource("1_v4ukh")
+
 [node name="PlayerHealthBar" parent="MarginContainer/HBoxContainer/Control" unique_id=781142148 instance=ExtResource("2_sfqjq")]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 14.0
-offset_right = 463.0
-offset_bottom = 54.0
+offset_left = 82.0
+offset_top = 18.0
+offset_right = 491.0
+offset_bottom = 58.0
 
-[node name="PlayerCurrentMode" parent="MarginContainer/HBoxContainer/Control" unique_id=975696919 instance=ExtResource("1_vkcr1")]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/Control" unique_id=1182821322]
 layout_mode = 0
+offset_left = 66.0
+offset_top = 26.0
+offset_right = 79.0
+offset_bottom = 39.0
+texture = ExtResource("2_7jhv2")
+
+[node name="AbilityMeter" parent="MarginContainer/HBoxContainer/Control" unique_id=1768102176 instance=ExtResource("4_7jhv2")]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 50.0
+offset_right = 126.0
+offset_bottom = 95.0
+
+[node name="AbilityMeter2" parent="MarginContainer/HBoxContainer/Control" unique_id=479732063 instance=ExtResource("4_7jhv2")]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 50.0
+offset_right = 178.0
+offset_bottom = 95.0
+powerup = 1
+
+[node name="AbilityMeter3" parent="MarginContainer/HBoxContainer/Control" unique_id=1526735806 instance=ExtResource("4_7jhv2")]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 50.0
+offset_right = 231.0
+offset_bottom = 95.0
+powerup = 2
 
 [node name="PlayerPoints" parent="MarginContainer/HBoxContainer/Control" unique_id=495870180 instance=ExtResource("3_v4ukh")]
 layout_mode = 0
-offset_left = 66.0
-offset_top = 54.0
-offset_right = 347.0
-offset_bottom = 103.0
+offset_left = 290.0
+offset_top = 58.0
+offset_right = 429.0
+offset_bottom = 84.0
 
-[node name="AbilityMeter" parent="MarginContainer/HBoxContainer" unique_id=1768102176 instance=ExtResource("4_7jhv2")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AbilityMeter2" parent="MarginContainer/HBoxContainer" unique_id=1334619059 instance=ExtResource("4_7jhv2")]
-layout_mode = 2
-size_flags_horizontal = 3
-powerup = 1
-
-[node name="AbilityMeter3" parent="MarginContainer/HBoxContainer" unique_id=2036713401 instance=ExtResource("4_7jhv2")]
-layout_mode = 2
-size_flags_horizontal = 3
-powerup = 2
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Control" unique_id=890825120]
+layout_mode = 1
+offset_left = 241.0
+offset_top = 59.0
+offset_right = 281.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.21960784, 0.7529412, 0.8980392, 1)
+theme_override_fonts/font = ExtResource("6_gaqtg")
+theme_override_font_sizes/font_size = 18
+text = "x1"
+script = ExtResource("7_xcl6o")

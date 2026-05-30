@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0dqtn0haqja"
-path="res://.godot/imported/default_mode.png-17c32999423526cbf7031b09dbe433f6.ctex"
+uid="uid://jym21l0i76on"
+path="res://.godot/imported/separatorTexture.png-0a979718e4a02c12fc3542c7136aca61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hud/CurrentMode/default_mode.png"
-dest_files=["res://.godot/imported/default_mode.png-17c32999423526cbf7031b09dbe433f6.ctex"]
+source_file="res://Hud/Game/separatorTexture.png"
+dest_files=["res://.godot/imported/separatorTexture.png-0a979718e4a02c12fc3542c7136aca61.ctex"]
 
 [params]
 

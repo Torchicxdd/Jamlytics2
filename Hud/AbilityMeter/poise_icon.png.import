@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcj4d41fcpxh1"
-path="res://.godot/imported/current_mode_background.png-dcbfbade0a9cfd5e50d07b8b440d1d9d.ctex"
+uid="uid://dlahqososx607"
+path="res://.godot/imported/poise_icon.png-d40f355f9c5668d985dcc2ed415e500d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hud/CurrentMode/current_mode_background.png"
-dest_files=["res://.godot/imported/current_mode_background.png-dcbfbade0a9cfd5e50d07b8b440d1d9d.ctex"]
+source_file="res://Hud/AbilityMeter/poise_icon.png"
+dest_files=["res://.godot/imported/poise_icon.png-d40f355f9c5668d985dcc2ed415e500d.ctex"]
 
 [params]
 
