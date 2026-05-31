@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://djf7xknacbn2e" path="res://Stages/Menus/Common/MenuButtonGroup.tscn" id="1_end"]
 [ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="2_end"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_w3cfp"]
+[ext_resource type="Script" uid="uid://ivbohfb5gcbr" path="res://Stages/Menus/EndGameMenu/end_game_menu.gd" id="3_end"]
 
 [node name="EndGameMenu" type="Control" unique_id=869881913]
 layout_mode = 3
@@ -10,6 +12,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_end")
+
+[node name="LevelBackground" type="TextureRect" parent="." unique_id=996924910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1126124171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75000006)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1823456789]
 layout_mode = 1
@@ -25,6 +45,54 @@ offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 32
+
+[node name="TopScoreLabel" type="Label" parent="VBoxContainer" unique_id=-961633963]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_w3cfp")
+theme_override_font_sizes/font_size = 24
+text = "High Score 500 000 PTS"
+uppercase = true
+
+[node name="CurrentScoreLabel" type="Label" parent="VBoxContainer" unique_id=1823228093]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.44313726, 0.6627451, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_w3cfp")
+theme_override_font_sizes/font_size = 96
+text = "320 000 PTS"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1174003361]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Fury" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1580431510]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.13333334, 0.70980394, 0.3254902, 1)
+theme_override_fonts/font = ExtResource("2_w3cfp")
+theme_override_font_sizes/font_size = 24
+text = "Fury: 10 000 PTS"
+uppercase = true
+
+[node name="Poise" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1166299898]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.99607843, 0.31764707, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("2_w3cfp")
+theme_override_font_sizes/font_size = 24
+text = "Poise: 10 000 PTS"
+uppercase = true
+
+[node name="Flow" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1361581454]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.16862746, 0.67058825, 0.80784315, 1)
+theme_override_fonts/font = ExtResource("2_w3cfp")
+theme_override_font_sizes/font_size = 24
+text = "Flow: 10 000 PTS"
+uppercase = true
 
 [node name="MenuButtonGroup" parent="VBoxContainer" unique_id=1829333320 instance=ExtResource("1_end")]
 layout_mode = 2

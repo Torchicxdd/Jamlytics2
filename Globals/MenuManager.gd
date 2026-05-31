@@ -7,6 +7,7 @@ signal on_menu_back_pressed()
 signal open_main_menu()
 signal open_levels_menu(is_faded: bool)
 signal open_death_menu()
+signal open_end_game_menu()
 
 # Settings menus signals
 signal open_audio_settings()

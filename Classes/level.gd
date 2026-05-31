@@ -12,6 +12,7 @@ var _death_start_ms := 0
 func _ready() -> void:
 	SceneLoader.load_finished.connect(_on_scene_loaded)
 	UISignalBus.player_died.connect(_on_player_died)
+	music_player.finished.connect(_on_music_player_finished)
 
 func _on_scene_loaded() -> void:
 	GameManager.is_game_started = true
@@ -41,3 +42,14 @@ func _process(_delta: float) -> void:
 			music_player.stop()
 		Engine.time_scale = 1.0
 		MenuManager.open_death_menu.emit()
+
+func _on_music_player_finished() -> void:
+	var score_data: Dictionary = {
+		"score": GameManager.level_points,
+		"fury": GameManager.powerup_states[GameManager.Powerup.FURY]["current_points"],
+		"poise": GameManager.powerup_states[GameManager.Powerup.POISE]["current_points"],
+		"flow": GameManager.powerup_states[GameManager.Powerup.FLOW]["current_points"],
+		"date_acquired": int(Time.get_unix_time_from_system())
+	}
+	LevelManager.save_level_score(GameManager.current_level_config.level_name, score_data)
+	MenuManager.open_end_game_menu.emit()

@@ -5,10 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bx13wn1tw6qvf" path="res://Stages/Levels/Level1/Config/Level1FocusedTexture.png" id="3_4cbn0"]
 [ext_resource type="Texture2D" uid="uid://c1etj6qhkc1fx" path="res://Stages/Levels/Level1/Config/Level1NormalTexture.png" id="3_h120k"]
 [ext_resource type="Script" uid="uid://bpggn603dypgg" path="res://Configs/level_config.gd" id="4_6g3mh"]
+[ext_resource type="Texture2D" uid="uid://dbhjamedneuab" path="res://Stages/Levels/Level1/Config/screenshot.png" id="5_h8nty"]
 
 [resource]
 script = ExtResource("4_6g3mh")
 ui_path = "uid://bkg4g88ho4mg0"
+level_screenshot = ExtResource("5_h8nty")
 level_path = "uid://dgjcptaxygbh7"
 level_name = "Level 1"
 level_normal_image = ExtResource("3_h120k")

@@ -30,6 +30,7 @@ MenuManager="*uid://kcypk2i3go16"
 GameManager="*uid://ckjvmre75b8qg"
 SettingsManager="*uid://di8rylqouyfmy"
 InputIconProvider="*res://Globals/InputIconProvider.gd"
+LevelManager="*uid://dp8gouoq16trx"
 
 [display]
 

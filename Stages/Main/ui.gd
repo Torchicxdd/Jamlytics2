@@ -8,6 +8,7 @@ func _ready() -> void:
 	MenuManager.open_main_menu.connect(_on_main_menu_open)
 	MenuManager.open_levels_menu.connect(_on_levels_menu_open)
 	MenuManager.open_death_menu.connect(_on_death_menu_open)
+	MenuManager.open_end_game_menu.connect(_on_end_game_menu_open)
 
 func _on_menu_open(menu_type: MenuManager.ROOT_MENU_TYPE) -> void:
 	if menu_type != MenuManager.ROOT_MENU_TYPE.MAIN:
@@ -30,7 +31,7 @@ func _on_levels_menu_open(is_faded: bool) -> void:
 		for child in get_children():
 			child.queue_free()
 		_unpause_world()
-		GameManager.is_game_started = false
+		GameManager.reset_level_states()
 		MenuManager.menu_stack_clear()
 		var level_scene = load(Constants.MENU_PATHS.levels_menu).instantiate()
 		MenuManager.open_menu(level_scene, false)
@@ -43,6 +44,17 @@ func _on_levels_menu_open(is_faded: bool) -> void:
 
 func _on_death_menu_open() -> void:
 	_toggle_pause_world(true, MenuManager.ROOT_MENU_TYPE.DEATH)
+
+func _on_end_game_menu_open() -> void:
+	MenuManager.screen_fade_transition(func():
+		for child in get_children():
+			child.queue_free()
+		_toggle_pause_world(true)
+		MenuManager.menu_stack_clear()
+		var end_game_scene = load(Constants.MENU_PATHS.end_game_menu).instantiate()
+		MenuManager.open_menu(end_game_scene, false)
+		add_child(end_game_scene)
+	)
 
 func _unpause_world() -> void:
 	if GameManager.is_world_paused:
@@ -70,10 +82,10 @@ func _toggle_pause_world(is_paused: bool, root_menu_type = null) -> void:
 	GameManager.is_world_paused = is_paused
 	var mode = Node.PROCESS_MODE_DISABLED if GameManager.is_world_paused else Node.PROCESS_MODE_INHERIT
 	_set_process_mode_recursive(world, mode)
-	if GameManager.is_world_paused and root_menu_type != null:
-		_on_menu_open(root_menu_type)
-	else:
+	if not GameManager.is_world_paused:
 		_on_resume_game()
+	elif root_menu_type != null:
+		_on_menu_open(root_menu_type)
 
 func _set_process_mode_recursive(node: Node, mode: ProcessMode) -> void:
 	node.process_mode = mode

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Levels/Level1/bg.png" id="2_4edty"]
 [ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_87ch2"]
 [ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="2_focus"]
+[ext_resource type="Texture2D" uid="uid://docg42m07tjyd" path="res://Stages/Menus/Levels/highscore_separator.png" id="4_ahpb2"]
 
 [node name="LevelsMenu" type="Control" unique_id=2113038213]
 layout_mode = 3
@@ -42,8 +43,7 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1634435977]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=578965984]
@@ -54,13 +54,67 @@ uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1964362046]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 32
 columns = 4
 
+[node name="Highscore" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=23471075]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Highscore" unique_id=1273495151]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("2_87ch2")
+theme_override_font_sizes/font_size = 18
+text = "High Score"
+uppercase = true
+
+[node name="HighscorePoints" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Highscore" unique_id=1069486941]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("2_87ch2")
+theme_override_font_sizes/font_size = 18
+text = "999 999 999 PTS"
+uppercase = true
+
+[node name="HighscoreDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Highscore" unique_id=104470006]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_87ch2")
+theme_override_font_sizes/font_size = 18
+text = "31/05/2026"
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1174865538]
+layout_mode = 2
+texture = ExtResource("4_ahpb2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1111111111]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoresContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=-2072745074]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=468651705]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Control" unique_id=2049955347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_bottom = 96
+
+[node name="LevelScreenshot" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/MarginContainer" unique_id=1448440250]
+layout_mode = 2
 
 [node name="BackButton" parent="MarginContainer/HBoxContainer/Control" unique_id=1723025850 instance=ExtResource("1_rt7xf")]
 layout_mode = 1

@@ -1,6 +1,6 @@
 extends Node
 
-const SETTINGS_PATH := "user://settings.tres"
+const SETTINGS_PATH: String = "user://settings.tres"
 
 var settings: SettingsConfig
 
