@@ -22,7 +22,7 @@ func _ready() -> void:
 
 	keyboard_btn.focus_mode = Control.FOCUS_ALL
 	controller_btn.focus_mode = Control.FOCUS_ALL
-	keyboard_btn.add_to_group(MenuFocusController.JOYPAD_SKIP_GROUP)
+	keyboard_btn.add_to_group(MenuFocusComponent.JOYPAD_SKIP_GROUP)
 
 	keyboard_btn.pressed.connect(_on_keyboard_btn_pressed)
 	controller_btn.pressed.connect(_on_controller_btn_pressed)

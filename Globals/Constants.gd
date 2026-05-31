@@ -49,3 +49,22 @@ const LEVEL_RESOURCE_PATHS: Dictionary = {
 	"level7": "uid://b065tlrou1dwd",
 	"level8": "uid://be17cdi8vnc5g",
 }
+
+const PLAYER_TEXTURE_PATHS: Dictionary = {
+	"neutral": "uid://b7n380mtn2fkt",
+	"fury": "uid://cbvu8he1h62xo",
+	"poise": "uid://cf6g5mgs8iwc",
+	"flow": "uid://css817yuabhto",
+	"fury_poise": "uid://bak4nuea5w24",
+	"fury_flow": "uid://bqaqr21a50x3b",
+	"poise_flow": "uid://460ndyticmw",
+}
+
+const AUDIO_STREAM_PATHS: Dictionary = {
+	"level_enter": "uid://cc8enkglqyf1v",
+	"menu_navigation": "uid://cxgyuesx8wh5m",
+	"player_damage_taken": "uid://gqd3up6hotd1",
+	"fury_ability": "uid://veeavi2fnfpd",
+	"poise_ability": "uid://da32qbecmy1m4",
+	"flow_ability": "uid://3a1n27dxjctt"
+}

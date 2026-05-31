@@ -8,6 +8,7 @@ enum SHOOTING_TYPE {
 	BEAM
 }
 
+@onready var stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var bullet: PackedScene
 @export var bullet_scale: Vector2 = Vector2(1.0, 1.0)
 @export var bullet_speed: float = 1000.0
@@ -35,6 +36,7 @@ func shoot() -> void:
 		_shoot_type(type)
 
 func _shoot_type(type: SHOOTING_TYPE) -> void:
+	stream_player.play()
 	match type:
 		SHOOTING_TYPE.STRAIGHT:
 			for i in bullet_count:

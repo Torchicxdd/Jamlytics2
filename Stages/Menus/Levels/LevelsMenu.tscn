@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="1_rt7xf"]
 [ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Levels/Level1/bg.png" id="2_4edty"]
 [ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_87ch2"]
-[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="2_focus"]
 [ext_resource type="Texture2D" uid="uid://docg42m07tjyd" path="res://Stages/Menus/Levels/highscore_separator.png" id="4_ahpb2"]
+[ext_resource type="PackedScene" uid="uid://csbbvmvoo6bde" path="res://Components/MenuFocusComponent.tscn" id="6_ahpb2"]
 
 [node name="LevelsMenu" type="Control" unique_id=2113038213]
 layout_mode = 3
@@ -128,5 +128,4 @@ offset_top = -38.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="MenuFocusController" type="Node" parent="." unique_id=4]
-script = ExtResource("2_focus")
+[node name="MenuFocusComponent" parent="." unique_id=1831756390 instance=ExtResource("6_ahpb2")]

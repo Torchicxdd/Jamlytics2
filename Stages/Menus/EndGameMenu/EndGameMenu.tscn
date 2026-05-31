@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dgmfomqqbeecv"]
 
 [ext_resource type="PackedScene" uid="uid://djf7xknacbn2e" path="res://Stages/Menus/Common/MenuButtonGroup.tscn" id="1_end"]
-[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="2_end"]
 [ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_w3cfp"]
 [ext_resource type="Script" uid="uid://ivbohfb5gcbr" path="res://Stages/Menus/EndGameMenu/end_game_menu.gd" id="3_end"]
+[ext_resource type="PackedScene" uid="uid://csbbvmvoo6bde" path="res://Components/MenuFocusComponent.tscn" id="4_w3cfp"]
 
 [node name="EndGameMenu" type="Control" unique_id=869881913]
 layout_mode = 3
@@ -98,5 +98,4 @@ uppercase = true
 layout_mode = 2
 show_continue = false
 
-[node name="MenuFocusController" type="Node" parent="." unique_id=1734567890]
-script = ExtResource("2_end")
+[node name="MenuFocusComponent" parent="." unique_id=1831756390 instance=ExtResource("4_w3cfp")]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://csbbvmvoo6bde"]
+
+[ext_resource type="Script" uid="uid://cv1wx1lwqowaq" path="res://Components/menu_focus_component.gd" id="1_4vit6"]
+
+[node name="MenuFocusComponent" type="Node" unique_id=1831756390]
+script = ExtResource("1_4vit6")

@@ -1,6 +1,12 @@
 class_name PowerupComponent
 extends Node
 
+const poise_ability = preload(Constants.AUDIO_STREAM_PATHS.poise_ability)
+const fury_ability = preload(Constants.AUDIO_STREAM_PATHS.fury_ability)
+const flow_ability = preload(Constants.AUDIO_STREAM_PATHS.flow_ability)
+
+@onready var stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 @export var shooting_component: ShootingComponent
 @export var health_component: HealthComponent
 @export var grazing_area: Area2D
@@ -18,12 +24,15 @@ func _on_powerups_activated(powerups: Array[GameManager.Powerup]) -> void:
 	for powerup in powerups:
 		match powerup:
 			GameManager.Powerup.FURY:
+				AudioManager.play_sfx(fury_ability)
 				shooting_component.add_shooting_type(ShootingComponent.SHOOTING_TYPE.SPREAD)
 				shooting_component.bullet_spawned.connect(_on_bullet_spawned_fury)
 			GameManager.Powerup.POISE:
+				AudioManager.play_sfx(poise_ability)
 				shooting_component.add_shooting_type(ShootingComponent.SHOOTING_TYPE.RADIAL)
 				_clear_bullets_around_player()
 			GameManager.Powerup.FLOW:
+				AudioManager.play_sfx(flow_ability)
 				shooting_component.add_shooting_type(ShootingComponent.SHOOTING_TYPE.BEAM)
 				_set_graze_radius(_base_graze_radius * 1.5)
 

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://ckonqh3tsjbfv"]
 
 [ext_resource type="Script" uid="uid://p6ax8ooa6ofw" path="res://Components/shooting_component.gd" id="1_owxoe"]
+[ext_resource type="AudioStream" uid="uid://hbplctwd6i5n" path="res://Audio/bullet_shooting.wav" id="2_6o8lb"]
 
 [node name="ShootingComponent" type="Node2D" unique_id=1089542001]
 script = ExtResource("1_owxoe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2146491954]
+stream = ExtResource("2_6o8lb")
+bus = &"SFX"

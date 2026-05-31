@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://di26qhqeujt0e" path="res://Stages/Menus/MainMenu/main_menu.gd" id="1_w0tgi"]
 [ext_resource type="Texture2D" uid="uid://j0x3pk7spdk8" path="res://Stages/Menus/MainMenu/game_logo.png" id="2_3wlyv"]
 [ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="3_67dbw"]
-[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="4_focus"]
+[ext_resource type="PackedScene" uid="uid://csbbvmvoo6bde" path="res://Components/MenuFocusComponent.tscn" id="4_67dbw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxv1a"]
 
@@ -145,5 +145,4 @@ text = "Exit Game
 "
 alignment = 0
 
-[node name="MenuFocusController" type="Node" parent="." unique_id=1]
-script = ExtResource("4_focus")
+[node name="MenuFocusComponent" parent="." unique_id=1831756390 instance=ExtResource("4_67dbw")]

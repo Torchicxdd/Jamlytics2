@@ -11,6 +11,7 @@ const icon_flow = preload(Constants.TEXTURE_PATHS.flow_icon)
 @export var powerup: GameManager.Powerup
 
 var _tween: Tween
+var _target_value: float = 0.0
 
 func _ready() -> void:
 	max_value = GameManager.POWERUP_MAX_VALUE
@@ -48,9 +49,11 @@ func _on_powerup_value_changed(powerup: GameManager.Powerup, amount: float) -> v
 		return
 
 	if amount > 0:
+		_target_value = clampf(_target_value + amount, 0.0, max_value)
 		if _tween:
 			_tween.kill()
 		_tween = create_tween()
-		_tween.tween_property(self, "value", value + amount, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+		_tween.tween_property(self, "value", _target_value, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	else:
-		value += amount
+		_target_value = clampf(_target_value + amount, 0.0, max_value)
+		value = _target_value

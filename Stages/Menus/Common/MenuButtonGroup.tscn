@@ -85,7 +85,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_pressed")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_hover")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_disabled")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
-text = "Options"
+text = "Input Settings"
 
 [node name="Quit To Menu" type="Button" parent="." unique_id=1367377077]
 layout_mode = 2

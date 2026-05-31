@@ -7,6 +7,9 @@
 
 [resource]
 script = ExtResource("3_ldoso")
+ui_path = "uid://bkg4g88ho4mg0"
+level_path = "uid://dq2cptaxygbh8"
+level_name = "Level 2"
 level_normal_image = ExtResource("2_edefy")
 level_focused_image = ExtResource("2_ldoso")
 metadata/_custom_type_script = "uid://bpggn603dypgg"

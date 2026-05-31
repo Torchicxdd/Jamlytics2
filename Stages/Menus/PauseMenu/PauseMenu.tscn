@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6s2lg8n4aoc8" path="res://Stages/Menus/PauseMenu/PauseTexture.png" id="1_8jwyd"]
 [ext_resource type="PackedScene" uid="uid://djf7xknacbn2e" path="res://Stages/Menus/Common/MenuButtonGroup.tscn" id="2_pause"]
-[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="3_osrhi"]
+[ext_resource type="PackedScene" uid="uid://csbbvmvoo6bde" path="res://Components/MenuFocusComponent.tscn" id="3_osrhi"]
 
 [node name="PauseMenu" type="Control" unique_id=2035707998]
 layout_mode = 3
@@ -34,5 +34,4 @@ texture = ExtResource("1_8jwyd")
 [node name="MenuButtonGroup" parent="VBoxContainer" unique_id=817992795 instance=ExtResource("2_pause")]
 layout_mode = 2
 
-[node name="Node" type="Node" parent="." unique_id=1267948028]
-script = ExtResource("3_osrhi")
+[node name="MenuFocusComponent" parent="." unique_id=1831756390 instance=ExtResource("3_osrhi")]

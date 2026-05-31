@@ -1,22 +1,24 @@
-class_name MenuFocusController
+class_name MenuFocusComponent
 extends Node
+
+const menu_navigation_sfx = preload(Constants.AUDIO_STREAM_PATHS.menu_navigation)
 
 const JOYPAD_SKIP_GROUP := "menu_joypad_skip"
 const _JOY_AXIS_DEADZONE := 0.5
 
 @export var focusables: Array[Control] = []
-
 @export var default_focusable: Control
 
 var _menu: Control
 var _using_mouse: bool = false
 var _using_joypad: bool = false
 var _last_focused: Control
+var _suppress_focus_sound: bool = false
 
 func _ready() -> void:
 	_menu = get_parent() as Control
 	if _menu == null:
-		push_warning("MenuFocusController: parent must be a Control.")
+		push_warning("MenuFocusComponent: parent must be a Control.")
 		return
 
 	_menu.visibility_changed.connect(_on_visibility_changed)
@@ -39,6 +41,7 @@ func _setup() -> void:
 	if _menu.is_visible_in_tree():
 		var target := _pick_focus_target()
 		if target:
+			_suppress_focus_sound = true
 			target.grab_focus.call_deferred()
 
 func _collect_focusables(node: Node) -> void:
@@ -52,6 +55,10 @@ func _on_focusable_hovered(control: Control) -> void:
 
 func _on_focusable_focused(control: Control) -> void:
 	_last_focused = control
+	if _suppress_focus_sound:
+		_suppress_focus_sound = false
+		return
+	AudioManager.play_sfx(menu_navigation_sfx, false)
 
 func _input(event: InputEvent) -> void:
 	if _menu == null or not _menu.is_visible_in_tree():
@@ -77,6 +84,7 @@ func _restore_focus_if_needed(event: InputEvent = null) -> void:
 	if get_viewport().gui_get_focus_owner() == null:
 		var target := _pick_focus_target()
 		if target:
+			_suppress_focus_sound = true
 			target.grab_focus()
 			if event == null or not event.is_action("ui_cancel"):
 				get_viewport().set_input_as_handled()
@@ -114,4 +122,5 @@ func _on_visibility_changed() -> void:
 	if _menu.visible and not _using_mouse:
 		var target := _pick_focus_target()
 		if target:
+			_suppress_focus_sound = true
 			target.grab_focus()

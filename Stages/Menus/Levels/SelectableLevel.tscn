@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dx85qtuluuqn8"]
 
 [ext_resource type="Script" uid="uid://cmcadhls2lld" path="res://Stages/Menus/Levels/selectable_level.gd" id="1_ifiig"]
+[ext_resource type="AudioStream" uid="uid://cc8enkglqyf1v" path="res://Audio/level_enter.wav" id="2_kqr2c"]
 
 [node name="SelectableLevel" type="TextureButton" unique_id=1593344942]
 script = ExtResource("1_ifiig")
+on_select_stream = ExtResource("2_kqr2c")

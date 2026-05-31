@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dq2cptaxygbh8"]
+
+[ext_resource type="PackedScene" uid="uid://c8htuj1mqlnsu" path="res://Stages/Common/LevelLimit.tscn" id="1_7p6ks"]
+[ext_resource type="Script" uid="uid://b7k2qaxq3mn4d" path="res://Stages/Levels/Level2/level_2.gd" id="1_l6h6a"]
+[ext_resource type="Texture2D" uid="uid://cq3bvi3rcihyi" path="res://Stages/Levels/Level1/bg.png" id="2_3cwmo"]
+[ext_resource type="PackedScene" uid="uid://cf5q1scjv6lwt" path="res://Entities/Player/Player.tscn" id="3_433hs"]
+[ext_resource type="PackedScene" uid="uid://c75a7hqy8htgf" path="res://Stages/Common/ParallaxBackground.tscn" id="4_ancos"]
+[ext_resource type="AudioStream" uid="uid://bjk7fxxat5brb" path="res://Stages/Levels/Level2/level_2_song.mp3" id="6_g6q1v"]
+[ext_resource type="PackedScene" uid="uid://bvf7t20vwshqn" path="res://Components/FormationComponent.tscn" id="7_v8ovw"]
+[ext_resource type="PackedScene" uid="uid://ce6o8am7n8ms4" path="res://Entities/WaveManager/WavePlayer.tscn" id="8_l6h6a"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 178.296
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_base"]
+_data = {
+&"RESET": SubResource("Animation_reset")
+}
+
+[node name="Level2" type="Node2D" unique_id=788206687 node_paths=PackedStringArray("music_player")]
+script = ExtResource("1_l6h6a")
+music_player = NodePath("AudioStreamPlayer")
+
+[node name="LevelArchitecture" type="Node2D" parent="." unique_id=1012730504]
+
+[node name="ParallaxBackground" parent="LevelArchitecture" unique_id=1047498705 instance=ExtResource("4_ancos")]
+visible_background = ExtResource("2_3cwmo")
+near_background = ExtResource("2_3cwmo")
+far_background = ExtResource("2_3cwmo")
+is_enabled = true
+
+[node name="LevelLimit" parent="LevelArchitecture" unique_id=1303801298 instance=ExtResource("1_7p6ks")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=866845207]
+stream = ExtResource("6_g6q1v")
+autoplay = true
+bus = &"Music"
+
+[node name="WavePlayer" parent="." unique_id=901209166 instance=ExtResource("8_l6h6a")]
+libraries/ = SubResource("AnimationLibrary_base")
+autoplay = &"RESET"
+music = ExtResource("6_g6q1v")
+
+[node name="FormationComponent" parent="." unique_id=1958382734 instance=ExtResource("7_v8ovw")]
+
+[node name="Player" parent="." unique_id=1083750269 instance=ExtResource("3_433hs")]
+position = Vector2(304, 568)

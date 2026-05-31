@@ -17,3 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_babl8")
 world = NodePath("../World")
+
+[node name="Node" type="Node" parent="." unique_id=120950357]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node" unique_id=734269684]

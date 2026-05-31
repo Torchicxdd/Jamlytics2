@@ -28,6 +28,8 @@ func _ready() -> void:
 func take_damage(amount: int) -> void:
 	if is_damageable:
 		health -= amount
+	else:
+		damaged.emit(0)
 
 func heal(amount: int) -> void:
 	health += amount

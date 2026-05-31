@@ -36,7 +36,7 @@ func _on_levels_menu_open(is_faded: bool) -> void:
 		var level_scene = load(Constants.MENU_PATHS.levels_menu).instantiate()
 		MenuManager.open_menu(level_scene, false)
 		add_child(level_scene)
-	
+
 	if is_faded:
 		MenuManager.screen_fade_transition(open_levels)
 	else:

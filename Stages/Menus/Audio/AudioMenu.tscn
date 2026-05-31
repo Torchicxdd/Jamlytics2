@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_mn407"]
 [ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_vahf6"]
 [ext_resource type="Texture2D" uid="uid://vg8pqaxtwa4n" path="res://Stages/Menus/Audio/AudioVerticalBar.png" id="3_ch5qv"]
-[ext_resource type="Script" uid="uid://b8ci52r6qatea" path="res://Stages/Menus/Common/menu_focus_controller.gd" id="4_focus"]
+[ext_resource type="PackedScene" uid="uid://csbbvmvoo6bde" path="res://Components/MenuFocusComponent.tscn" id="6_jfq16"]
 
 [node name="AudioMenu" type="Control" unique_id=703233102]
 layout_mode = 3
@@ -103,5 +103,4 @@ offset_top = -38.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="MenuFocusController" type="Node" parent="." unique_id=3]
-script = ExtResource("4_focus")
+[node name="MenuFocusComponent" parent="." unique_id=1831756390 instance=ExtResource("6_jfq16")]

@@ -1,6 +1,7 @@
 class_name SelectableLevel
 extends TextureButton
 
+const level_enter_sfx = preload(Constants.AUDIO_STREAM_PATHS.level_enter)
 const SELECTABLE_LEVEL_SCENE: PackedScene = preload(Constants.MENU_PATHS.selectable_level)
 
 @export var level_config: LevelConfig
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 	if not level_config.level_path.is_empty():
 		var on_level_click = func() -> void:
+			AudioManager.play_sfx(level_enter_sfx)
 			GameManager.current_level_config = level_config
 			SceneLoader.load_scene(level_config.level_path)
 
