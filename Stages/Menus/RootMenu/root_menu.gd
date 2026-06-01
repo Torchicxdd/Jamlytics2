@@ -11,6 +11,7 @@ var root_menu_type: MenuManager.ROOT_MENU_TYPE
 @onready var audio_menu = $menu_wrapper/AudioMenu
 @onready var input_menu = $menu_wrapper/InputMenu
 @onready var tutorial_menu = $menu_wrapper/TutorialMenu
+@onready var credits_menu = $menu_wrapper/CreditsMenu
 
 var current_menu: Control
 
@@ -24,7 +25,8 @@ func _ready() -> void:
 	MenuManager.open_audio_settings.connect(_on_open_audio_settings)
 	MenuManager.open_input_settings.connect(_on_open_input_settings)
 	MenuManager.open_tutorial.connect(_on_open_tutorial)
-	
+	MenuManager.open_credits.connect(_on_open_credits)
+
 	match root_menu_type:
 		MenuManager.ROOT_MENU_TYPE.MAIN:
 			main_background.show()
@@ -71,3 +73,6 @@ func _on_open_input_settings():
 
 func _on_open_tutorial():
 	MenuManager.open_menu(tutorial_menu)
+
+func _on_open_credits():
+	MenuManager.open_menu(credits_menu)

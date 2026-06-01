@@ -55,6 +55,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuy58"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crd3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crd4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crd5"]
+
 [node name="MainMenu" type="Control" unique_id=499520224]
 layout_mode = 3
 anchors_preset = 15
@@ -120,6 +130,22 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tut3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_tut4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tut5")
 text = "Tutorial"
+alignment = 0
+
+[node name="Credits" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=555666001]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_crd1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_crd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_crd3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_crd4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crd5")
+text = "Credits"
 alignment = 0
 
 [node name="Audio" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131273]

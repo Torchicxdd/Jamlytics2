@@ -65,6 +65,7 @@ speed = 1000.0
 focus_speed_multiplier = 0.33
 
 [node name="HealthComponent" parent="." unique_id=1908907186 instance=ExtResource("5_hj1c0")]
+max_health = 10000
 
 [node name="ShootingComponent" parent="." unique_id=1089542001 node_paths=PackedStringArray("bullet_starting_positions") instance=ExtResource("8_x44r4")]
 bullet = ExtResource("9_761t5")

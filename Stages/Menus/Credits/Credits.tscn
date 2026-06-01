@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://cred1tsmenu1"]
+
+[ext_resource type="Script" uid="uid://dadh6a684j1y8" path="res://Stages/Menus/Credits/credits.gd" id="1_cred"]
+[ext_resource type="FontFile" uid="uid://bx420vyjej7d8" path="res://themes/Fonts/Belgrano/Belgrano-Regular.ttf" id="2_cred"]
+[ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="3_cred"]
+[ext_resource type="Texture2D" uid="uid://cbhdrydm5ti08" path="res://themes/Logo/itchio-textless-white.svg" id="3_rua2e"]
+[ext_resource type="Texture2D" uid="uid://det14hwf1fdsf" path="res://themes/Logo/twitter.png" id="4_643lb"]
+[ext_resource type="Texture2D" uid="uid://cjo401nth6bdn" path="res://themes/Logo/youtube.png" id="5_oc4da"]
+[ext_resource type="Texture2D" uid="uid://cuphtvh35o6yp" path="res://themes/Logo/soundcloud.svg" id="6_7iwl0"]
+
+[node name="Credits" type="Control" unique_id=987654001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cred")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=987654002]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=987654003]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("2_cred")
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Dev1Row" type="HBoxContainer" parent="VBoxContainer" unique_id=987654004]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Dev1Name" type="Label" parent="VBoxContainer/Dev1Row" unique_id=987654005]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_fonts/font = ExtResource("2_cred")
+theme_override_font_sizes/font_size = 29
+text = "Game Developer: Torchicxdd"
+
+[node name="Control" type="Control" parent="VBoxContainer/Dev1Row" unique_id=760355917]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Dev1Icon" type="TextureButton" parent="VBoxContainer/Dev1Row/Control" unique_id=987654006]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_top = -12.0
+offset_right = 262.0
+offset_bottom = 223.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("3_rua2e")
+
+[node name="Dev2Row" type="HBoxContainer" parent="VBoxContainer" unique_id=987654007]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Dev2Name" type="Label" parent="VBoxContainer/Dev2Row" unique_id=987654008]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_fonts/font = ExtResource("2_cred")
+theme_override_font_sizes/font_size = 29
+text = "UI Design & Art Direction: EKB9816"
+
+[node name="Control" type="Control" parent="VBoxContainer/Dev2Row" unique_id=252754728]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Dev2Icon" type="TextureButton" parent="VBoxContainer/Dev2Row/Control" unique_id=987654009]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_top = -5.0
+offset_right = 3840.0
+offset_bottom = 3154.0
+scale = Vector2(0.015, 0.015)
+texture_normal = ExtResource("4_643lb")
+
+[node name="Dev3Row" type="HBoxContainer" parent="VBoxContainer" unique_id=987654010]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Dev3Name" type="Label" parent="VBoxContainer/Dev3Row" unique_id=987654011]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_fonts/font = ExtResource("2_cred")
+theme_override_font_sizes/font_size = 29
+text = "Music Producer: Kunyro"
+
+[node name="Control" type="Control" parent="VBoxContainer/Dev3Row" unique_id=1010032514]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Dev3Icon" type="TextureButton" parent="VBoxContainer/Dev3Row/Control" unique_id=987654012]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2689.0
+scale = Vector2(0.015, 0.015)
+texture_normal = ExtResource("5_oc4da")
+
+[node name="Dev3Icon2" type="TextureButton" parent="VBoxContainer/Dev3Row/Control" unique_id=689529156]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 67.05
+offset_top = -2.74
+offset_right = 3907.05
+offset_bottom = 2686.26
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("6_7iwl0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=987654013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=987654014]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackButton" parent="MarginContainer/Control" unique_id=987654015 instance=ExtResource("3_cred")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_right = 118.0
+grow_vertical = 0

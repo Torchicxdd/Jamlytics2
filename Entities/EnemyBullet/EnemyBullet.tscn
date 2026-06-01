@@ -132,7 +132,7 @@ metadata/_custom_type_script = "uid://cq2s5aimu6dfn"
 [node name="CoverageHurtboxComponent" parent="." unique_id=277223054 instance=ExtResource("6_dtidn")]
 collision_layer = 4
 collision_mask = 2
-damage = 1
+damage = 1000
 
 [node name="BulletCollision" type="CollisionShape2D" parent="CoverageHurtboxComponent" unique_id=328775204]
 scale = Vector2(0.2, 0.2)

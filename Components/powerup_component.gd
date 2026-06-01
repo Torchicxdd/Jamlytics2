@@ -5,6 +5,8 @@ const poise_ability = preload(Constants.AUDIO_STREAM_PATHS.poise_ability)
 const fury_ability = preload(Constants.AUDIO_STREAM_PATHS.fury_ability)
 const flow_ability = preload(Constants.AUDIO_STREAM_PATHS.flow_ability)
 
+const FURY_HEALING = 5
+
 @onready var stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var shooting_component: ShootingComponent
@@ -52,7 +54,7 @@ func _on_powerups_deactivated(powerups: Array[GameManager.Powerup]) -> void:
 func _on_bullet_spawned_fury(spawned_bullet: Bullet) -> void:
 	var dc := spawned_bullet.get_node_or_null("DamageComponent") as DamageComponent
 	if dc:
-		dc.damaged.connect(func(): health_component.heal(1))
+		dc.damaged.connect(func(): health_component.heal(FURY_HEALING))
 
 func _clear_bullets_around_player() -> void:
 	var space_state := grazing_area.get_world_2d().direct_space_state

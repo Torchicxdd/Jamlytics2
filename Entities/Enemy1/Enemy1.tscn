@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djlxphyer30qi" path="res://Components/HurtboxComponent.tscn" id="3_4g2qm"]
 [ext_resource type="PackedScene" uid="uid://bvhjl3fvttyj" path="res://Components/DeathComponent.tscn" id="4_ewq8o"]
 [ext_resource type="PackedScene" uid="uid://bal2dqypf7j5g" path="res://Components/DespawnOverTimeComponent.tscn" id="5_47lke"]
+[ext_resource type="PackedScene" uid="uid://cdmgflash01" path="res://Components/DamageFlashComponent.tscn" id="6_dmgflash"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7fld"]
 atlas = ExtResource("2_k1vp1")
@@ -149,6 +150,9 @@ visible_on_screen_notifier = NodePath("../VisibleOnScreenNotifier2D")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=848423927]
 rect = Rect2(-96, -64, 200, 144)
+
+[node name="DamageFlashComponent" parent="." unique_id=811043201 node_paths=PackedStringArray("sprite") instance=ExtResource("6_dmgflash")]
+sprite = NodePath("../AnimatedSprite2D")
 
 [node name="BulletMarker" type="Marker2D" parent="." unique_id=5637503]
 position = Vector2(-101, 22)

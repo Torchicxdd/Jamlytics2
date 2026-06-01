@@ -2,6 +2,7 @@ extends Control
 
 @onready var levels = $VBoxContainer2/VBoxContainer/Levels
 @onready var tutorial = $VBoxContainer2/VBoxContainer/Tutorial
+@onready var credits = $VBoxContainer2/VBoxContainer/Credits
 @onready var audio = $VBoxContainer2/VBoxContainer/Audio
 @onready var input_settings = $VBoxContainer2/VBoxContainer/InputSettings
 @onready var exit = $VBoxContainer2/VBoxContainer/ExitGame
@@ -9,6 +10,7 @@ extends Control
 func _ready() -> void:
 	levels.pressed.connect(_on_levels_pressed)
 	tutorial.pressed.connect(_on_tutorial_pressed)
+	credits.pressed.connect(_on_credits_pressed)
 	audio.pressed.connect(_on_audio_pressed)
 	input_settings.pressed.connect(_on_input_settings_pressed)
 	exit.pressed.connect(_on_exit_pressed)
@@ -18,6 +20,9 @@ func _on_levels_pressed() -> void:
 
 func _on_tutorial_pressed() -> void:
 	MenuManager.open_tutorial.emit()
+
+func _on_credits_pressed() -> void:
+	MenuManager.open_credits.emit()
 
 func _on_audio_pressed() -> void:
 	MenuManager.open_audio_settings.emit()

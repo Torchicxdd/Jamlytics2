@@ -17,7 +17,7 @@ var powerup_states: Dictionary[Powerup, Dictionary] = {
 }
 
 const NO_DAMAGE_TICK_INTERVAL: float = 2
-const NO_DAMAGE_BASE_POINTS: int = 25
+const NO_DAMAGE_BASE_POINTS: int = 75
 var no_damage_timer: float = 0.0
 var no_damage_multiplier: int = 1
 
@@ -65,7 +65,7 @@ func reset_no_damage_streak() -> void:
 	UISignalBus.no_damage_multiplier_changed.emit(no_damage_multiplier)
 
 func _input(event: InputEvent) -> void:
-	if not is_game_started:
+	if not is_game_started or is_world_paused:
 		return
 	
 	var powerups: Array[Powerup] = []
