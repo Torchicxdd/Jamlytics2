@@ -23,7 +23,8 @@ const MENU_PATHS: Dictionary = {
 	"input_menu": "uid://c4mksxfwpkihk",
 	"input_rebind": "uid://dsa44yacw8cb3",
 	"selectable_level": "uid://dx85qtuluuqn8",
-	"end_game_menu": "uid://dgmfomqqbeecv"
+	"end_game_menu": "uid://dgmfomqqbeecv",
+	"tutorial_menu": "uid://ctutorialmenu1"
 }
 
 const TEXTURE_PATHS: Dictionary = {

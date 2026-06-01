@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvkg18v8eerfb" path="res://Stages/Menus/DeathMenu/death_background.png" id="3_j1236"]
 [ext_resource type="PackedScene" uid="uid://bkr8y5fs0wg8c" path="res://Stages/Menus/Audio/AudioMenu.tscn" id="4_o3j03"]
 [ext_resource type="PackedScene" uid="uid://c4mksxfwpkihk" path="res://Stages/Menus/InputMenu/InputMenu.tscn" id="6_rxpjs"]
+[ext_resource type="PackedScene" uid="uid://ctutorialmenu1" path="res://Stages/Menus/Tutorial/Tutorial.tscn" id="7_tut"]
 
 [node name="RootMenu" type="Control" unique_id=1614342080]
 layout_mode = 3
@@ -61,5 +62,9 @@ visible = false
 layout_mode = 1
 
 [node name="AudioMenu" parent="menu_wrapper" unique_id=703233102 instance=ExtResource("4_o3j03")]
+visible = false
+layout_mode = 1
+
+[node name="TutorialMenu" parent="menu_wrapper" unique_id=999111222 instance=ExtResource("7_tut")]
 visible = false
 layout_mode = 1

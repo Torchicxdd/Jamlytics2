@@ -19,6 +19,7 @@ size = Vector2(261, 127)
 radius = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3uyv8"]
+radius = 37.142857
 
 [node name="Player" type="CharacterBody2D" unique_id=390965236]
 collision_layer = 2
@@ -43,18 +44,19 @@ script = ExtResource("4_hacra")
 shape = SubResource("CircleShape2D_lu8i8")
 
 [node name="CoreSprite" type="Sprite2D" parent="." unique_id=1932929985]
-position = Vector2(1.5, 1.5)
-scale = Vector2(1.0652174, 1.0434783)
+position = Vector2(1.75, 1.745)
+scale = Vector2(0.35, 0.343)
 texture = ExtResource("2_1des2")
 
 [node name="HurtboxComponent" parent="CoreSprite" unique_id=1373001464 node_paths=PackedStringArray("health_component") instance=ExtResource("3_t38ms")]
+position = Vector2(-5, -2.1720111)
 scale = Vector2(24.380953, 24.380953)
 collision_layer = 2
 collision_mask = 0
 health_component = NodePath("../../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoreSprite/HurtboxComponent" unique_id=1556242971]
-position = Vector2(-0.057756703, -0.01965332)
+position = Vector2(0, -2.9802322e-08)
 scale = Vector2(0.041015625, 0.041015625)
 shape = SubResource("CircleShape2D_3uyv8")
 

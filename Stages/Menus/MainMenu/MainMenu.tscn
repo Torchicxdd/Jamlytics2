@@ -15,6 +15,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ofch"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tut1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tut2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tut3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tut4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tut5"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo46c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0tgi"]
@@ -94,6 +104,22 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_k7ap5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_0q0u8")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6ofch")
 text = "Levels"
+alignment = 0
+
+[node name="Tutorial" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=123456789]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.54901963, 0.60784316, 0.70980394, 1)
+theme_override_colors/font_focus_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.98039216, 0.98039216, 1)
+theme_override_fonts/font = ExtResource("3_67dbw")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tut1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tut2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tut3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tut4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tut5")
+text = "Tutorial"
 alignment = 0
 
 [node name="Audio" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1153131273]

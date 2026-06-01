@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ctujr8116xe67"]
+
+[ext_resource type="Texture2D" uid="uid://cu3ja4ebsypiw" path="res://Stages/Menus/Tutorial/tutorial.png" id="1_tut"]
+[ext_resource type="Script" uid="uid://1s0q0ayqwy7i" path="res://Stages/Menus/Tutorial/tutorial.gd" id="1_wrb1r"]
+[ext_resource type="PackedScene" uid="uid://bdt7axx6mm1ka" path="res://Stages/Menus/Common/BackButton.tscn" id="2_j3q0t"]
+
+[node name="Tutorial" type="Control" unique_id=1960297205]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrb1r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=676870064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tut")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=283878508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1168038512]
+layout_mode = 2
+
+[node name="BackButton" parent="MarginContainer/Control" unique_id=1723025850 instance=ExtResource("2_j3q0t")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_right = 118.0
+grow_vertical = 0
