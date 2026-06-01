@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://b6k42bsrpiq5c"]
+
+[ext_resource type="PackedScene" uid="uid://c7vxopvmy4fos" path="res://Entities/Enemy1/Enemy1.tscn" id="1_2618u"]
+[ext_resource type="PackedScene" uid="uid://pr6f2mkb6s4u" path="res://Entities/EnemyBullet/EnemyBullet.tscn" id="1_xlypt"]
+[ext_resource type="SpriteFrames" uid="uid://clrnca46mcg76" path="res://Entities/WolfBoss/wolf_boss_normal_bullet_frames.tres" id="2_sl1i7"]
+[ext_resource type="Script" uid="uid://cn64vgwhcxafo" path="res://Configs/enemy_config.gd" id="2_xlypt"]
+
+[resource]
+script = ExtResource("2_xlypt")
+enemy_scene = ExtResource("1_2618u")
+health = 5
+despawn_timer = 5.0
+despawn_duration = 1.5
+bullet_scene = ExtResource("1_xlypt")
+bullet_sprite_frames = ExtResource("2_sl1i7")
+bullet_scale = Vector2(0.5, 0.5)
+bullet_speed = 400.0
+bullet_count = 14
+shooting_start_delay = 0.5
+is_rotating = true
+rotation_speed = 5.0
+spawn_interval = 0.2
+metadata/_custom_type_script = "uid://cn64vgwhcxafo"

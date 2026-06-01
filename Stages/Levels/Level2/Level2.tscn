@@ -6,42 +6,229 @@
 [ext_resource type="PackedScene" uid="uid://cf5q1scjv6lwt" path="res://Entities/Player/Player.tscn" id="3_433hs"]
 [ext_resource type="PackedScene" uid="uid://c75a7hqy8htgf" path="res://Stages/Common/ParallaxBackground.tscn" id="4_ancos"]
 [ext_resource type="AudioStream" uid="uid://bjk7fxxat5brb" path="res://Stages/Levels/Level2/level_2_song.mp3" id="6_g6q1v"]
+[ext_resource type="Resource" uid="uid://l2i5xcfv6g7n" path="res://Stages/Levels/Level2/Formations/0/formation_0.tres" id="7_7duew"]
 [ext_resource type="PackedScene" uid="uid://bvf7t20vwshqn" path="res://Components/FormationComponent.tscn" id="7_v8ovw"]
 [ext_resource type="PackedScene" uid="uid://ce6o8am7n8ms4" path="res://Entities/WaveManager/WavePlayer.tscn" id="8_l6h6a"]
+[ext_resource type="PackedScene" uid="uid://y1gfd14dkj6q" path="res://Entities/WolfBoss/WolfBoss.tscn" id="25_mhoxu"]
+[ext_resource type="Resource" uid="uid://l2form1" path="res://Stages/Levels/Level2/Formations/1/formation_1.tres" id="f1"]
+[ext_resource type="Resource" uid="uid://l2form2" path="res://Stages/Levels/Level2/Formations/2/formation_2.tres" id="f2"]
+[ext_resource type="Resource" uid="uid://l2form3" path="res://Stages/Levels/Level2/Formations/3/formation_3.tres" id="f3"]
+[ext_resource type="Resource" uid="uid://l2form4" path="res://Stages/Levels/Level2/Formations/4/formation_4.tres" id="f4"]
+[ext_resource type="Resource" uid="uid://l2form5" path="res://Stages/Levels/Level2/Formations/5/formation_5.tres" id="f5"]
+[ext_resource type="Resource" uid="uid://l2form7" path="res://Stages/Levels/Level2/Formations/7/formation_7.tres" id="f7"]
+[ext_resource type="Resource" uid="uid://l2form8" path="res://Stages/Levels/Level2/Formations/8/formation_8.tres" id="f8"]
+[ext_resource type="Resource" uid="uid://l2form10" path="res://Stages/Levels/Level2/Formations/10/formation_10.tres" id="f10"]
+[ext_resource type="Resource" uid="uid://l2form11" path="res://Stages/Levels/Level2/Formations/11/formation_11.tres" id="f11"]
+[ext_resource type="Resource" uid="uid://l2form12" path="res://Stages/Levels/Level2/Formations/12/formation_12.tres" id="f12"]
+[ext_resource type="Resource" uid="uid://l2form14" path="res://Stages/Levels/Level2/Formations/14/formation_14.tres" id="f14"]
+[ext_resource type="Resource" uid="uid://l2form15" path="res://Stages/Levels/Level2/Formations/15/formation_15.tres" id="f15"]
+[ext_resource type="Resource" uid="uid://l2form16" path="res://Stages/Levels/Level2/Formations/16/formation_16.tres" id="f16"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 178.296
+step = 1.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FormationComponent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 13, 20, 27, 34, 39, 45, 58, 68, 73, 78, 83, 88, 93, 98, 104, 109, 115),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("7_7duew")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f1")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f2")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f3")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f4")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("7_7duew")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f5")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f2")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f7")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f8")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f5")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f10")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f11")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f12")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f3")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f14")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f15")],
+"method": &"spawn_formation"
+}, {
+"args": [ExtResource("f16")],
+"method": &"spawn_formation"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(123.00001, 126.00001, 175.00002),
+"transitions": PackedFloat32Array(1, 6.062855, 6.062855),
+"update": 0,
+"values": [0.0, 0.306, 1.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D/WolfBoss")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(130, 137, 144, 151, 158, 165),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [0, true],
+"method": &"toggle_spawner"
+}, {
+"args": [0, false],
+"method": &"toggle_spawner"
+}, {
+"args": [0, true],
+"method": &"toggle_spawner"
+}, {
+"args": [0, false],
+"method": &"toggle_spawner"
+}, {
+"args": [0, true],
+"method": &"toggle_spawner"
+}, {
+"args": [0, false],
+"method": &"toggle_spawner"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Path2D/PathFollow2D/WolfBoss")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(137, 144, 151, 158, 165, 172),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [1, true],
+"method": &"toggle_spawner"
+}, {
+"args": [1, false],
+"method": &"toggle_spawner"
+}, {
+"args": [1, true],
+"method": &"toggle_spawner"
+}, {
+"args": [1, false],
+"method": &"toggle_spawner"
+}, {
+"args": [1, true],
+"method": &"toggle_spawner"
+}, {
+"args": [1, false],
+"method": &"toggle_spawner"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mhoxu"]
+resource_name = "boss_move_along_path"
+length = 178.296
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.305]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_base"]
 _data = {
-&"RESET": SubResource("Animation_reset")
+&"RESET": SubResource("Animation_reset"),
+&"boss_move_along_path": SubResource("Animation_mhoxu")
 }
 
-[node name="Level2" type="Node2D" unique_id=788206687 node_paths=PackedStringArray("music_player")]
+[sub_resource type="Curve2D" id="Curve2D_mhoxu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2280, 540, 0, 0, 0, 0, 1664, 540, 0, 0, 0, 0, 1664, 192, 0, 0, 0, 0, 1664, 888, 0, 0, 0, 0, 1664, 540)
+}
+point_count = 5
+
+[node name="Level2" type="Node2D" unique_id=1214130080 node_paths=PackedStringArray("music_player")]
 script = ExtResource("1_l6h6a")
 music_player = NodePath("AudioStreamPlayer")
 
-[node name="LevelArchitecture" type="Node2D" parent="." unique_id=1012730504]
+[node name="LevelArchitecture" type="Node2D" parent="." unique_id=1904555990]
 
-[node name="ParallaxBackground" parent="LevelArchitecture" unique_id=1047498705 instance=ExtResource("4_ancos")]
+[node name="ParallaxBackground" parent="LevelArchitecture" unique_id=948102630 instance=ExtResource("4_ancos")]
 visible_background = ExtResource("2_3cwmo")
 near_background = ExtResource("2_3cwmo")
 far_background = ExtResource("2_3cwmo")
 is_enabled = true
 
-[node name="LevelLimit" parent="LevelArchitecture" unique_id=1303801298 instance=ExtResource("1_7p6ks")]
+[node name="LevelLimit" parent="LevelArchitecture" unique_id=1122201973 instance=ExtResource("1_7p6ks")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=866845207]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1708279758]
 stream = ExtResource("6_g6q1v")
 autoplay = true
 bus = &"Music"
 
-[node name="WavePlayer" parent="." unique_id=901209166 instance=ExtResource("8_l6h6a")]
+[node name="WavePlayer" parent="." unique_id=1322806896 instance=ExtResource("8_l6h6a")]
 libraries/ = SubResource("AnimationLibrary_base")
 autoplay = &"RESET"
 music = ExtResource("6_g6q1v")
 
-[node name="FormationComponent" parent="." unique_id=1958382734 instance=ExtResource("7_v8ovw")]
+[node name="FormationComponent" parent="." unique_id=359545223 instance=ExtResource("7_v8ovw")]
 
-[node name="Player" parent="." unique_id=1083750269 instance=ExtResource("3_433hs")]
+[node name="Player" parent="." unique_id=420014482 instance=ExtResource("3_433hs")]
 position = Vector2(304, 568)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=215100984]
+curve = SubResource("Curve2D_mhoxu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=28069328]
+position = Vector2(2280, 540)
+rotation = 3.1415927
+rotates = false
+loop = false
+
+[node name="WolfBoss" parent="Path2D/PathFollow2D" unique_id=1396904751 instance=ExtResource("25_mhoxu")]
+position = Vector2(-8, 0)
+rotation = 3.1415925

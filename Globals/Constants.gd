@@ -10,6 +10,7 @@ const SCENE_PATHS: Dictionary = {
 	"game_hud": "uid://bkg4g88ho4mg0",
 	"spawner": "uid://bg667a7oky02g",
 	"level_1": "uid://dgjcptaxygbh7",
+	"wolf_boss": "uid://y1gfd14dkj6q"
 }
 
 const MENU_PATHS: Dictionary = {
@@ -58,6 +59,7 @@ const PLAYER_TEXTURE_PATHS: Dictionary = {
 	"fury_poise": "uid://bak4nuea5w24",
 	"fury_flow": "uid://bqaqr21a50x3b",
 	"poise_flow": "uid://460ndyticmw",
+	"all_abilities": "uid://b8t5k4ktwrtd1"
 }
 
 const AUDIO_STREAM_PATHS: Dictionary = {

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://y1gfd14dkj6q"]
+
+[ext_resource type="Script" uid="uid://br0itgaelvoo7" path="res://Entities/WolfBoss/wolf_boss.gd" id="1_qtsu7"]
+[ext_resource type="Texture2D" uid="uid://cbu7v8esru1w3" path="res://Entities/WolfBoss/wolf_boss_texture.png" id="2_w8kl3"]
+[ext_resource type="PackedScene" uid="uid://gkyfmndrnava" path="res://Components/HealthComponent.tscn" id="3_llnnu"]
+[ext_resource type="PackedScene" uid="uid://djlxphyer30qi" path="res://Components/HurtboxComponent.tscn" id="4_qtsu7"]
+[ext_resource type="PackedScene" uid="uid://bg667a7oky02g" path="res://Entities/Spawner/Spawner.tscn" id="5_ey7fd"]
+[ext_resource type="PackedScene" uid="uid://pr6f2mkb6s4u" path="res://Entities/EnemyBullet/EnemyBullet.tscn" id="5_y8be6"]
+[ext_resource type="SpriteFrames" uid="uid://clrnca46mcg76" path="res://Entities/WolfBoss/wolf_boss_normal_bullet_frames.tres" id="7_n757g"]
+[ext_resource type="SpriteFrames" uid="uid://3pgde4xg7u0w" path="res://Entities/WolfBoss/wolf_boss_special_bullet_frames.tres" id="8_054ml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtsu7"]
+size = Vector2(487, 568)
+
+[node name="WolfBoss" type="RigidBody2D" unique_id=1396904751]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_qtsu7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1672457786]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_w8kl3")
+
+[node name="HealthComponent" parent="." unique_id=1908907186 instance=ExtResource("3_llnnu")]
+is_damageable = false
+
+[node name="HurtboxComponent" parent="." unique_id=1373001464 node_paths=PackedStringArray("health_component") instance=ExtResource("4_qtsu7")]
+collision_layer = 8
+collision_mask = 0
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" unique_id=242048263]
+polygon = PackedVector2Array(-231, -14, -220, 5, -208, 16, -124, 52, -98, 130, 13, 253, 154, 323, 259, 323, 257, -250, 212, -233, 117, -189, -10, -128, -81, -98, -139, -108, -165, -157, -166, -81, -177, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182898448]
+position = Vector2(12.5, 36)
+shape = SubResource("RectangleShape2D_qtsu7")
+
+[node name="NormalSpawner" parent="." unique_id=690138998 instance=ExtResource("5_ey7fd")]
+position = Vector2(-216, 8)
+pattern = 1
+bullet_scene = ExtResource("5_y8be6")
+bullet_sprite_frames = ExtResource("7_n757g")
+bullet_speed = 500.0
+bullet_count = 5
+is_oscillating = true
+rotation_speed = 5.0
+spawn_interval = 0.2
+arc_angle = 75.0
+
+[node name="SpecialSpawner" parent="." unique_id=1591850823 instance=ExtResource("5_ey7fd")]
+position = Vector2(-216, 8)
+bullet_scene = ExtResource("5_y8be6")
+bullet_sprite_frames = ExtResource("8_054ml")
+bullet_speed = 500.0
+bullet_count = 14
+is_rotating = true
+rotation_speed = 7.0
+spawn_interval = 0.15

@@ -36,7 +36,8 @@ func spawn_formation(
 			config.enemies[i].is_oscillating,
 			config.enemies[i].rotation_speed,
 			config.enemies[i].spawn_interval,
-			config.enemies[i].arc_angle
+			config.enemies[i].arc_angle,
+			config.enemies[i].base_aim_angle
 		)
 		enemy.add_child(spawner)
 		spawner.global_position = enemy.bullet_marker.global_position

@@ -20,3 +20,4 @@ extends Resource
 @export var rotation_speed: float = 2.0
 @export var spawn_interval: float = 0.5
 @export_range(-360, 360) var arc_angle: float = 30.0
+@export var base_aim_angle: float = PI

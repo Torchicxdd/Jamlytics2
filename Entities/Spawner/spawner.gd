@@ -15,6 +15,8 @@ const SPAWNER_SCENE: PackedScene = preload(Constants.SCENE_PATHS.spawner)
 @export var rotation_speed: float = 2.0
 @export var spawn_interval: float = 0.5
 @export var arc_angle: float = 30.0
+@export var base_aim_angle: float = PI
+@export var is_enabled = true
 
 static func new_spawner(
 	pattern: Patterns,
@@ -28,7 +30,8 @@ static func new_spawner(
 	is_oscillating: bool,
 	rotation_speed: float,
 	spawn_interval: float,
-	arc_angle: float
+	arc_angle: float,
+	base_aim_angle: float
 ) -> Spawner:
 	var spawner = SPAWNER_SCENE.instantiate() as Spawner
 	spawner.pattern = pattern
@@ -43,10 +46,9 @@ static func new_spawner(
 	spawner.rotation_speed = rotation_speed
 	spawner.spawn_interval = spawn_interval
 	spawner.arc_angle = arc_angle
+	spawner.base_aim_angle = base_aim_angle
 	return spawner
 
-
-var is_enabled = false
 var start_delay_finished = false
 var start_delay_timer: float = 0.0
 var _time: float = 0.0
@@ -65,15 +67,18 @@ func _physics_process(delta: float) -> void:
 			return
 		start_delay_finished = true
 
+	if not is_enabled:
+		return
+
 	_time += delta
 	_rotation_time += delta
 	
 	if is_rotating:
 		rotation += rotation_speed * delta
 	elif is_oscillating:
-		rotation = PI + sin(_rotation_time * rotation_speed) * deg_to_rad(arc_angle / 2.0)
+		rotation = base_aim_angle + sin(_rotation_time * rotation_speed) * deg_to_rad(arc_angle / 2.0)
 	else:
-		rotation = PI
+		rotation = base_aim_angle
 
 	match pattern:
 		Patterns.SPIRAL:

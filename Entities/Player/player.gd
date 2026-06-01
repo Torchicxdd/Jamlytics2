@@ -10,6 +10,7 @@ const texture_flow = preload(Constants.PLAYER_TEXTURE_PATHS.flow)
 const texture_fury_poise = preload(Constants.PLAYER_TEXTURE_PATHS.fury_poise)
 const texture_fury_flow = preload(Constants.PLAYER_TEXTURE_PATHS.fury_flow)
 const texture_poise_flow = preload(Constants.PLAYER_TEXTURE_PATHS.poise_flow)
+const texture_all_abilities = preload(Constants.PLAYER_TEXTURE_PATHS.all_abilities)
 
 @export var player_config: PlayerConfig
 
@@ -52,7 +53,7 @@ func _update_player_texture() -> void:
 	var flow: bool = GameManager.powerup_states[GameManager.Powerup.FLOW]["is_activated"]
 
 	if fury and poise and flow:
-		pass
+		player_sprite.texture = texture_all_abilities
 	elif fury and poise:
 		player_sprite.texture = texture_fury_poise
 	elif fury and flow:

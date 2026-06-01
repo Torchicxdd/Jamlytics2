@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FormationConfig" format=3 uid="uid://l2form12"]
+
+[ext_resource type="Script" uid="uid://warx1l6000ef" path="res://Configs/formation_config.gd" id="1_fc"]
+[ext_resource type="Script" uid="uid://cn64vgwhcxafo" path="res://Configs/enemy_config.gd" id="2_ec"]
+[ext_resource type="Resource" uid="uid://l2f12sweep" path="res://Stages/Levels/Level2/Formations/12/f12_sweep.tres" id="3_r0"]
+
+[resource]
+script = ExtResource("1_fc")
+formation_type = 2
+entry_style = 3
+formation_center = Vector2(1540, 800)
+enemy_count = 5
+enemy_spacing = 140.0
+enemies = Array[ExtResource("2_ec")]([ExtResource("3_r0"), ExtResource("3_r0"), ExtResource("3_r0"), ExtResource("3_r0"), ExtResource("3_r0")])
+metadata/_custom_type_script = "uid://warx1l6000ef"

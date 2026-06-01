@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FormationConfig" format=3 uid="uid://l2i5xcfv6g7n"]
+
+[ext_resource type="Script" uid="uid://cn64vgwhcxafo" path="res://Configs/enemy_config.gd" id="1_xga21"]
+[ext_resource type="Resource" uid="uid://b6k42bsrpiq5c" path="res://Stages/Levels/Level2/Formations/0/f1_enemy_1.tres" id="2_fonf0"]
+[ext_resource type="Script" uid="uid://warx1l6000ef" path="res://Configs/formation_config.gd" id="2_ona75"]
+
+[resource]
+script = ExtResource("2_ona75")
+entry_style = 3
+formation_center = Vector2(1280, 540)
+enemy_count = 1
+enemies = Array[ExtResource("1_xga21")]([ExtResource("2_fonf0")])
+metadata/_custom_type_script = "uid://warx1l6000ef"

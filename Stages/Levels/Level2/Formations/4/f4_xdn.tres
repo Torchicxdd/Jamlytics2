@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://l2f4xdn"]
+
+[ext_resource type="Script" uid="uid://cn64vgwhcxafo" path="res://Configs/enemy_config.gd" id="1_s"]
+[ext_resource type="PackedScene" uid="uid://c7vxopvmy4fos" path="res://Entities/Enemy1/Enemy1.tscn" id="2_e"]
+[ext_resource type="PackedScene" uid="uid://pr6f2mkb6s4u" path="res://Entities/EnemyBullet/EnemyBullet.tscn" id="3_b"]
+[ext_resource type="SpriteFrames" uid="uid://c7boqnkc2ncqf" path="res://Entities/EnemyBullet/wolf_minion_alternate_bullets.tres" id="4_f"]
+
+[resource]
+script = ExtResource("1_s")
+enemy_scene = ExtResource("2_e")
+health = 5
+despawn_timer = 7.0
+despawn_duration = 1.0
+despawn_style = 2
+pattern = 1
+bullet_scene = ExtResource("3_b")
+bullet_sprite_frames = ExtResource("4_f")
+bullet_scale = Vector2(0.5, 0.5)
+bullet_speed = 480.0
+bullet_count = 7
+shooting_start_delay = 0.5
+is_rotating = true
+rotation_speed = 4.0
+spawn_interval = 0.25
+arc_angle = 16.0
+base_aim_angle = 0.0
+metadata/_custom_type_script = "uid://cn64vgwhcxafo"
