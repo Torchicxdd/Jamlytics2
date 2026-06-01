@@ -13,6 +13,7 @@ signal open_end_game_menu()
 signal open_audio_settings()
 signal open_input_settings()
 signal open_tutorial()
+signal open_credits()
 
 # Pause signals
 signal resume_game()
