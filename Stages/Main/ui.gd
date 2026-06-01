@@ -84,10 +84,14 @@ func _toggle_pause_world(is_paused: bool, root_menu_type = null) -> void:
 	_set_process_mode_recursive(world, mode)
 	if not GameManager.is_world_paused:
 		_on_resume_game()
-	elif root_menu_type != null:
-		_on_menu_open(root_menu_type)
+	else:
+		MenuManager.game_paused.emit()
+		if root_menu_type != null:
+			_on_menu_open(root_menu_type)
 
 func _set_process_mode_recursive(node: Node, mode: ProcessMode) -> void:
+	if node.process_mode == Node.PROCESS_MODE_ALWAYS:
+		return
 	node.process_mode = mode
 
 	for child in node.get_children():

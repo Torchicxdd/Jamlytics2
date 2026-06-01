@@ -17,6 +17,7 @@ signal open_credits()
 
 # Pause signals
 signal resume_game()
+signal game_paused()
 signal game_resumed()
 
 

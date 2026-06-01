@@ -10,9 +10,12 @@ var _death_active := false
 var _death_start_ms := 0
 
 func _ready() -> void:
+	music_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	SceneLoader.load_finished.connect(_on_scene_loaded)
 	UISignalBus.player_died.connect(_on_player_died)
 	music_player.finished.connect(_on_music_player_finished)
+	MenuManager.game_paused.connect(_on_game_paused)
+	MenuManager.game_resumed.connect(_on_game_resumed)
 
 func _on_scene_loaded() -> void:
 	GameManager.is_game_started = true
@@ -42,6 +45,12 @@ func _process(_delta: float) -> void:
 			music_player.stop()
 		Engine.time_scale = 1.0
 		MenuManager.open_death_menu.emit()
+
+func _on_game_paused() -> void:
+	music_player.stream_paused = true
+
+func _on_game_resumed() -> void:
+	music_player.stream_paused = false
 
 func _on_music_player_finished() -> void:
 	var score_data: Dictionary = {
