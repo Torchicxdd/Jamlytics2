@@ -8,6 +8,9 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_watig"]
 texture = ExtResource("3_t82wb")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mib3r"]
+texture = ExtResource("3_t82wb")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j71rm"]
 texture = ExtResource("3_watig")
 
@@ -35,6 +38,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_watig")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_watig")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mib3r")
 text = "A"
 icon_alignment = 1
 

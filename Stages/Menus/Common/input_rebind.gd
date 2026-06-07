@@ -112,6 +112,8 @@ func _on_controller_btn_pressed() -> void:
 	_update_controller_display()
 	ignore_next_click = true
 
+## The button signals fire before the _input method so call stack goes button click signal listener then _input
+## This means when you click the button to rebind, you go directly to the ignore_next_clic branch
 func _input(event: InputEvent) -> void:
 	if not listening:
 		return
@@ -124,8 +126,6 @@ func _input(event: InputEvent) -> void:
 
 	if ignore_next_click:
 		ignore_next_click = false
-		keyboard_btn.disabled = true
-		controller_btn.disabled = true
 		return
 
 	if listening_device == InputTypes.KEYANDM and (event is InputEventKey or event is InputEventMouseButton):
@@ -159,6 +159,3 @@ func _remap(event: InputEvent) -> void:
 	listening_device = null
 	_update_keyboard_display()
 	_update_controller_display()
-	keyboard_btn.disabled = false
-	controller_btn.disabled = false
-	get_viewport().set_input_as_handled()
